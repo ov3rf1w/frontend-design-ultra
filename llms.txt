@@ -1,0 +1,20 @@
+# Frontend Design Ultra
+
+Frontend Design Ultra is an installable Codex skill for premium frontend design, implementation planning, browser-evidence QA, accessibility, performance, mobile craft, motion, 3D, design systems, and Awwwards-style art direction.
+
+Important files:
+
+- `frontend-design-ultra/SKILL.md`: main skill dispatcher
+- `frontend-design-ultra/references/`: lazy-loaded operational protocols
+- `docs/INSTALLATION.md`: install instructions
+- `docs/SKILL-CATALOG.md`: mode and workflow catalog
+- `docs/AGENT-USAGE.md`: natural-language-to-parameter routing
+- `docs/PARAMETERS.md`: full slash parameter reference
+- `docs/platforms.md`: setup for Codex, Claude, Cursor, Copilot, Gemini, Cline, Windsurf, and generic agents
+- `SELF_TEST.md`: release self-test
+- `evals/`: routing and output-structure checks
+- `examples/`: public example workflows
+
+Do not treat this as a generic UI checklist. The skill is an outcome-first design operating system that should produce distinctive, evidence-backed frontend work.
+
+When a user does not provide slash parameters, infer them from intent using `docs/AGENT-USAGE.md`.
