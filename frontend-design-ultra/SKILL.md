@@ -16,10 +16,11 @@ Main agent owns creative direction, visual judgment, conflict decisions, and fin
 Groups:
 
 - Mode: `/analyse`, `/design`, `/polish`, `/implement`, `/verify`
-- Domain: `/landing`, `/dashboard`, `/saas`, `/ecommerce`, `/mobile`
+- Domain: `/landing`, `/dashboard`, `/saas`, `/ecommerce`, `/mobile`, `/redesign`, `/image-to-code`
 - Quality: `/premium`, `/awwward`, `/conversion`, `/accessibility`, `/performance`
-- Tool: `/playwright`, `/figma`, `/tailwind`, `/gsap`, `/framer`, `/3d`
+- Tool: `/playwright`, `/figma`, `/tailwind`, `/gsap`, `/framer`, `/3d`, `/reference`
 - Intensity: `/quick`, `/deep`, `/brutal`
+- Taste dials: `/variance-low|mid|high`, `/motion-low|mid|high`, `/density-low|mid|high`
 
 Mode precedence: `/verify` > `/implement` > `/polish` > `/design` > `/analyse`. Aliases: `/designsystem` -> `/tailwind`; `/motion` and `/scroll` -> motion lane; `/awwwards` -> `/awwward`.
 
@@ -30,6 +31,8 @@ Default mode: URL/local app/screenshot -> `/analyse`; edit request -> `/implemen
 - Validate parameter compatibility before acting; reject impossible combinations with a valid replacement.
 - Treat tools as preferences. If GSAP, Framer, Figma, Tailwind, Playwright, or 3D tooling is absent, state the fallback instead of silently downgrading.
 - `/quick` means highest-signal only; `/deep` means full relevant protocol; `/brutal` means strict gate language, stronger critique, and sidecar review where useful.
+- Set three taste dials before visual work: layout variance, motion intensity, and information density. Infer defaults from domain if omitted.
+- Use workflow commands internally: audit existing UI before redesign, define reference mechanics before image-to-code, choose design lane before implementation, and treat motion create/audit as separate paths.
 - Output contracts by mode:
   - `/analyse`: Executive Summary, Evidence, Prioritized Findings, Severity, Impact, Fix Recommendation, QA Follow-up.
   - `/design`: Design Direction, Layout Strategy, Component Strategy, Design System Implications, Responsive Behavior, Implementation Notes.
@@ -75,6 +78,8 @@ Do not load every reference.
 - Need parameter/output precision -> `references/dispatch-matrix.md`.
 - Need browser evidence, tooling, Figma, Tailwind, implementation workflow -> `references/tools-workflow.md`.
 - Need accessibility/performance/mobile/motion/3D/ship gates -> `references/hard-gates-evidence.md`.
+- Need visual direction, taste dials, design lanes, reference/image pipeline, redesign protocol -> `references/design-lanes.md`.
+- Need motion create/audit, lens weighting, motion-gap analysis -> `references/motion-lenses.md`.
 - Need examples -> `references/example-invocations.md`.
 
 ## Confidentiality

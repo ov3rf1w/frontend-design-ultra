@@ -16,6 +16,8 @@ This skill pushes Codex toward a higher bar:
 - evidence-backed UI critique with Playwright when available
 - hard gates for accessibility, correctness, performance, and mobile usability
 - motion and 3D as controlled enhancers, not default spectacle
+- taste dials for variance, motion, and density
+- audit-first redesign and reference/image-to-code workflows
 
 ## What You Can Ask
 
@@ -25,6 +27,8 @@ This skill pushes Codex toward a higher bar:
 /polish /awwward /gsap
 /implement /dashboard /saas /accessibility
 /verify /mobile /performance
+/redesign /brutal /playwright
+/image-to-code /reference /landing /premium
 ```
 
 ## Core Modes
@@ -91,4 +95,3 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 ## License
 
 MIT. See [LICENSE](LICENSE).
-

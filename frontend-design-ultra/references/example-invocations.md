@@ -7,4 +7,5 @@
 | `/polish /awwward /gsap` | polish | hard-gates-evidence |
 | `/figma /implement /tailwind` | implement | tools-workflow + dispatch-matrix |
 | `/3d /mobile /verify` | verify | tools-workflow + hard-gates-evidence |
-
+| `/redesign /brutal /playwright` | analyse -> implement | design-lanes + tools-workflow + hard-gates-evidence |
+| `/image-to-code /reference /landing /premium` | design -> implement | design-lanes + tools-workflow |

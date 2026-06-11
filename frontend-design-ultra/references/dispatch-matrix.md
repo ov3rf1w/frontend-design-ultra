@@ -5,10 +5,11 @@
 | Group | Effect |
 |---|---|
 | Mode | Selects the one primary workflow. Precedence: `/verify` > `/implement` > `/polish` > `/design` > `/analyse`. |
-| Domain | Changes heuristics: `/landing` first viewport + conversion; `/dashboard` density + control semantics; `/saas` repeated workflows; `/ecommerce` product/funnel trust; `/mobile` recomposition. |
+| Domain | Changes heuristics: `/landing` first viewport + conversion; `/dashboard` density + control semantics; `/saas` repeated workflows; `/ecommerce` product/funnel trust; `/mobile` recomposition; `/redesign` audit-first; `/image-to-code` reference mechanics. |
 | Quality | Adds gates: `/premium` composition/detail; `/awwward` signature mechanism; `/conversion` proof + CTA; `/accessibility` WCAG; `/performance` CWV/runtime. |
-| Tool | Selects route preference: `/playwright`, `/figma`, `/tailwind`, `/gsap`, `/framer`, `/3d`; missing tools require fallback plan. |
+| Tool | Selects route preference: `/playwright`, `/figma`, `/tailwind`, `/gsap`, `/framer`, `/3d`, `/reference`; missing tools require fallback plan. |
 | Intensity | `/quick` top risks only; `/deep` full relevant protocol; `/brutal` strict scoring + sidecar critique where useful. |
+| Taste dials | `/variance-*`, `/motion-*`, `/density-*` tune visual experimentation, animation depth, and information per viewport. |
 
 ## Output Contracts
 
@@ -24,5 +25,6 @@
 - `/figma` works as protocol even without Figma tooling: use frame URL, screenshot, tokens, exports, or ask for the missing source.
 - `/3d` plus `/mobile` requires a non-3D mobile fallback.
 - `/gsap` or `/framer` requires existing dependency or explicit acceptance.
+- `/image-to-code` requires a reference image/screenshot or reference-generation step.
+- `/redesign` must run audit before replacement UI.
 - Unsupported combinations return a short error and a valid replacement.
-

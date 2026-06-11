@@ -17,7 +17,9 @@ C:\Users\rapha\.codex\skills\frontend-design-ultra
 - Modes: `/analyse`, `/design`, `/polish`, `/implement`, `/verify`
 - Domains: `/landing`, `/dashboard`, `/saas`, `/ecommerce`, `/mobile`
 - Quality: `/premium`, `/awwward`, `/conversion`, `/accessibility`, `/performance`
-- Tools: `/playwright`, `/figma`, `/tailwind`, `/gsap`, `/framer`, `/3d`
+- Tools: `/playwright`, `/figma`, `/tailwind`, `/gsap`, `/framer`, `/3d`, `/reference`
+- Workflows: `/redesign`, `/image-to-code`
+- Taste dials: `/variance-low|mid|high`, `/motion-low|mid|high`, `/density-low|mid|high`
 - Intensity: `/quick`, `/deep`, `/brutal`
 
 ## Validation

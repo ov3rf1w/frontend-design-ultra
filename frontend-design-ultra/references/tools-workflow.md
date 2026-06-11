@@ -4,6 +4,13 @@
 
 Default sequence: analyse -> design -> implement -> verify -> polish only when useful. Shortcut modes run only their needed slice; do not duplicate checks.
 
+Internal command patterns:
+
+- Redesign: audit -> retain strengths -> replace weak systems -> verify.
+- Image-to-code: reference mechanics -> token map -> implementation -> browser comparison.
+- Design-system: token audit -> semantic map -> component states -> usage cleanup.
+- Motion: create or audit, never both by default.
+
 ## Playwright / Browser
 
 Use for authorized URL/local-app evidence. Capture desktop and mobile, tablet when useful, console/runtime issues, overflow, key interactions, responsive defects, accessibility smoke, and before/after after implementation. If private/authenticated/confidential, ask first.
@@ -26,4 +33,3 @@ Figma is optional and future-ready. If tooling exists, inspect frames/variables/
 ## Implementation
 
 Keep file scope minimal, follow local framework and components, implement gates during the change, and verify the changed surfaces only unless risk demands broader capture.
-
