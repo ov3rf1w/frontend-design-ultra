@@ -15,3 +15,5 @@
 | `/analyse /dashboard /saas /deep` | analyse | ux-research-strategy + report-templates |
 | `/verify /playwright /accessibility` | verify | playwright-recipes + accessibility-wcag-recipes + report-templates |
 | `/3d /performance /mobile` | design -> verify | three-r3f-recipes + performance-cwv-recipes + hard-gates-evidence |
+| `/design /landing /awwward /trend /brandkit` | design | trend-research + asset-art-direction + design-lanes + awwwards-pattern-library |
+| `/image-to-code /reference /premium` | design -> implement | design-dna-extraction + ui-spec-dsl + tools-workflow |

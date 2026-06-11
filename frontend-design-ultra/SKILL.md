@@ -17,7 +17,7 @@ Groups:
 
 - Mode: `/analyse`, `/design`, `/polish`, `/implement`, `/verify`
 - Domain: `/landing`, `/dashboard`, `/saas`, `/ecommerce`, `/mobile`, `/redesign`, `/image-to-code`, `/brandkit`
-- Quality: `/premium`, `/awwward`, `/conversion`, `/accessibility`, `/performance`
+- Quality: `/premium`, `/awwward`, `/conversion`, `/accessibility`, `/performance`, `/trend`
 - Tool: `/playwright`, `/figma`, `/tailwind`, `/gsap`, `/framer`, `/3d`, `/reference`
 - Intensity: `/quick`, `/deep`, `/brutal`
 - Taste dials: `/variance-low|mid|high`, `/motion-low|mid|high`, `/density-low|mid|high`
@@ -36,6 +36,8 @@ Default mode: URL/local app/screenshot -> `/analyse`; edit request -> `/implemen
 - Use workflow commands internally: audit existing UI before redesign, define reference mechanics before image-to-code, choose design lane before implementation, and treat motion create/audit as separate paths.
 - For visually important websites, create or request real visual source material before coding: generated section comps, real product/place images, brand assets, or screenshot references. Do not code a premium site from text-only vibes when image generation or visual inputs are available.
 - Before final response on implementation work, run the Preflight: hero fit, asset reality, copy sanity, CTA consistency, state coverage, responsive behavior, motion/reduced-motion, contrast, performance, and browser evidence.
+- For `/trend`, extract current reference mechanics only: composition, typography, interaction, motion, asset language, and overused patterns to avoid. Never clone a reference.
+- For `/image-to-code` or visual references, produce Design DNA before implementation: tokens, layout grammar, component states, motion vocabulary, evidence plan.
 - Output contracts by mode:
   - `/analyse`: Executive Summary, Evidence, Prioritized Findings, Severity, Impact, Fix Recommendation, QA Follow-up.
   - `/design`: Design Direction, Layout Strategy, Component Strategy, Design System Implications, Responsive Behavior, Implementation Notes.
@@ -92,6 +94,10 @@ Do not load every reference.
 - Need UX research, journey, IA, persona-lite, usability plans -> `references/ux-research-strategy.md`.
 - Need stakeholder/audit/implementation/ship output templates -> `references/report-templates.md`.
 - Need visual direction, taste dials, design lanes, reference/image pipeline, redesign protocol -> `references/design-lanes.md`.
+- Need Design DNA extraction from screenshot/URL/reference -> `references/design-dna-extraction.md`.
+- Need deterministic page/component specification -> `references/ui-spec-dsl.md`.
+- Need buttons/forms/nav/cards/modals/tables/pricing/product/dashboard state contracts -> `references/component-state-library.md`.
+- Need Awwwards-style composition patterns -> `references/awwwards-pattern-library.md`.
 - Need motion create/audit, lens weighting, motion-gap analysis -> `references/motion-lenses.md`.
 - Need image generation, asset planning, brand boards, image-to-code extraction -> `references/asset-art-direction.md`.
 - Need copy, conversion, proof, CTA, testimonials, pricing/e-commerce content -> `references/content-conversion.md`.
