@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Design Ultra"
+  short_description: "Premium frontend design, implementation, and QA orchestration."
+  default_prompt: "Use this skill to analyze, design, polish, implement, and verify high-end frontend interfaces with Structiva-level taste, accessibility, performance, motion, mobile, and browser-based QA."

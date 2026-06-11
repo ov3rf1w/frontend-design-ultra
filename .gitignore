@@ -1,0 +1,23 @@
+# Local/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Dependencies/build output
+node_modules/
+dist/
+build/
+.next/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# Internal construction artifacts
+analysis/
+upstream/
+
