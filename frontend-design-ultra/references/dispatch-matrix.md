@@ -5,7 +5,7 @@
 | Group | Effect |
 |---|---|
 | Mode | Selects the one primary workflow. Precedence: `/verify` > `/implement` > `/polish` > `/design` > `/analyse`. |
-| Domain | Changes heuristics: `/landing` first viewport + conversion; `/dashboard` density + control semantics; `/saas` repeated workflows; `/ecommerce` product/funnel trust; `/mobile` recomposition; `/redesign` audit-first; `/image-to-code` reference mechanics. |
+| Domain | Changes heuristics: `/landing` first viewport + conversion; `/dashboard` density + control semantics; `/saas` repeated workflows; `/ecommerce` product/funnel trust; `/mobile` recomposition; `/redesign` audit-first; `/image-to-code` reference mechanics; `/brandkit` identity system. |
 | Quality | Adds gates: `/premium` composition/detail; `/awwward` signature mechanism; `/conversion` proof + CTA; `/accessibility` WCAG; `/performance` CWV/runtime. |
 | Tool | Selects route preference: `/playwright`, `/figma`, `/tailwind`, `/gsap`, `/framer`, `/3d`, `/reference`; missing tools require fallback plan. |
 | Intensity | `/quick` top risks only; `/deep` full relevant protocol; `/brutal` strict scoring + sidecar critique where useful. |
@@ -27,4 +27,5 @@
 - `/gsap` or `/framer` requires existing dependency or explicit acceptance.
 - `/image-to-code` requires a reference image/screenshot or reference-generation step.
 - `/redesign` must run audit before replacement UI.
+- `/brandkit` must define visual language, palette, type, shape, image, motion, and forbidden defaults before page design.
 - Unsupported combinations return a short error and a valid replacement.

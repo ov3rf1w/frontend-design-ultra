@@ -18,6 +18,9 @@ This skill pushes Codex toward a higher bar:
 - motion and 3D as controlled enhancers, not default spectacle
 - taste dials for variance, motion, and density
 - audit-first redesign and reference/image-to-code workflows
+- design-system foundation mapping, page archetypes, motion lenses, and Awwwards scorecards
+- image-first art direction, brandkit mode, content/CTA contracts, preflight completion checks, and AI-tell sweeps
+- concrete recipes for Playwright QA, WCAG checks, Core Web Vitals, Tailwind tokens, 3D/R3F, UX research, and report templates
 
 ## What You Can Ask
 
@@ -29,6 +32,7 @@ This skill pushes Codex toward a higher bar:
 /verify /mobile /performance
 /redesign /brutal /playwright
 /image-to-code /reference /landing /premium
+/brandkit /landing /awwward
 ```
 
 ## Core Modes

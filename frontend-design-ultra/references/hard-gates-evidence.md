@@ -20,6 +20,20 @@ Use CWV as contract: LCP <= 2.5s, INP <= 200ms, CLS <= 0.1. Watch above-fold med
 
 Recompose content order; preserve image focal points; keep primary action visible; prevent horizontal overflow; avoid fixed UI covering content; keep practical tap targets around 44px; convert hover effects to explicit touch actions.
 
+## Awwwards Scorecard
+
+Score 1-5 before calling premium work done:
+
+- First impression: memorable within 3 seconds.
+- Specificity: could not belong to any random startup.
+- Composition: clear hierarchy, rhythm, and spatial intent.
+- Typography: distinct roles, clean breaks, no default-looking stack.
+- Motion: purposeful and complete with reduced motion.
+- Mobile craft: recomposed, not merely stacked.
+- Proof/conversion: user knows why to trust and what to do.
+
+Any score below 4 becomes a fix target, not a note.
+
 ## Motion / 3D
 
 Motion must clarify state, hierarchy, or progression. Prefer transform/opacity, stable dimensions, reduced-motion final visibility, no blank pinned states, no scroll hijack. 3D needs one clear scene purpose, lazy load, static fallback, mobile fallback, and no unreadable text inside fragile canvas states.
@@ -27,4 +41,3 @@ Motion must clarify state, hierarchy, or progression. Prefer transform/opacity, 
 ## Evidence IDs
 
 When browser evidence is authorized, visual/runtime claims should reference screenshot, viewport, console, trace, or check IDs. Without evidence, label the claim `Needs Browser Verification`.
-

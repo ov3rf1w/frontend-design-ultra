@@ -25,6 +25,30 @@ Choose one primary lane; blend at most two.
 - Industrial/Brutalist: sharp grid, mechanical rhythm, high contrast.
 - Soft Luxury: warm surfaces, generous spacing, refined type, subtle spring motion.
 
+## Foundation Mapping
+
+If the brief clearly matches an established product ecosystem, use its official design system before inventing local CSS:
+
+- Enterprise/Microsoft-style -> Fluent-style components/tokens.
+- Material/Google-style -> Material-style components/tokens.
+- IBM/analytics -> Carbon-style density and data patterns.
+- Shopify admin -> Polaris-style patterns.
+- Atlassian/Jira-style -> Atlassian-style tokens and interaction conventions.
+- GitHub/devtool -> Primer-style conventions.
+- Public-sector/trust service -> government-style system, conservative motion, high accessibility.
+- Owned modern SaaS -> Tailwind + headless primitives/shadcn-style components, but restyled beyond defaults.
+
+Use one system per project. Do not mix design systems unless the existing codebase already does and the task is cleanup.
+
+## Page Archetypes
+
+- Landing: first viewport = outcome + proof + action; second viewport proves mechanism.
+- Portfolio/studio: first viewport = name + signature craft + one memorable motion/layout device.
+- SaaS dashboard: command area, decision zone, secondary context; dense but calm.
+- E-commerce PDP: product media, price, variant, shipping/returns, CTA in one scan band.
+- Local/service business: trust proof, location/availability, direct contact path, no vague agency copy.
+- Editorial: content rhythm, strong type roles, image pacing, restrained CTAs.
+
 ## Reference And Image-To-Code
 
 For `/reference` or `/image-to-code`:
@@ -38,4 +62,6 @@ For `/reference` or `/image-to-code`:
 ## Redesign
 
 For `/redesign`, audit first: first viewport job, hierarchy, scan path, token drift, generic patterns, mobile damage, motion/performance debt, proof/CTA gaps. Then change the fewest surfaces that materially improve strategy, gates, and conversion.
+
+Fix priority: font/system mismatch, palette drift, interaction states, layout/spacing, generic components, missing states, final typography/spacing polish.
 

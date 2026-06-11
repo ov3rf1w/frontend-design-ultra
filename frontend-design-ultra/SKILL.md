@@ -16,7 +16,7 @@ Main agent owns creative direction, visual judgment, conflict decisions, and fin
 Groups:
 
 - Mode: `/analyse`, `/design`, `/polish`, `/implement`, `/verify`
-- Domain: `/landing`, `/dashboard`, `/saas`, `/ecommerce`, `/mobile`, `/redesign`, `/image-to-code`
+- Domain: `/landing`, `/dashboard`, `/saas`, `/ecommerce`, `/mobile`, `/redesign`, `/image-to-code`, `/brandkit`
 - Quality: `/premium`, `/awwward`, `/conversion`, `/accessibility`, `/performance`
 - Tool: `/playwright`, `/figma`, `/tailwind`, `/gsap`, `/framer`, `/3d`, `/reference`
 - Intensity: `/quick`, `/deep`, `/brutal`
@@ -32,7 +32,10 @@ Default mode: URL/local app/screenshot -> `/analyse`; edit request -> `/implemen
 - Treat tools as preferences. If GSAP, Framer, Figma, Tailwind, Playwright, or 3D tooling is absent, state the fallback instead of silently downgrading.
 - `/quick` means highest-signal only; `/deep` means full relevant protocol; `/brutal` means strict gate language, stronger critique, and sidecar review where useful.
 - Set three taste dials before visual work: layout variance, motion intensity, and information density. Infer defaults from domain if omitted.
+- Start every substantial design/build with a one-line Design Read: page kind, audience, brand language, stack direction, and risk constraint. Ask one clarifying question only if the read genuinely diverges.
 - Use workflow commands internally: audit existing UI before redesign, define reference mechanics before image-to-code, choose design lane before implementation, and treat motion create/audit as separate paths.
+- For visually important websites, create or request real visual source material before coding: generated section comps, real product/place images, brand assets, or screenshot references. Do not code a premium site from text-only vibes when image generation or visual inputs are available.
+- Before final response on implementation work, run the Preflight: hero fit, asset reality, copy sanity, CTA consistency, state coverage, responsive behavior, motion/reduced-motion, contrast, performance, and browser evidence.
 - Output contracts by mode:
   - `/analyse`: Executive Summary, Evidence, Prioritized Findings, Severity, Impact, Fix Recommendation, QA Follow-up.
   - `/design`: Design Direction, Layout Strategy, Component Strategy, Design System Implications, Responsive Behavior, Implementation Notes.
@@ -62,14 +65,17 @@ Final verification is `Pass`, `Fail`, or `Needs Review`; do not ship around a fa
 - Extract mechanics from references; never clone a reference or repeat the same lane/palette/hero/motion pattern by default.
 - First viewport must show the product, place, proof, task, or page job before explaining it.
 - One signature move per major page. No effect bouquets.
-- Composition before styling: one visual verb per viewport, max three priorities, dominant/subordinate hierarchy, no unjustified 50/50 split.
-- Typography is positioning: max two font families, explicit roles/scale, meaningful line breaks, body 40-65ch, display copy tight but readable.
-- Use semantic tokens for surfaces, text, accent, action, state, elevation, and motion; avoid raw component-level hex/rhythm drift.
+- Composition before styling: one visual verb per viewport, max three priorities, dominant/subordinate hierarchy, no unjustified 50/50 split; avoid centered heroes when variance is above mid unless the message itself is the design.
+- Typography is positioning: max two font families, explicit roles/scale, meaningful line breaks, body 40-65ch, display copy tight but readable; avoid novelty serif defaults unless the brief is truly editorial/luxury/heritage.
+- Use semantic tokens for surfaces, text, accent, action, state, elevation, radius, and motion; avoid raw component-level hex/rhythm drift.
 - Use one decisive accent family. Avoid default purple/blue gradients, decorative orbs/blobs, glass cards, fake badges, stock atmosphere, cards-in-cards, and generic 3-column section grids.
+- Lock the palette, radius scale, icon family, shadow language, and motion scale for the whole page; audit drift before shipping.
+- Every visual asset must have a role: hero, proof, product, instruction, atmosphere, or identity. Delete assets without a role; do not use fake screenshot divs as proof for real products.
 - Long pages need rhythm: proof, media, metric, quote, interaction, or composition shift every 1-2 screenfuls.
 - Mobile is recomposed, not squeezed: reorder content, preserve focal points, keep tap targets about 44px, avoid fixed UI covering content.
 - Motion must clarify hierarchy or progression; animate transform/opacity, avoid CLS, avoid blank pinned states, and make reduced-motion final states complete.
 - 3D must have a purpose, budget, lazy-load/fallback, and mobile/reduced-motion alternative.
+- Finish the forgotten states: loading, empty, error, validation, 404, back path, skip link, metadata, legal/footer links when relevant.
 
 ## Lazy References
 
@@ -77,9 +83,19 @@ Do not load every reference.
 
 - Need parameter/output precision -> `references/dispatch-matrix.md`.
 - Need browser evidence, tooling, Figma, Tailwind, implementation workflow -> `references/tools-workflow.md`.
+- Need Playwright screenshot/console/network/overflow/trace recipes -> `references/playwright-recipes.md`.
+- Need Tailwind v3/v4, DTCG-style tokens, component specs, Figma variables, localization, system governance -> `references/design-system-governance.md`.
 - Need accessibility/performance/mobile/motion/3D/ship gates -> `references/hard-gates-evidence.md`.
+- Need detailed WCAG/form/widget accessibility recipes -> `references/accessibility-wcag-recipes.md`.
+- Need Core Web Vitals LCP/INP/CLS debugging -> `references/performance-cwv-recipes.md`.
+- Need Three.js/R3F/WebGL performance and fallback recipes -> `references/three-r3f-recipes.md`.
+- Need UX research, journey, IA, persona-lite, usability plans -> `references/ux-research-strategy.md`.
+- Need stakeholder/audit/implementation/ship output templates -> `references/report-templates.md`.
 - Need visual direction, taste dials, design lanes, reference/image pipeline, redesign protocol -> `references/design-lanes.md`.
 - Need motion create/audit, lens weighting, motion-gap analysis -> `references/motion-lenses.md`.
+- Need image generation, asset planning, brand boards, image-to-code extraction -> `references/asset-art-direction.md`.
+- Need copy, conversion, proof, CTA, testimonials, pricing/e-commerce content -> `references/content-conversion.md`.
+- Need completion gates for forms, states, navigation, metadata, final QA -> `references/preflight-scorecard.md`.
 - Need examples -> `references/example-invocations.md`.
 
 ## Confidentiality
