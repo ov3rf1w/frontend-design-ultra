@@ -14,6 +14,8 @@ Known blockers cannot be averaged out. If any critical category scores below 4/5
 
 Check landmarks, heading order, keyboard path, focus visibility, labels, form errors, contrast, alt text, reduced motion, and non-color-only states. Prefer native controls; ARIA is a last-mile tool, not a substitute for semantics.
 
+WCAG 2.2 AA is the practical floor for shipped UI unless the user explicitly requests a different compliance target. Treat focus visibility, target size/spacing, keyboard operability, labels, contrast, error identification, and reduced-motion as ship gates, not polish.
+
 ## Performance
 
 Use CWV as contract: LCP <= 2.5s, INP <= 200ms, CLS <= 0.1. Watch above-fold media, heavy client JS, late fonts/media, scroll listeners, animation layout work, and 3D/canvas cost.
@@ -57,3 +59,9 @@ Motion must clarify state, hierarchy, or progression. Prefer transform/opacity, 
 ## Evidence IDs
 
 When browser evidence is authorized, visual/runtime claims should reference screenshot, viewport, console, trace, or check IDs. Without evidence, label the claim `Needs Browser Verification`.
+
+## Evidence Confidence Tiers
+
+- High: browser evidence, code evidence, provided source material, or recognized standard directly supports the claim.
+- Medium: strong expert inference from available UI/code but not independently verified.
+- Low: plausible hypothesis requiring research, user confirmation, browser capture, or asset input.

@@ -6,17 +6,20 @@ Use this for substantial UI work, premium redesigns, route systems, Awwwards-gra
 
 Run this before styling or implementation:
 
-1. Page job: define the one thing the page must make clear or possible.
-2. Audience intent: identify whether the user is evaluating, comparing, buying, trusting, operating, or contacting.
-3. Conversion/trust spine: define relevance, concrete outcome, proof, action, and post-click expectation.
-4. Asset reality: list available proof media, product states, brand assets, people/place/process visuals, data, and missing assets.
-5. Strategy lane: choose one lane and blend at most one support lane.
-6. Signature move: choose one page-native mechanism that supports the page job.
-7. Token contract: lock surfaces, text, accent, radius, spacing, type roles, elevation, and motion scale.
-8. First viewport fit: account for nav, browser chrome, safe areas, fixed controls, CTA, media crop, and shortest mobile height.
-9. Responsive viewport system: define compact laptop, standard desktop, wide monitor, mobile, and reduced-motion/no-pin compositions.
-10. Mobile recomposition: define mobile order, first visible action, media focal points, and motion reduction.
-11. Verification plan: define desktop/mobile/wide evidence, reduced-motion pass, interaction smoke, overflow, console, accessibility, and performance checks.
+1. Research read: collect domain mechanics, user need, trust friction, references, accessibility/performance constraints, and evidence gaps.
+2. Design system: generate or adopt typography, color, surface, spacing, grid, components, motion, assets, accessibility, and performance rules.
+3. Page job: define the one thing the page must make clear or possible.
+4. Audience intent: identify whether the user is evaluating, comparing, buying, trusting, operating, or contacting.
+5. Conversion/trust spine: define relevance, concrete outcome, proof, action, and post-click expectation.
+6. Asset reality: list available proof media, product states, brand assets, people/place/process visuals, data, and missing assets.
+7. Website type playbook: choose the closest type and inherit its hero/trust/CTA/layout/motion defaults.
+8. Strategy lane: choose one lane and blend at most one support lane.
+9. Signature move: choose one page-native mechanism that supports the page job.
+10. Token contract: lock surfaces, text, accent, radius, spacing, type roles, elevation, and motion scale.
+11. First viewport fit: account for nav, browser chrome, safe areas, fixed controls, CTA, media crop, and shortest mobile height.
+12. Responsive viewport system: define compact laptop, standard desktop, wide monitor, mobile, and reduced-motion/no-pin compositions.
+13. Mobile recomposition: define mobile order, first visible action, media focal points, and motion reduction.
+14. Verification plan: define desktop/mobile/wide evidence, reduced-motion pass, interaction smoke, overflow, console, accessibility, and performance checks.
 
 If any item is unknown, mark it explicitly. Do not hide uncertainty behind generic visual language.
 
@@ -112,6 +115,16 @@ Deterministic checks:
 - Problem words are not highlighted as the primary accent in display copy; highlight promise/outcome words.
 - Shared components consume semantic tokens, not raw one-off literals.
 
+## Evidence Confidence
+
+Classify major claims:
+
+- High: supported by browser evidence, provided assets, live reference, established standard, or source-aware research.
+- Medium: supported by domain heuristics and similar patterns, but not yet verified on this project.
+- Low: plausible direction with missing user/source/browser evidence.
+
+Do not present low-confidence claims as final truth. Use `Needs Browser Verification`, `Needs Asset Input`, or `Needs Research Confirmation`.
+
 ## Signature Move Rules
 
 One strong mechanism beats many effects:
@@ -123,6 +136,14 @@ One strong mechanism beats many effects:
 - It should create memory through structure, not decoration.
 
 Examples of valid mechanisms: interactive task index, proof board, object-stage product hero, editorial split, scroll chapter with immediate content, image-mask reveal with static fallback, immersive footer, route/action atlas, cursor-follow preview on pointer devices only.
+
+## Motion Governance
+
+- One animation system owns transform state for a given element.
+- Use GSAP for deterministic scroll timelines and pinned chapters.
+- Use Framer/Motion for React state, shared layout, modal/drawer, and route UI transitions.
+- Use CSS for simple hover/focus/reveal interactions.
+- Avoid motion on task-critical forms, dense dashboards, reduced-motion contexts, and low-power/mobile paths unless it clarifies state.
 
 ## Ship Decision
 

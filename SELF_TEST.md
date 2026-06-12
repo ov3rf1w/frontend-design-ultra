@@ -39,3 +39,14 @@ Run before publishing a release.
 - [ ] Wide monitors use capped copy, scaled stage/media/backgrounds, and authored negative space.
 - [ ] Pinned/scroll sections have separate desktop, mobile, and reduced-motion/no-pin layouts.
 - [ ] Eval `responsive-viewport-system` covers the expected output structure.
+
+## Ultimate Design Operating System Checks
+
+- [ ] `/research` forces a research packet, source mechanics, evidence gaps, and confidence tiers before premium decisions.
+- [ ] New substantial websites and large redesigns are design-system-first: generated or adopted typography, color, surface, grid, spacing, component, motion, asset, accessibility, and performance system.
+- [ ] No default typography/color gate blocks Inter/Roboto/Arial/system UI and generic blue/purple glow unless explicitly justified.
+- [ ] `/analyse` and `/polish` use diagnosis lenses, root cause, Keep/Delete/Replace/Rebuild, severity, and evidence confidence.
+- [ ] Website-type playbooks route agency/studio, SaaS/app, dashboard, ecommerce, hospitality, portfolio/showroom, local, legal/finance/healthcare, luxury/editorial, and startup/product launch.
+- [ ] Editorial motion uses intent, one-owner-per-element, GSAP/Framer/CSS decision, choreography layers, motion budget, mobile alternative, and reduced-motion fallback.
+- [ ] Implementation recipes cover responsive hero, editorial split, full-bleed media, sticky chapter, cursor-follow preview, product object stage, dashboard density, pricing/proof board, immersive footer, and mobile recomposition.
+- [ ] Evals include design-from-zero-system-first, analyse-polish-professional-lens, and editorial-motion-system.

@@ -29,4 +29,35 @@ Use when problem, audience, conversion path, IA, or workflow is unclear.
 - UX risks
 - Design implications
 - Verification tasks
+# Research Strategy Additions
+
+## Minimal Research Packet
+
+Use before substantial design decisions:
+
+- page job
+- audience segment
+- target action
+- trust friction
+- proof needed
+- hypothesis
+- task set
+- pass/fail criteria
+- artifact capture plan
+
+## Failure Map
+
+For each issue, track:
+
+- issue
+- evidence
+- reproducibility
+- affected task
+- severity
+- expected impact
+- acceptance condition
+
+## Research Loop
+
+Use find -> prioritize -> test. Do not run one large late study when smaller formative rounds and iteration would answer the design question faster. If statistical confidence is requested, state participant/sample assumptions and do not overclaim.
 

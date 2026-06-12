@@ -29,6 +29,17 @@ Precedence: `/verify` > `/implement` > `/polish` > `/design` > `/analyse`.
 | `/about` | Trust/capability route. |
 | `/contact` | Direct action/contact route. |
 | `/local` | Local-service route with relevance, location, availability. |
+| `/agency` | Agency/studio website playbook. |
+| `/studio` | Studio/craft website playbook. |
+| `/portfolio` | Portfolio/showroom website playbook. |
+| `/hospitality` | Restaurant, hotel, venue, lifestyle hospitality playbook. |
+| `/legal` | Legal/trust-heavy professional playbook. |
+| `/finance` | Finance/trust-heavy professional playbook. |
+| `/healthcare` | Healthcare/trust-heavy professional playbook. |
+| `/luxury` | Luxury/premium editorial playbook. |
+| `/editorial` | Editorial/magazine-like visual system. |
+| `/startup` | Product launch/startup playbook. |
+| `/app` | Product/app interface playbook. |
 
 ## Quality
 
@@ -37,6 +48,7 @@ Precedence: `/verify` > `/implement` > `/polish` > `/design` > `/analyse`.
 | `/premium` | Stronger composition/detail bar. |
 | `/awwward` | Memorable, art-directed, signature moment. |
 | `/trend` | Research current visual mechanics. |
+| `/research` | Source-informed research packet, reference mechanics, evidence confidence. |
 | `/conversion` | CTA/proof/funnel optimization. |
 | `/trust` | Proof, credibility, and risk-reducer checks near friction. |
 | `/accessibility` | WCAG-oriented checks. |
