@@ -15,6 +15,20 @@ Assign every asset one role:
 
 Delete assets with no role. Do not use atmosphere where proof is required.
 
+## Asset Budget Gate
+
+Before media-led design, count the assets required by the concept:
+
+- hero-grade media
+- proof media
+- product/interface states
+- people/place/process imagery
+- logos or trust marks
+- texture/identity assets
+- fallback posters and mobile crops
+
+If the budget is weak, change the visual carrier. Use typography, proof boards, real UI states, diagrams, editorial structure, or direct content instead of filling gaps with decorative images.
+
 ## Image-First Pipeline
 
 When visual quality matters and image generation or real assets are available:
@@ -40,6 +54,7 @@ Never shrink a whole site into a tiny collage if typography, spacing, buttons, a
 - Logo walls should use real SVG logos or credible custom marks, not plain text names.
 - Fake product screenshots made from placeholder rectangles are a tell. Use a real screenshot, generated product state, actual mini-component, or omit the preview.
 - If assets are missing, mark the required placements and ask/generate them instead of filling with decorative UI.
+- For hero video or heavy media, define compression, poster, dimensions, lazy-load boundary, autoplay policy, and reduced-motion fallback before implementation.
 
 ## Brandkit Mode
 
@@ -52,4 +67,3 @@ For `/brandkit`, produce:
 - image language: subject, crop, lighting, texture
 - motion language: restraint/polish/experiment weighting
 - forbidden defaults: colors, fonts, patterns, or components to avoid
-

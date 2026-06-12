@@ -18,6 +18,8 @@ Before adding motion: identify the state change, decide if motion helps orientat
 
 Recipes: enter/exit, state swap, list reorder, drawer/modal, toast, hover/focus, scroll chapter, canvas/3D.
 
+Motion must be information architecture. It earns its place only when it improves orientation, hierarchy, causality, state clarity, pacing, or brand memory.
+
 ## Motion Scale
 
 - Micro: 100-160ms, controls and feedback.
@@ -127,6 +129,15 @@ Reduced motion baseline:
 ```
 
 Runtime reduced-motion should still set final visible states, not leave pre-animation opacity/transform.
+
+## Static Render And Reduced-Motion Traps
+
+- Do not leave important content at `opacity: 0`, offscreen transform, or fully clipped when motion is disabled or a viewport trigger never fires.
+- For SSR/static export, prefer reveal patterns where the no-JS/no-motion state is visible, or make reduced-motion set the final visible state immediately.
+- Avoid mixed-unit `clip-path` interpolation. Use consistent units or prefer scale/opacity with visible fallback.
+- Gate hover-only choreography with `@media (hover:hover) and (pointer:fine)`.
+- Pinned scenes must show useful content immediately; never start with a blank pin that waits for scroll progress.
+- On mobile, re-author scroll scenes as compact stacked content unless the interaction is intentionally touch-safe.
 
 ## Motion Anti-Patterns
 

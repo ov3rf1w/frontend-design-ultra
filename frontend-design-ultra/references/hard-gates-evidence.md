@@ -8,6 +8,8 @@
 - `Fail`: accessibility, correctness, runtime, layout, or performance blocker exists.
 - `Needs Review`: private/manual state or missing browser evidence blocks certainty.
 
+Known blockers cannot be averaged out. If any critical category scores below 4/5, return `Fail` or `Not done`, not a polite pass.
+
 ## Accessibility
 
 Check landmarks, heading order, keyboard path, focus visibility, labels, form errors, contrast, alt text, reduced motion, and non-color-only states. Prefer native controls; ARIA is a last-mile tool, not a substitute for semantics.
@@ -33,6 +35,20 @@ Score 1-5 before calling premium work done:
 - Proof/conversion: user knows why to trust and what to do.
 
 Any score below 4 becomes a fix target, not a note.
+
+Critical categories for substantial UI: first impression, specificity, typography, mobile craft, conversion clarity, accessibility, correctness, and performance.
+
+## First Viewport Gate
+
+Fail when the first screen does not make the page job understandable, hides the primary action path, clips key content, uses a decorative media carrier where proof is required, or relies on scroll theatre before value is clear.
+
+## Conversion / Trust Gate
+
+Fail when the page lacks a concrete outcome, source-aware proof, clear next action, or risk reducer near friction. Do not invent metrics, logos, awards, or customer proof.
+
+## Reduced-Motion Gate
+
+Fail when reduced-motion leaves hidden content, frozen pre-reveal elements, blank pinned scenes, inaccessible canvas, or no static alternative for essential motion.
 
 ## Motion / 3D
 

@@ -14,6 +14,18 @@ Every page needs:
 
 If these are unclear, fix them before styling.
 
+## Conversion / Trust Spine
+
+Use this ladder before visual polish:
+
+1. Relevance: user recognizes the page is for them.
+2. Concrete outcome: the page says what changes for the user.
+3. Proof: proof is source-aware and near the claim or friction.
+4. Action: primary CTA states the next real step.
+5. Post-click expectation: user knows what happens after the action.
+
+For trust-heavy pages, at least one meaningful proof signal must appear in the first viewport or first scroll. Do not bury all trust in the footer.
+
 ## Hero Contract
 
 - H1: position or literal offer.
@@ -28,6 +40,14 @@ Hero constraints:
 - subline around 20 words unless the layout explicitly supports more
 - one primary CTA plus at most one secondary CTA
 - no logo wall, pricing teaser, feature bullet list, or trust micro-strip inside the hero unless it is the central concept
+
+Route-specific hero guidance:
+
+- Services: show the offer map or task index before decorative claims.
+- About: show people/process/proof before long biography.
+- Contact: show direct action, availability, and response expectation before mood imagery.
+- Local: show location/service-area relevance and a direct contact path.
+- Showroom/case: show the work/result before explaining methodology.
 
 ## CTA Discipline
 
@@ -52,6 +72,8 @@ Before shipping, reread every visible string:
 - Attribution needs name, role, and company when possible.
 - Trust blocks go next to friction: CTA, pricing, checkout, forms, enterprise proof.
 - Do not invent awards, customer numbers, or brand logos as real proof.
+- Place risk reducers next to friction: pricing, checkout, contact forms, enterprise CTAs, downloads, and appointment booking.
+- Regulated or trust-heavy pages should avoid fake precision; use structured explanation when exact pricing or outcomes depend on context.
 
 ## E-Commerce
 
@@ -65,4 +87,3 @@ Product detail first scan band:
 - primary CTA
 
 Move long descriptions and specs into accordions, grouped chunks, or visual tiles. Do not ship long spec tables as default.
-

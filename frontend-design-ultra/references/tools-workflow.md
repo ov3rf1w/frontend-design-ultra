@@ -4,6 +4,8 @@
 
 Default sequence: analyse -> design -> implement -> verify -> polish only when useful. Shortcut modes run only their needed slice; do not duplicate checks.
 
+For substantial visual work, use this sequence before styling: define page job -> audience intent -> conversion/trust spine -> reference mechanics if relevant -> asset gate -> strategy lane -> signature move -> token contract -> UI spec -> implement -> evidence verification.
+
 Internal command patterns:
 
 - Redesign: audit -> retain strengths -> replace weak systems -> verify.
@@ -15,6 +17,8 @@ Internal command patterns:
 ## Playwright / Browser
 
 Use for authorized URL/local-app evidence. Capture desktop and mobile, tablet when useful, console/runtime issues, overflow, key interactions, responsive defects, accessibility smoke, and before/after after implementation. If private/authenticated/confidential, ask first.
+
+For premium page-level work, collect three visual scales when authorized: isolated first viewport, detailed desktop/mobile slices, and full-page overview. Full-page is additive for rhythm and footer continuity, never a replacement for hero/slice review.
 
 ## Design System / Tailwind
 
@@ -49,6 +53,8 @@ Keep file scope minimal, follow local framework and components, implement gates 
 ## Strategic Omissions Check
 
 Before final response, check whether the site forgot: metadata/social image, skip link, form validation, loading/empty/error states, custom 404 or back path, footer/legal links when relevant, cookie consent when jurisdiction requires it.
+
+Also check: route diversity, first-viewport fit, asset-role coverage, one signature move, reduced-motion final state, public-output safety, and no fake proof.
 
 ## Output Enforcement
 

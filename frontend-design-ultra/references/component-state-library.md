@@ -2,6 +2,12 @@
 
 Use for `/implement`, `/dashboard`, `/saas`, `/ecommerce`, `/accessibility`, forms, shared UI, and final polish.
 
+Treat component states as mandatory spec dimensions. If a component is interactive or shared, document states, keyboard behavior, ARIA/semantic expectations, responsive behavior, motion, and token usage before calling it done.
+
+## Surface Policy
+
+Cards exist for repeated objects, selected proof, tools, modals, product entries, pricing options, and dashboard widgets. Do not wrap an entire section in a card because the composition is unresolved.
+
 ## Button
 
 - States: default, hover, focus, active, disabled, loading.
@@ -26,6 +32,7 @@ Use for `/implement`, `/dashboard`, `/saas`, `/ecommerce`, `/accessibility`, for
 - States: rest, hover, focus, selected, loading, empty.
 - A11y: if clickable, whole card has one clear action; avoid nested interactive traps.
 - Polish: card exists for repeated object, not whole page section.
+- States must not create nested interactive traps; one object gets one primary action.
 
 ## Modal / Dialog
 
@@ -61,4 +68,3 @@ Use for `/implement`, `/dashboard`, `/saas`, `/ecommerce`, `/accessibility`, for
 - States: loading, empty, stale, error, filtered, expanded.
 - A11y: title, value, trend meaning not color-only.
 - Motion: data changes should preserve orientation, not flash randomly.
-

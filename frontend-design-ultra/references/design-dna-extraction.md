@@ -9,6 +9,16 @@ design_dna:
   source:
     type: screenshot | url | generated-reference | live-site
     confidence: high | medium | low
+  strategy:
+    page_job:
+    audience_intent:
+    design_lane:
+    signature_move:
+    conversion_spine:
+  asset_reality:
+    available_roles:
+    missing_roles:
+    concept_fit:
   palette:
     base: []
     surface: []
@@ -71,6 +81,8 @@ design_dna:
 - Mark uncertainty instead of inventing precision.
 - Convert fixed visuals into responsive grammar.
 - Reject visual ideas that require inaccessible text, fragile layout, or unbounded performance cost.
+- Reject media-led ideas when the available asset budget cannot support them.
+- Convert the first viewport into a responsive fit contract, not a fixed-frame copy.
 
 ## Implementation Use
 
@@ -82,4 +94,3 @@ Before coding from a visual source, produce:
 4. Responsive behavior.
 5. Motion/fallback map.
 6. Browser verification plan.
-

@@ -15,6 +15,8 @@ Use when the user asks for audits, review, final QA, or stakeholder-readable out
 ## Awwwards Design Direction
 
 - Strategy lane
+- Page job and audience intent
+- Conversion/trust spine
 - Brandkit summary
 - First viewport concept
 - Signature move
@@ -27,6 +29,8 @@ Use when the user asks for audits, review, final QA, or stakeholder-readable out
 ## Implementation Plan
 
 - Goal
+- Page job
+- Strategy lane and signature move
 - Files/components
 - Token/system changes
 - Component/state changes
@@ -39,8 +43,9 @@ Use when the user asks for audits, review, final QA, or stakeholder-readable out
 
 - Pass/Fail/Needs Review
 - Evidence ids
+- Route/viewport coverage
+- Reduced-motion result
 - Blocking issues
 - Non-blocking polish
 - Performance/accessibility risks
 - Ship recommendation
-

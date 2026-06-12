@@ -7,6 +7,16 @@ Use this when `/tailwind`, `/designsystem`, `/brandkit`, theming, shared compone
 - Canonical tokens should live in a machine-readable token source with type, description, references/aliases where useful, and version.
 - Prefer semantic tokens over component literals: canvas, surface, text, border, accent, action, danger, success, focus, elevation, motion.
 - Theme changes need token diff, impacted component list, and visual coverage for affected surfaces.
+- Substantial UI work needs a token contract before styling: surfaces, text, line, accent, action, state colors, focus, radius, spacing, elevation, motion, and typography roles.
+- Shared components should consume semantic tokens, not raw one-off color, spacing, radius, or shadow literals.
+
+## Deterministic Token Checks
+
+- Dominant surfaces should be tinted, warm, or brand-aware; pure black and pure white require explicit reason and verified contrast.
+- Use one accent family per page context. Additional hues must be state colors, data colors, or brand requirements.
+- Spacing should follow a visible rhythm; common section spacing is tighter on mobile and more generous on desktop.
+- Typography roles must include display, section, body, eyebrow, CTA, metadata, and numeric/mono where relevant.
+- Highlight promise/outcome words, not pain/problem words, in display emphasis.
 
 ## Tailwind
 
@@ -54,6 +64,8 @@ Every shared component needs:
 - responsive behavior
 - examples
 
+No shared component is done until its state contract and token mapping are documented in the implementation plan or component spec.
+
 ## Figma And Tokens
 
 If Figma variables are available, extract local variables, resolve aliases, normalize to canonical tokens, and map them into the code token layer. Publish/update variables in Figma before expecting other files to consume them.
@@ -72,3 +84,6 @@ For UI likely to ship across locales:
 
 New shared components cannot be considered done without token mapping, component spec, keyboard/a11y notes, localization behavior when relevant, and browser evidence for at least one real usage.
 
+## Surface Policy
+
+Use cards for repeated objects, tools, framed proof, modals, and selected content. Do not wrap whole sections in cards because no stronger composition was chosen. Prefer editorial split, proof board, route/action panel, full-bleed chapter, or direct content when those better match the page job.
