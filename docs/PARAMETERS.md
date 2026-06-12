@@ -24,6 +24,11 @@ Precedence: `/verify` > `/implement` > `/polish` > `/design` > `/analyse`.
 | `/redesign` | Audit-first replacement workflow. |
 | `/image-to-code` | Build from screenshot/reference. |
 | `/brandkit` | Identity/tokens/visual language. |
+| `/showroom` | Case/portfolio/result route with work-first proof. |
+| `/services` | Offer/service index route with choice clarity. |
+| `/about` | Trust/capability route. |
+| `/contact` | Direct action/contact route. |
+| `/local` | Local-service route with relevance, location, availability. |
 
 ## Quality
 
@@ -33,8 +38,10 @@ Precedence: `/verify` > `/implement` > `/polish` > `/design` > `/analyse`.
 | `/awwward` | Memorable, art-directed, signature moment. |
 | `/trend` | Research current visual mechanics. |
 | `/conversion` | CTA/proof/funnel optimization. |
+| `/trust` | Proof, credibility, and risk-reducer checks near friction. |
 | `/accessibility` | WCAG-oriented checks. |
 | `/performance` | LCP/INP/CLS/runtime checks. |
+| `/responsive` | Compact laptop, desktop, wide monitor, mobile, and reduced-motion viewport checks. |
 
 ## Tools
 
@@ -58,4 +65,3 @@ Precedence: `/verify` > `/implement` > `/polish` > `/design` > `/analyse`.
 | `/variance-low|mid|high` | Layout experimentation. |
 | `/motion-low|mid|high` | Motion intensity. |
 | `/density-low|mid|high` | Information density. |
-

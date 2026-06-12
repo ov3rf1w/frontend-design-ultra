@@ -21,3 +21,12 @@ Run before publishing a release.
 - [ ] `/verify /mobile /performance /playwright`
 - [ ] `/polish /awwward /motion-high`
 
+
+## Design Operating System Integration Checks
+
+- [ ] `SKILL.md` routes substantial UI work through page job, audience intent, conversion/trust spine, asset reality, strategy lane, signature move, token contract, first-viewport fit, mobile recomposition, and verification plan.
+- [ ] `references/design-operating-system.md` is linked from `SKILL.md` and contains route archetypes, asset gate, first-viewport fit, diversity gate, token contract, signature move rules, and ship decision thresholds.
+- [ ] `/showroom`, `/services`, `/about`, `/contact`, `/local`, and `/trust` are documented and route to behavior-changing rules.
+- [ ] Public-facing files avoid private source names, internal paths, copied-source claims, and confidential project identifiers.
+- [ ] Evals include `design-operating-system` and `public-safety-scan` scenarios.
+- [ ] Critical scores below 4/5 block completion for first impression, specificity, typography, mobile craft, conversion clarity, accessibility, correctness, and performance.
