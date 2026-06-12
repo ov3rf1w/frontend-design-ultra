@@ -11,7 +11,7 @@ It includes taste dials, design lanes, page archetypes, audit-first redesign, im
 Copy or symlink the `frontend-design-ultra` folder into a Codex skill root such as:
 
 ```powershell
-C:\Users\rapha\.codex\skills\frontend-design-ultra
+%USERPROFILE%\.codex\skills\frontend-design-ultra
 ```
 
 ## Parameters
