@@ -30,3 +30,12 @@ Run before publishing a release.
 - [ ] Public-facing files avoid private source names, internal paths, copied-source claims, and confidential project identifiers.
 - [ ] Evals include `design-operating-system` and `public-safety-scan` scenarios.
 - [ ] Critical scores below 4/5 block completion for first impression, specificity, typography, mobile craft, conversion clarity, accessibility, correctness, and performance.
+
+## Responsive Viewport System Checks
+
+- [ ] `/responsive` is documented and routes to compact laptop, standard desktop, wide monitor, mobile browser, and reduced-motion/no-pin checks.
+- [ ] Premium first viewports define chrome participation, `svh`/`dvh` height model, type clamp bounds, line breaks, CTA safe zone, media crop, and scroll-trigger start.
+- [ ] Laptop clipping is fixed by viewport contract changes, not by globally shrinking the whole site.
+- [ ] Wide monitors use capped copy, scaled stage/media/backgrounds, and authored negative space.
+- [ ] Pinned/scroll sections have separate desktop, mobile, and reduced-motion/no-pin layouts.
+- [ ] Eval `responsive-viewport-system` covers the expected output structure.
