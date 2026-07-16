@@ -29,9 +29,10 @@ Use when problem, audience, conversion path, IA, or workflow is unclear.
 - UX risks
 - Design implications
 - Verification tasks
-# Research Strategy Additions
 
-## Minimal Research Packet
+## Research Strategy Additions
+
+### Minimal Research Packet
 
 Use before substantial design decisions:
 
@@ -45,7 +46,7 @@ Use before substantial design decisions:
 - pass/fail criteria
 - artifact capture plan
 
-## Failure Map
+### Failure Map
 
 For each issue, track:
 
@@ -57,7 +58,6 @@ For each issue, track:
 - expected impact
 - acceptance condition
 
-## Research Loop
+### Research Loop
 
 Use find -> prioritize -> test. Do not run one large late study when smaller formative rounds and iteration would answer the design question faster. If statistical confidence is requested, state participant/sample assumptions and do not overclaim.
-
