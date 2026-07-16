@@ -48,7 +48,7 @@ This repository separates implemented infrastructure from visual-effect claims. 
 |---|---|
 | Skill | Installable dispatcher, progressive references, project inspector, deterministic validator, and regression tests |
 | Reference intelligence | 76 dated multi-industry candidates across ten design lanes. The 20 newest-v2 scan outcomes are 11 complete, 7 partial, 2 unsupported, and 0 failed; 7 qualify as strict public observations and 13 remain diagnostic-only |
-| Motion intelligence | 19 structured recipes: 16 evidence-pending prototypes and 3 candidates, each with mobile, reduced-motion, runtime, failure, and rights rules; no pattern is labelled verified without build evidence |
+| Motion intelligence | 19 structured contracts: 16 evidence-pending recipes and 3 candidates, each with mobile, reduced-motion, runtime, failure, and rights rules. A recipe is not a code or build claim; verified and promoted patterns require complete original-build evidence. |
 | Playwright evidence | Capture Contract v2 for commit-anchored entrance timing, verified scroll positions, real mobile emulation, reduced motion, video, opt-in traces, Web Animations/computed-state coverage, and runtime failures. The 20-site run produced 1,990 raw files / 2.227 GiB that remain private and are excluded from releases |
 | Original showcase | 6 repository-authored fictional industry builds with a static export, compact public renders, and local desktop/mobile/motion/interaction evidence; no third-party visual assets are declared, but this is not a legal-clearance claim or a benchmark result |
 | Public media | 9 SVG/WebP assets enumerated in one schema-validated provenance manifest with exact SHA-256, origin, license, redistribution status, review date, and claim boundary |
