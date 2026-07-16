@@ -1,0 +1,77 @@
+{
+  "$schema": "schemas/capture-profiles.schema.json",
+  "schemaVersion": 1,
+  "status": "pending-toolchain-pin",
+  "readyMarker": "[data-benchmark-ready='true']",
+  "fontReadiness": true,
+  "profiles": [
+    {
+      "id": "compact-laptop",
+      "width": 1366,
+      "height": 768,
+      "deviceScaleFactor": 1,
+      "reducedMotion": "no-preference",
+      "jury": false,
+      "screenshots": ["first-viewport", "full-page"],
+      "video": false
+    },
+    {
+      "id": "desktop-jury",
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1,
+      "reducedMotion": "no-preference",
+      "jury": true,
+      "screenshots": ["first-viewport", "full-page", "motion-keyframes"],
+      "video": true
+    },
+    {
+      "id": "wide-desktop",
+      "width": 1920,
+      "height": 1080,
+      "deviceScaleFactor": 1,
+      "reducedMotion": "no-preference",
+      "jury": false,
+      "screenshots": ["first-viewport", "full-page"],
+      "video": false
+    },
+    {
+      "id": "mobile-jury",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 1,
+      "reducedMotion": "no-preference",
+      "jury": true,
+      "screenshots": ["first-viewport", "full-page", "motion-keyframes"],
+      "video": true
+    },
+    {
+      "id": "desktop-reduced-motion",
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1,
+      "reducedMotion": "reduce",
+      "jury": false,
+      "screenshots": ["first-viewport", "full-page", "final-states"],
+      "video": false
+    },
+    {
+      "id": "mobile-reduced-motion",
+      "width": 393,
+      "height": 852,
+      "deviceScaleFactor": 1,
+      "reducedMotion": "reduce",
+      "jury": false,
+      "screenshots": ["first-viewport", "full-page", "final-states"],
+      "video": false
+    }
+  ],
+  "motionSequence": {
+    "heroIdleMilliseconds": 2000,
+    "wheelDeltaPixels": 360,
+    "pauseAfterWheelMilliseconds": 450,
+    "pauseAtSectionMilliseconds": 800,
+    "recordActualScrollPositions": true,
+    "recordActionsAndTimestamps": true
+  }
+}
