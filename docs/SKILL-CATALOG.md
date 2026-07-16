@@ -4,7 +4,7 @@
 
 Installable path: `frontend-design-ultra/`
 
-Purpose: build, redesign, polish, implement, and verify premium frontend experiences with Awwwards-level ambition, browser evidence, accessibility, performance, mobile craft, motion discipline, and design-system depth.
+Purpose: build, redesign, polish, implement, and verify premium frontend experiences with Awwwards-level ambition, authorized browser evidence, accessibility, performance, mobile craft, motion discipline, and design-system depth.
 
 ## Primary Modes
 
@@ -13,22 +13,33 @@ Purpose: build, redesign, polish, implement, and verify premium frontend experie
 | `/analyse` | Evidence, findings, severity, impact, fixes |
 | `/design` | Direction, layout strategy, component strategy, responsive behavior |
 | `/polish` | Diagnosis, high-impact design moves, detail pass |
-| `/implement` | Implementation plan, files/components, gates, verification |
+| `/implement` | Implemented outcome, changed files/components, checks, evidence gaps |
 | `/verify` | Pass/Fail/Needs Review, evidence, ship recommendation |
 
 ## Specialist Workflows
 
 | Workflow | References |
 |---|---|
-| `/trend` | `trend-research.md`, `awwwards-pattern-library.md` |
-| `/brandkit` | `asset-art-direction.md`, `design-lanes.md` |
+| `/new-site`, `/project-fit` | `agency-project-bridge.md`, `design-operating-system.md` |
+| `/trend`, `/reference` | `reference-intelligence.md`, `trend-research.md`, `awwwards-pattern-library.md` |
+| `/research` | `research-first-design.md`, `reference-intelligence.md` |
+| `/brandkit` | `asset-art-direction.md`, `design-lanes.md`, `brandkit-board-grammar.md` |
+| `/imagegen` | `image-generation-protocol.md` |
 | `/image-to-code` | `design-dna-extraction.md`, `ui-spec-dsl.md` |
+| `/designplan` | `design-dna-extraction.md`, `ui-spec-dsl.md` |
+| `/output-integrity` | `output-integrity-contract.md` |
+| `/stitch` | `image-generation-protocol.md`, `ui-spec-dsl.md` |
 | `/redesign` | `design-lanes.md`, `preflight-scorecard.md` |
-| `/playwright` | `playwright-recipes.md` |
+| `/playwright` | `playwright-recipes.md`; authorized temporal reference scans use `scripts/scan-reference.mjs` |
+| `/motion`, `/scroll`, `/gsap` | `motion-pattern-catalog.md`, `editorial-motion-system.md`, `motion-lenses.md` |
 | `/tailwind` | `design-system-governance.md` |
 | `/accessibility` | `accessibility-wcag-recipes.md` |
 | `/performance` | `performance-cwv-recipes.md` |
+| `/responsive`, `/mobile` | `responsive-viewport-systems.md` |
 | `/3d` | `three-r3f-recipes.md` |
+| Style presets | `style-preset-library.md`, `aesthetic-locks.md` |
+
+`/new-site` and `/project-fit` keep the portable design skill separate from any executable starter. The skill detects and adapts to the project; the project remains independently versioned.
 
 ## Natural Language Routing
 
