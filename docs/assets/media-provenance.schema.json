@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ov3rf1w/frontend-design-ultra/blob/main/docs/assets/media-provenance.schema.json",
+  "title": "Frontend Design Ultra public media provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "policy",
+    "updatedAt",
+    "scope",
+    "legalBoundary",
+    "assets"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "./media-provenance.schema.json"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "policy": {
+      "const": "all-public-media-enumerated"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "legalBoundary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "mediaType",
+          "origin",
+          "author",
+          "source",
+          "license",
+          "redistribution",
+          "modification",
+          "thirdPartyMaterial",
+          "reviewedAt",
+          "claimBoundary"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+\\.(?:avif|gif|jpe?g|mp4|png|svg|webm|webp)$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "mediaType": {
+            "enum": [
+              "image/avif",
+              "image/gif",
+              "image/jpeg",
+              "image/png",
+              "image/svg+xml",
+              "image/webp",
+              "video/mp4",
+              "video/webm"
+            ]
+          },
+          "origin": {
+            "enum": [
+              "compatibly-licensed-third-party",
+              "explicitly-permitted-third-party",
+              "public-domain",
+              "repository-authored",
+              "render-of-repository-authored"
+            ]
+          },
+          "author": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "license": {
+            "type": "string",
+            "minLength": 1
+          },
+          "redistribution": {
+            "const": "allowed"
+          },
+          "modification": {
+            "enum": [
+              "allowed",
+              "not-allowed",
+              "not-applicable"
+            ]
+          },
+          "thirdPartyMaterial": {
+            "type": "boolean"
+          },
+          "sourceUrl": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://"
+          },
+          "rightsEvidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reviewedAt": {
+            "type": "string",
+            "format": "date"
+          },
+          "claimBoundary": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "type": "object",
+              "properties": {
+                "origin": {
+                  "enum": [
+                    "repository-authored",
+                    "render-of-repository-authored"
+                  ]
+                }
+              },
+              "required": [
+                "origin"
+              ]
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "thirdPartyMaterial": {
+                  "const": false
+                }
+              }
+            },
+            "else": {
+              "type": "object",
+              "required": [
+                "sourceUrl",
+                "rightsEvidence"
+              ],
+              "properties": {
+                "thirdPartyMaterial": {
+                  "const": true
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
