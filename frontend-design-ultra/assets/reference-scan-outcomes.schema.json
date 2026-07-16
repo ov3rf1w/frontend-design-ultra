@@ -1,0 +1,286 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Frontend Design Ultra Sanitized Reference Scan Outcomes",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "generatedAt",
+    "sourceCorpusVersion",
+    "publicationClass",
+    "outcomeCount",
+    "rightsPolicy",
+    "summary",
+    "outcomes"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "sourceCorpusVersion": { "type": "string" },
+    "publicationClass": { "const": "diagnostic-only" },
+    "outcomeCount": { "type": "integer", "minimum": 0 },
+    "rightsPolicy": { "const": "sanitized-scan-metadata-only-no-raw-artifacts" },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relevantNewestAttempts",
+        "statusCounts",
+        "eligibilityCounts",
+        "viewportStatusCounts"
+      ],
+      "properties": {
+        "relevantNewestAttempts": { "type": "integer", "minimum": 0 },
+        "statusCounts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["complete", "partial", "failed", "unsupported"],
+          "properties": {
+            "complete": { "type": "integer", "minimum": 0 },
+            "partial": { "type": "integer", "minimum": 0 },
+            "failed": { "type": "integer", "minimum": 0 },
+            "unsupported": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "eligibilityCounts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["eligibleCompleteObservation", "diagnosticOnly"],
+          "properties": {
+            "eligibleCompleteObservation": { "type": "integer", "minimum": 0 },
+            "diagnosticOnly": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "viewportStatusCounts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["complete", "partial", "unsupported", "missing"],
+          "properties": {
+            "complete": { "type": "integer", "minimum": 0 },
+            "partial": { "type": "integer", "minimum": 0 },
+            "unsupported": { "type": "integer", "minimum": 0 },
+            "missing": { "type": "integer", "minimum": 0 }
+          }
+        }
+      }
+    },
+    "outcomes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/outcome" }
+    }
+  },
+  "$defs": {
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "issueCodes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "entrance-timing-missed",
+          "entrance-sample-failed",
+          "scroll-target-missed",
+          "interaction-incomplete",
+          "reduced-motion-contract-partial",
+          "viewport-capture-failed",
+          "artifact-budget-exceeded",
+          "capture-contract-partial",
+          "capture-contract-failed",
+          "capture-contract-unsupported",
+          "observation-freshness-window-exceeded",
+          "observation-derived-record-unavailable",
+          "observation-complete-contract-integrity-failed",
+          "observation-artifact-integrity-failed",
+          "other-capture-contract-issue"
+        ]
+      }
+    },
+    "limitationCodes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "human-visual-review-required",
+          "not-normal-observation-evidence",
+          "incomplete-viewport-coverage",
+          "unsupported-scroll-journey",
+          "canvas-or-virtual-scroll-journey-unverified",
+          "direct-timeline-introspection-unavailable",
+          "continuous-video-unavailable",
+          "zero-waapi-does-not-establish-zero-motion",
+          "derived-mechanics-unavailable",
+          "reduced-motion-runtime-errors-recorded",
+          "network-policy-subresources-blocked",
+          "complete-attempt-not-published-as-observation"
+        ]
+      }
+    },
+    "sampleCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requested", "recorded", "artifactsCaptured"],
+      "properties": {
+        "requested": { "$ref": "#/$defs/count" },
+        "recorded": { "$ref": "#/$defs/count" },
+        "artifactsCaptured": { "$ref": "#/$defs/count" },
+        "met": { "$ref": "#/$defs/count" },
+        "missed": { "$ref": "#/$defs/count" },
+        "failed": { "$ref": "#/$defs/count" },
+        "unsupported": { "$ref": "#/$defs/count" },
+        "notApplicable": { "$ref": "#/$defs/count" },
+        "policyBlocked": { "$ref": "#/$defs/count" }
+      }
+    },
+    "artifactCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requested", "captured"],
+      "properties": {
+        "requested": { "$ref": "#/$defs/count" },
+        "captured": { "$ref": "#/$defs/count" }
+      }
+    },
+    "viewportCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "viewport",
+        "viewportStatus",
+        "entranceSamples",
+        "scrollSamples",
+        "interactionSamples",
+        "settledSamples",
+        "reducedMotionArtifacts",
+        "videoArtifacts",
+        "traceArtifacts",
+        "runtimeCounts"
+      ],
+      "properties": {
+        "viewport": { "enum": ["desktop", "mobile"] },
+        "viewportStatus": { "enum": ["complete", "partial", "unsupported", "missing"] },
+        "entranceSamples": {
+          "allOf": [
+            { "$ref": "#/$defs/sampleCounts" },
+            { "type": "object", "required": ["met", "missed", "failed"] }
+          ]
+        },
+        "scrollSamples": {
+          "allOf": [
+            { "$ref": "#/$defs/sampleCounts" },
+            { "type": "object", "required": ["met", "missed", "unsupported", "notApplicable"] }
+          ]
+        },
+        "interactionSamples": {
+          "allOf": [
+            { "$ref": "#/$defs/sampleCounts" },
+            { "type": "object", "required": ["met", "failed", "policyBlocked", "notApplicable"] }
+          ]
+        },
+        "settledSamples": {
+          "allOf": [
+            { "$ref": "#/$defs/sampleCounts" },
+            { "type": "object", "required": ["met"] }
+          ]
+        },
+        "reducedMotionArtifacts": { "$ref": "#/$defs/artifactCounts" },
+        "videoArtifacts": { "$ref": "#/$defs/artifactCounts" },
+        "traceArtifacts": { "$ref": "#/$defs/artifactCounts" },
+        "runtimeCounts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "consoleMessages",
+            "runtimeErrors",
+            "requestFailures",
+            "reducedMotionFailures"
+          ],
+          "properties": {
+            "consoleMessages": { "$ref": "#/$defs/count" },
+            "runtimeErrors": { "$ref": "#/$defs/count" },
+            "requestFailures": { "$ref": "#/$defs/count" },
+            "reducedMotionFailures": { "$ref": "#/$defs/count" }
+          }
+        }
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "refId",
+        "capturedAt",
+        "status",
+        "eligibility",
+        "issues",
+        "limitations",
+        "viewportCoverage",
+        "rights"
+      ],
+      "properties": {
+        "refId": { "type": "string", "pattern": "^ref-[0-9]{3}$" },
+        "capturedAt": { "type": "string", "format": "date-time" },
+        "status": { "enum": ["complete", "partial", "failed", "unsupported"] },
+        "eligibility": {
+          "enum": ["eligible-complete-observation", "diagnostic-only"]
+        },
+        "issues": { "$ref": "#/$defs/issueCodes" },
+        "limitations": { "$ref": "#/$defs/limitationCodes" },
+        "viewportCoverage": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/viewportCoverage" }
+        },
+        "rights": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "publicSurface",
+            "rawArtifactsPublished",
+            "copiedCode",
+            "copiedAssets",
+            "usableForMotionVerification"
+          ],
+          "properties": {
+            "publicSurface": { "const": "sanitized-diagnostic-scan-metadata-only" },
+            "rawArtifactsPublished": { "const": false },
+            "copiedCode": { "const": false },
+            "copiedAssets": { "const": false },
+            "usableForMotionVerification": { "const": false }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": { "enum": ["partial", "failed", "unsupported"] }
+            },
+            "required": ["status"]
+          },
+          "then": {
+            "properties": {
+              "eligibility": { "const": "diagnostic-only" }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "eligibility": { "const": "eligible-complete-observation" }
+            },
+            "required": ["eligibility"]
+          },
+          "then": {
+            "properties": {
+              "status": { "const": "complete" }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
