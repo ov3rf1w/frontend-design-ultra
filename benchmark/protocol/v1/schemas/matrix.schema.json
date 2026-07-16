@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-design-ultra/benchmark/matrix.schema.json",
+  "title": "Benchmark Matrix Lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "benchmarkVersion",
+    "status",
+    "locked",
+    "briefIds",
+    "conditionIds",
+    "replicates",
+    "expectedRunSlots",
+    "executedRunSlots",
+    "runIdTemplate",
+    "resultsStatus",
+    "unresolvedLocks"
+  ],
+  "properties": {
+    "$schema": { "const": "schemas/matrix.schema.json" },
+    "schemaVersion": { "const": 1 },
+    "benchmarkVersion": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$" },
+    "status": { "enum": ["pending-pins", "frozen", "running", "complete"] },
+    "locked": { "type": "boolean" },
+    "briefIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^cal-[a-z0-9]+(?:-[a-z0-9]+)*$" }
+    },
+    "conditionIds": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+    },
+    "replicates": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "integer", "minimum": 1 }
+    },
+    "expectedRunSlots": { "type": "integer", "minimum": 1 },
+    "executedRunSlots": { "type": "integer", "minimum": 0 },
+    "runIdTemplate": { "const": "{briefId}--{conditionId}--r{replicate}" },
+    "resultsStatus": { "enum": ["pending", "partial", "complete"] },
+    "unresolvedLocks": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}
