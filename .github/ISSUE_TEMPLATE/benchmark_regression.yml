@@ -1,0 +1,53 @@
+name: Benchmark or visual regression
+description: Report a reproducible benchmark, evidence, or rendered-output regression.
+title: "[Benchmark]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report only sanitized evidence from public fixtures or projects you are authorized to share. Never upload third-party browser traces, credentials, or confidential client captures.
+  - type: input
+    id: benchmark_version
+    attributes:
+      label: Benchmark protocol and result version
+      placeholder: "protocol v1, results v1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: skill_identity
+    attributes:
+      label: Skill version or full commit
+      placeholder: "v1.0.0 or 0123456789abcdef..."
+    validations:
+      required: true
+  - type: input
+    id: run_identity
+    attributes:
+      label: Brief, condition, and run ID
+      placeholder: "hospitality-03 / frontend-design-ultra / run-02"
+    validations:
+      required: true
+  - type: textarea
+    id: regression
+    attributes:
+      label: Observed regression
+      description: Explain what changed and which Creative or Shipping Jury dimension is affected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction and sanitized evidence
+      description: Include the pinned model/configuration, commands, viewport/state IDs, and public evidence links.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safeguards
+    attributes:
+      label: Evidence safeguards
+      options:
+        - label: The comparison uses the same brief, assets, model/configuration, and declared budget, or clearly identifies every difference.
+          required: true
+        - label: All evidence is public or authorized for publication and contains no secrets or private customer data.
+          required: true
