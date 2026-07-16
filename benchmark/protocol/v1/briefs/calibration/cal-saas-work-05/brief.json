@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../schemas/brief.schema.json",
+  "schemaVersion": 1,
+  "id": "cal-saas-work-05",
+  "split": "calibration",
+  "fictional": true,
+  "title": "Operations Workspace S-05",
+  "industry": "saas",
+  "projectType": "greenfield",
+  "locale": "en-US",
+  "audience": [
+    "operations leads coordinating recurring work across distributed teams",
+    "IT evaluators checking deployment, permissions, and auditability"
+  ],
+  "pageJob": "Demonstrate a fictional operations workflow through coherent product states and route qualified teams toward requesting a sandbox without fabricated adoption proof.",
+  "targetAction": "Request a 14-day sandbox",
+  "facts": [
+    { "id": "workflow", "statement": "WORK 05 models recurring work as intake, ownership, dependency, approval, and completion states.", "publicClaimAllowed": true },
+    { "id": "permissions", "statement": "The fictional product has workspace, team, and item-level roles with exportable activity history.", "publicClaimAllowed": true },
+    { "id": "integrations", "statement": "The fixture supports fictional email, webhook, CSV, and generic identity-provider integration categories without naming vendors.", "publicClaimAllowed": true },
+    { "id": "sandbox", "statement": "The fictional sandbox lasts 14 days and contains synthetic sample data only.", "publicClaimAllowed": true },
+    { "id": "deployment", "statement": "The fictional service is cloud-hosted; no self-hosted edition is offered in this fixture.", "publicClaimAllowed": true },
+    { "id": "proof", "statement": "No customer count, uptime percentage, compliance certification, testimonial, or logo is supplied.", "publicClaimAllowed": false }
+  ],
+  "requiredContent": [
+    "coherent product workflow with at least four real interface states",
+    "roles and activity-history explanation",
+    "integration categories without vendor-logo invention",
+    "sandbox duration and synthetic-data boundary",
+    "cloud-hosted deployment clarification"
+  ],
+  "constraints": [
+    "Do not use placeholder rectangles as a fake product screenshot.",
+    "Do not invent adoption metrics, uptime, certifications, customer logos, or quotes.",
+    "The product task must be visible before a generic feature explanation.",
+    "Loading, empty, error, focus, and success states are required where relevant."
+  ],
+  "assetPolicy": {
+    "remoteAssets": false,
+    "generatedMedia": false,
+    "suppliedAssetCount": 0,
+    "instruction": "Build benchmark-authored interface states from the supplied workflow facts; do not use external UI kits, screenshots, logos, illustrations, or portraits."
+  },
+  "shippingBudgets": {
+    "maximumInitialJavaScriptKbGzip": 170,
+    "maximumImageBytes": 0,
+    "minimumTapTargetPx": 44,
+    "accessibilityTarget": "WCAG 2.2 AA practical floor; conformance requires complete evidence"
+  }
+}
