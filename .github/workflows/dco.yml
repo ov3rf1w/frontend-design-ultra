@@ -25,7 +25,21 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Verify every pull-request commit has an author-matching DCO sign-off
+        shell: bash
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
-        run: node scripts/check-dco.mjs --base "$BASE_SHA" --head "$HEAD_SHA"
+        run: |
+          set -euo pipefail
+          if [[ ! "$BASE_SHA" =~ ^[0-9a-f]{40}$ ]] || [[ ! "$HEAD_SHA" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "Pull-request base/head values must be full commit SHAs." >&2
+            exit 1
+          fi
+          git cat-file -e "$BASE_SHA^{commit}"
+          git cat-file -e "$HEAD_SHA^{commit}"
+          trusted_checker="$RUNNER_TEMP/frontend-design-ultra-check-dco.mjs"
+          git show "$BASE_SHA:scripts/check-dco.mjs" > "$trusted_checker"
+          node "$trusted_checker" \
+            --root "$GITHUB_WORKSPACE" \
+            --base "$BASE_SHA" \
+            --head "$HEAD_SHA"
