@@ -2,6 +2,16 @@
 
 Use separate paths for motion creation and motion audit.
 
+## Contents
+
+- Lens Weighting
+- Create Mode
+- Motion Scale
+- Code Recipes
+- Static Render And Reduced-Motion Traps
+- Motion Anti-Patterns
+- Audit Mode
+
 ## Lens Weighting
 
 | Context | Primary | Secondary | Avoid |
@@ -31,44 +41,76 @@ Use one easing family per surface. Springs should feel weighted, not bouncy by d
 
 ## Code Recipes
 
-GSAP ScrollTrigger:
+React + GSAP ScrollTrigger with scoped selectors, reduced-motion final states, and lifecycle cleanup:
 
-```js
-gsap.timeline({
-  scrollTrigger: {
-    trigger: ".panel",
-    start: "top top",
-    end: "+=1400",
-    scrub: 0.6,
-    pin: ".panel",
-    anticipatePin: 1,
-  },
-})
-.to(".bg", { y: "-20%", ease: "none" }, 0)
-.to(".title", { opacity: 1 }, "<");
+```jsx
+"use client";
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
+export function StoryPanel() {
+  const root = useRef(null);
+
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add({
+      desktop: "(min-width: 800px)",
+      reduce: "(prefers-reduced-motion: reduce)",
+    }, ({ conditions }) => {
+      const { desktop, reduce } = conditions;
+
+      if (reduce) {
+        gsap.set("[data-reveal]", { clearProps: "all" });
+        return;
+      }
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: root.current,
+          start: "top top",
+          end: desktop ? "+=1400" : "+=500",
+          scrub: 0.6,
+          pin: desktop ? root.current : false,
+          anticipatePin: 1,
+        },
+      })
+      .from(".bg", { yPercent: -20, ease: "none" }, 0)
+      .from(".title", { autoAlpha: 0, y: 24 }, 0);
+    });
+
+    return () => mm.revert();
+  }, { scope: root });
+
+  return (
+    <section ref={root} className="panel">
+      <div className="bg" aria-hidden="true" />
+      <h2 className="title" data-reveal>Readable before animation</h2>
+    </section>
+  );
+}
 ```
 
-Animate children inside pinned sections, not the pinned wrapper itself.
-
-GSAP responsive/reduced-motion:
-
-```js
-const mm = gsap.matchMedia();
-mm.add({
-  isDesktop: "(min-width: 800px)",
-  reduceMotion: "(prefers-reduced-motion: reduce)",
-}, ({ conditions }) => {
-  const { isDesktop, reduceMotion } = conditions;
-  gsap.to(".hero", { duration: reduceMotion ? 0 : 1, x: isDesktop ? 120 : 60 });
-});
-```
+`useGSAP` scopes selectors to `root` and reverts animations and ScrollTriggers on unmount; `matchMedia().revert()` removes condition-specific work. Do not kill global triggers owned by other components. Animate children inside pinned sections, not the pinned wrapper itself. If `@gsap/react` is not installed and dependency changes are not approved, use a scoped `gsap.context()` inside `useLayoutEffect` with `context.revert()` cleanup.
 
 Motion shared layout:
 
 ```jsx
+const reduceMotion = useReducedMotion();
+
 <AnimatePresence>
   {selectedId && (
-    <motion.div layoutId={`card-${selectedId}`} layout transition={{ type: "spring", duration: 0.4 }} />
+    <motion.div
+      key={selectedId}
+      layoutId={`card-${selectedId}`}
+      layout
+      transition={reduceMotion ? { duration: 0 } : { type: "spring", duration: 0.4 }}
+    />
   )}
 </AnimatePresence>
 ```
@@ -101,7 +143,8 @@ Do not rely on scroll-driven CSS without fallback.
 GSAP Flip:
 
 ```js
-const state = Flip.getState(".tile");
+const tiles = container.querySelectorAll(".tile");
+const state = Flip.getState(tiles);
 reorderDOM();
 Flip.from(state, { duration: 0.6, absolute: true, scale: false, ease: "power2.out" });
 ```
@@ -109,26 +152,42 @@ Flip.from(state, { duration: 0.6, absolute: true, scale: false, ease: "power2.ou
 View Transition fallback:
 
 ```js
-if (document.startViewTransition) {
-  document.startViewTransition(() => setRoute(nextRoute));
+import { flushSync } from "react-dom";
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (!reduceMotion && document.startViewTransition) {
+  document.startViewTransition(() => {
+    flushSync(() => setRoute(nextRoute));
+  });
 } else {
   setRoute(nextRoute);
 }
 ```
 
-Reduced motion baseline:
+Targeted reduced-motion baseline:
 
 ```css
+[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
+  :root {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal], [data-reveal]::before, [data-reveal]::after {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
   }
 }
 ```
 
-Runtime reduced-motion should still set final visible states, not leave pre-animation opacity/transform.
+Runtime reduced-motion should still set final visible states, not leave pre-animation opacity/transform. Avoid universal `*` duration overrides: they can disturb native controls, third-party widgets, animation events, and stateful transitions unrelated to decorative motion.
 
 ## Static Render And Reduced-Motion Traps
 
@@ -142,6 +201,8 @@ Runtime reduced-motion should still set final visible states, not leave pre-anim
 ## Motion Anti-Patterns
 
 - no cleanup for timelines/triggers on unmount
+- global `ScrollTrigger.getAll().forEach(trigger => trigger.kill())` cleanup that destroys another component's work
+- global selectors in component motion without a scoped root/context
 - `will-change` applied globally
 - layout properties animated during scroll
 - multiple active elements sharing one `view-transition-name`
