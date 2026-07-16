@@ -2,6 +2,12 @@
 
 Use when implementation needs deterministic structure rather than free prose.
 
+## Contents
+
+- Page Spec
+- Component Spec
+- Use
+
 ## Page Spec
 
 ```yaml
