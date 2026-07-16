@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../schemas/brief.schema.json",
+  "schemaVersion": 1,
+  "id": "cal-finance-five-03",
+  "split": "calibration",
+  "fictional": true,
+  "title": "Investment Fixture F-03",
+  "industry": "finance",
+  "projectType": "redesign",
+  "locale": "en-GB",
+  "audience": [
+    "first-time long-term investors comparing transparent managed portfolios",
+    "existing self-directed investors evaluating fees, risk, and methodology"
+  ],
+  "pageJob": "Explain a fictional regulated investment platform's eligibility, fees, risk method, and data boundaries before inviting a visitor to check eligibility.",
+  "targetAction": "Check investment eligibility",
+  "facts": [
+    { "id": "minimum", "statement": "The fictional service has a minimum initial investment of GBP 2,500.", "publicClaimAllowed": true },
+    { "id": "fee", "statement": "The platform fee is a fictional 0.48% per year, excluding underlying fund costs of 0.12% to 0.24%.", "publicClaimAllowed": true },
+    { "id": "portfolios", "statement": "Five fictional globally diversified portfolios are mapped to risk bands rather than return targets.", "publicClaimAllowed": true },
+    { "id": "rebalance", "statement": "Portfolio weights are reviewed quarterly and rebalanced when a declared tolerance is exceeded.", "publicClaimAllowed": true },
+    { "id": "data", "statement": "Any example chart must be labelled illustrative and generated from benchmark-authored fictional data.", "publicClaimAllowed": true },
+    { "id": "risk", "statement": "Capital is at risk and eligibility is not a recommendation or guarantee of suitability.", "publicClaimAllowed": true }
+  ],
+  "requiredContent": [
+    "minimum investment and complete fee layers",
+    "five risk-band methodology",
+    "quarterly review and tolerance-based rebalance explanation",
+    "capital-at-risk and no-guarantee disclosure",
+    "source label on every illustrative data view"
+  ],
+  "constraints": [
+    "Do not invent returns, customer counts, regulator names, security certifications, or guaranteed outcomes.",
+    "Do not use neon-fintech visuals as a substitute for understandable numbers.",
+    "Eligibility must not be described as regulated advice or a suitability decision.",
+    "Data visualizations require text alternatives and visible units."
+  ],
+  "assetPolicy": {
+    "remoteAssets": false,
+    "generatedMedia": false,
+    "suppliedAssetCount": 0,
+    "instruction": "Use benchmark-authored CSS and fact-derived illustrative data only; no market data, logos, screenshots, portraits, or financial charts are supplied."
+  },
+  "shippingBudgets": {
+    "maximumInitialJavaScriptKbGzip": 140,
+    "maximumImageBytes": 0,
+    "minimumTapTargetPx": 44,
+    "accessibilityTarget": "WCAG 2.2 AA practical floor; conformance requires complete evidence"
+  }
+}
