@@ -1,24 +1,42 @@
 # Platforms
 
-Frontend Design Ultra is a portable agent skill. The installable Codex folder is `frontend-design-ultra/`.
+Frontend Design Ultra follows the Agent Skills directory shape. Codex is the tested install surface; the other integrations below are manual adapters and do not imply behavioral parity.
 
 ## Codex
 
-Use the installer:
+Use the open Agent Skills CLI:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ov3rf1w/frontend-design-ultra/main/install.sh | bash
+npx skills add ov3rf1w/frontend-design-ultra --skill frontend-design-ultra -g -a codex
+```
+
+Or inspect and install an exact commit locally:
+
+```bash
+git clone https://github.com/ov3rf1w/frontend-design-ultra.git
+cd frontend-design-ultra
+git checkout --detach <40-character-commit>
+npm ci --ignore-scripts
+npm run build
+bash install.sh --local
 ```
 
 Windows:
 
 ```powershell
-irm https://raw.githubusercontent.com/ov3rf1w/frontend-design-ultra/main/install.ps1 | iex
+git clone https://github.com/ov3rf1w/frontend-design-ultra.git
+cd frontend-design-ultra
+git checkout --detach <40-character-commit>
+npm ci --ignore-scripts
+npm run build
+.\install.ps1 -Source Local
 ```
+
+Versioned release archives, manifests, and checksums become the recommended pinned installer surface when the first GitHub release is published. Do not execute a mutable remote installer through a shell pipeline.
 
 ## Claude Code
 
-Copy `frontend-design-ultra/SKILL.md` and `frontend-design-ultra/references/` into a Claude project or skill-compatible location.
+Install the complete `frontend-design-ultra/` directory through a supported skill location, or provide it as project knowledge. Keep its `references/`, `scripts/`, and `agents/` subdirectories together.
 
 Recommended instruction:
 
@@ -51,14 +69,12 @@ Recommended:
 
 Provide:
 
-- `frontend-design-ultra/SKILL.md`
+- the complete `frontend-design-ultra/` directory
 - `docs/AGENT-USAGE.md`
 - `docs/PARAMETERS.md`
-- `frontend-design-ultra/references/`
 
 Instruction:
 
 ```text
 Infer the right Frontend Design Ultra parameters from the user request. Use AGENT-USAGE.md for routing. Load only the relevant reference files.
 ```
-
