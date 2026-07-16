@@ -26,7 +26,7 @@ Use when the user asks for audits, review, final QA, or stakeholder-readable out
 - Mobile adaptation
 - Risk/gate notes
 
-## Implementation Plan
+## Pre-Build Design Plan
 
 - Goal
 - Page job
@@ -39,9 +39,22 @@ Use when the user asks for audits, review, final QA, or stakeholder-readable out
 - Motion/3D fallback
 - Verification steps
 
+## Implemented Outcome
+
+- Implemented result
+- Changed files/components
+- Preserved systems and intentional extensions
+- Component/state behavior
+- Accessibility and performance decisions
+- Lint/type/test/build results
+- Authorized browser evidence or `Needs Browser Verification`
+- Remaining evidence gaps and residual risks
+
 ## Ship Decision
 
 - Pass/Fail/Needs Review
+- Creative Jury critique, kept separate from Shipping Gates
+- Binary Shipping Gate results
 - Evidence ids
 - Route/viewport coverage
 - Reduced-motion result
