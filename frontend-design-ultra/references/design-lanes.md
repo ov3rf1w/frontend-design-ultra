@@ -1,5 +1,17 @@
 # Design Lanes
 
+## Contents
+
+- Taste Dials
+- Strategy Lanes
+- Foundation Mapping
+- Design Start Gate
+- Page Archetypes
+- First Viewport Patterns
+- Reference And Image-To-Code
+- Redesign
+- Diversity Gate
+
 ## Taste Dials
 
 Set before design or polish:
@@ -105,4 +117,4 @@ Fix priority: font/system mismatch, palette drift, interaction states, layout/sp
 
 ## Diversity Gate
 
-Compare the planned page against nearby pages and recent outputs. If lane, hero composition, palette family, surface rhythm, and motion signature all match, change at least one. A polished repeated default is still generic.
+Compare the planned page against nearby pages. Compare cross-client outputs only when the agency supplies a local recent-build ledger; never infer that history from model memory. If lane, hero composition, palette family, surface rhythm, and motion signature all match, change at least one. A polished repeated default is still generic.
