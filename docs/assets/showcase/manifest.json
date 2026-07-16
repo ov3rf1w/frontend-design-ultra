@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "status": "curated-showcase-not-benchmark",
+  "capturedAt": "2026-07-16",
+  "environment": {
+    "node": "v24.18.0",
+    "playwrightCore": "1.61.1",
+    "chromium": "149.0.7827.55",
+    "platform": "win32 10.0.26200",
+    "locale": "en-GB"
+  },
+  "capture": {
+    "desktopViewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "mobileViewport": {
+      "width": 393,
+      "height": 852
+    },
+    "entranceFramesMs": [
+      0,
+      300,
+      900,
+      1800
+    ],
+    "entranceFrameActualMs": [
+      {
+        "targetMs": 0,
+        "actualMs": 29.9
+      },
+      {
+        "targetMs": 300,
+        "actualMs": 306.8
+      },
+      {
+        "targetMs": 900,
+        "actualMs": 908.3
+      },
+      {
+        "targetMs": 1800,
+        "actualMs": 1815
+      }
+    ],
+    "auditedExportSha256": "08d774c278d7ea29e9802fab2bf07f0290f2fcd374b4904461b2aa9674c8d881",
+    "privateAuditReportSha256": "08685bb7ff47de75aa37f05389b23ae946ec06ffb8cf85e733afe4313d3573b7",
+    "scrollProgress": [
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "reducedMotion": true,
+    "rawArtifactsPublished": false,
+    "evidenceScope": {
+      "publicRouteRenders": "settled desktop render for all six routes",
+      "publicEntranceStoryboard": "hospitality route only",
+      "privateScrollSlices": "all six routes at four progress states in desktop and touch-enabled mobile profiles",
+      "privateReducedMotionCheck": "all six routes"
+    }
+  },
+  "qaSummary": {
+    "routes": 6,
+    "desktopHorizontalOverflow": 0,
+    "mobileHorizontalOverflow": 0,
+    "consoleOrPageErrors": 0,
+    "reducedMotionRunningAnimationsAfterSettle": 0,
+    "interactiveTargetsBelow24Px": 0,
+    "interactionFlowsPassed": 6
+  },
+  "rights": {
+    "visuals": "original repository-authored SVG and CSS",
+    "brandsAndFacts": "fictional benchmark calibration fixtures",
+    "thirdPartyVisualAssets": false,
+    "claimBoundary": "These are curated showcase renders, not blind benchmark results, customer outcomes, conversion evidence, or award scores."
+  },
+  "files": [
+    {
+      "path": "ecommerce.webp",
+      "route": "/ecommerce/",
+      "width": 960,
+      "height": 600,
+      "sha256": "f4a529bb716c698a9c2772054f2a020a75aed3e7fb4873e0aa99b8c16404b1f0"
+    },
+    {
+      "path": "finance.webp",
+      "route": "/finance/",
+      "width": 960,
+      "height": 600,
+      "sha256": "bdaba02edca6a18265a3bc9332dbf4a7fbdc9bdf84318bcd7eab1ffcc47cd97f"
+    },
+    {
+      "path": "healthcare.webp",
+      "route": "/healthcare/",
+      "width": 960,
+      "height": 600,
+      "sha256": "9b0cd0ba53e4178a41b91c29d7ca7dfe10f89270be5c3f219d835e465df97328"
+    },
+    {
+      "path": "hospitality.webp",
+      "route": "/hospitality/",
+      "width": 960,
+      "height": 600,
+      "sha256": "234323434527fdf1f829883e01ce667f179e5d737376087e1c82bf445eab0a7d"
+    },
+    {
+      "path": "legal.webp",
+      "route": "/legal/",
+      "width": 960,
+      "height": 600,
+      "sha256": "10a9f77152d3582fd44d58ec9a8d2db94993f6b7e8aea6ffb38c548973fda4f6"
+    },
+    {
+      "path": "saas.webp",
+      "route": "/saas/",
+      "width": 960,
+      "height": 600,
+      "sha256": "4765fe95a9b24a583c4a33e3347a761b6aa30513e870008d3ebaec9d0aba81ac"
+    },
+    {
+      "path": "hospitality-entrance-storyboard.webp",
+      "route": "/hospitality/",
+      "width": 1440,
+      "height": 900,
+      "sha256": "55e3034e6f1e95fbbb45117ec2cb58d20ce87da444a7a8a18330ab358447f978"
+    }
+  ]
+}
