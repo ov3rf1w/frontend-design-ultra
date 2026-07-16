@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-design-ultra/benchmark/jury-vote.schema.json",
+  "title": "Blind Jury Vote",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "benchmarkVersion", "packetSha256", "assignmentId", "jurorId", "choice", "dimensionScores", "invalidReason", "confidence", "reasonTags", "comment", "submittedAt", "privacy", "eligibility"],
+  "properties": {
+    "$schema": { "type": "string", "minLength": 1 },
+    "schemaVersion": { "const": 1 },
+    "benchmarkVersion": { "type": "string", "minLength": 1 },
+    "packetSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "assignmentId": { "type": "string", "pattern": "^P-[A-Z2-7]+$" },
+    "jurorId": { "type": "string", "pattern": "^J-[A-Z2-7]+$" },
+    "choice": { "enum": ["left", "right", "tie", "invalid"] },
+    "dimensionScores": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["left", "right"],
+      "properties": {
+        "left": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["design", "usability", "creativity", "content"],
+          "properties": {
+            "design": { "type": "integer", "minimum": 1, "maximum": 5 },
+            "usability": { "type": "integer", "minimum": 1, "maximum": 5 },
+            "creativity": { "type": "integer", "minimum": 1, "maximum": 5 },
+            "content": { "type": "integer", "minimum": 1, "maximum": 5 }
+          }
+        },
+        "right": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["design", "usability", "creativity", "content"],
+          "properties": {
+            "design": { "type": "integer", "minimum": 1, "maximum": 5 },
+            "usability": { "type": "integer", "minimum": 1, "maximum": 5 },
+            "creativity": { "type": "integer", "minimum": 1, "maximum": 5 },
+            "content": { "type": "integer", "minimum": 1, "maximum": 5 }
+          }
+        }
+      }
+    },
+    "invalidReason": {
+      "type": ["string", "null"],
+      "enum": [
+        null,
+        "evidence-missing-or-corrupt",
+        "evidence-not-decodable",
+        "comparison-not-evaluable",
+        "technical-access-failure"
+      ]
+    },
+    "confidence": { "type": "integer", "minimum": 1, "maximum": 5 },
+    "reasonTags": {
+      "type": "array",
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "composition",
+          "typography",
+          "color",
+          "imagery",
+          "motion",
+          "hierarchy",
+          "readability",
+          "navigation",
+          "task-clarity",
+          "mobile-composition",
+          "content-credibility",
+          "subject-specificity",
+          "polish",
+          "evidence-quality"
+        ]
+      }
+    },
+    "comment": { "type": "null" },
+    "submittedAt": { "type": "string", "format": "date-time" },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identifierMode", "consentStatus", "retentionClass", "redactionStatus"],
+      "properties": {
+        "identifierMode": { "const": "pseudonymous" },
+        "consentStatus": { "const": "verified-private-record" },
+        "retentionClass": { "const": "benchmark-v1-jury" },
+        "redactionStatus": { "enum": ["reviewed-no-direct-identifiers", "redacted"] }
+      }
+    },
+    "eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["conflictsDeclared", "relationship", "eligible"],
+      "properties": {
+        "conflictsDeclared": { "const": true },
+        "relationship": { "enum": ["independent", "benchmark-contributor", "evaluated-condition-affiliated"] },
+        "eligible": { "const": true }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "choice": { "const": "invalid" },
+        "dimensionScores": { "type": "null" },
+        "invalidReason": {
+          "enum": [
+            "evidence-missing-or-corrupt",
+            "evidence-not-decodable",
+            "comparison-not-evaluable",
+            "technical-access-failure"
+          ]
+        }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "choice": { "enum": ["left", "right", "tie"] },
+        "dimensionScores": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["left", "right"],
+          "properties": {
+            "left": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["design", "usability", "creativity", "content"],
+              "properties": {
+                "design": { "type": "integer", "minimum": 1, "maximum": 5 },
+                "usability": { "type": "integer", "minimum": 1, "maximum": 5 },
+                "creativity": { "type": "integer", "minimum": 1, "maximum": 5 },
+                "content": { "type": "integer", "minimum": 1, "maximum": 5 }
+              }
+            },
+            "right": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["design", "usability", "creativity", "content"],
+              "properties": {
+                "design": { "type": "integer", "minimum": 1, "maximum": 5 },
+                "usability": { "type": "integer", "minimum": 1, "maximum": 5 },
+                "creativity": { "type": "integer", "minimum": 1, "maximum": 5 },
+                "content": { "type": "integer", "minimum": 1, "maximum": 5 }
+              }
+            }
+          }
+        },
+        "invalidReason": { "type": "null" }
+      }
+    }
+  ]
+}
