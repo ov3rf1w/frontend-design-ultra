@@ -1,0 +1,128 @@
+name: Package release candidate
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Verify tag and release surface
+        shell: bash
+        run: |
+          node -e "const p=require('./package.json');if(process.env.GITHUB_REF_NAME!=='v'+p.version){throw new Error('Tag and package version differ')}"
+          npm run lint
+          npm test
+          npm run build
+
+      - name: Build deterministic release artifacts
+        shell: bash
+        run: |
+          source_commit="$(git rev-parse HEAD)"
+          source_date_epoch="$(git show -s --format=%ct HEAD)"
+          node scripts/package-release.mjs \
+            --source-commit "$source_commit" \
+            --source-date-epoch "$source_date_epoch"
+
+      - name: Verify checksums and independently unpack archive
+        shell: bash
+        run: |
+          node scripts/package-release.mjs --verify-only --require-committed-source
+          (
+            cd dist/release
+            sha256sum --check SHA256SUMS
+          )
+          shopt -s nullglob
+          archives=(dist/release/frontend-design-ultra-*.tar.gz)
+          if [[ "${#archives[@]}" -ne 1 ]]; then
+            echo "Expected exactly one release archive, found ${#archives[@]}." >&2
+            exit 1
+          fi
+          extraction_root="$RUNNER_TEMP/frontend-design-ultra-release"
+          mkdir -p "$extraction_root"
+          tar --extract --gzip --file "${archives[0]}" --directory "$extraction_root"
+          test -s "$extraction_root/frontend-design-ultra/SKILL.md"
+          test -s "$extraction_root/frontend-design-ultra/LICENSE"
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: frontend-design-ultra-${{ github.ref_name }}
+          path: dist/release/*
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download verified release artifacts
+        uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5.0.0
+        with:
+          name: frontend-design-ultra-${{ github.ref_name }}
+          path: dist/release
+
+      - name: Reverify downloaded checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          (
+            cd dist/release
+            sha256sum --check SHA256SUMS
+          )
+          shopt -s nullglob
+          archives=(dist/release/frontend-design-ultra-*.tar.gz)
+          if [[ "${#archives[@]}" -ne 1 ]]; then
+            echo "Expected exactly one release archive, found ${#archives[@]}." >&2
+            exit 1
+          fi
+
+      - name: Attest release archive
+        uses: actions/attest-build-provenance@43d14bc2b83dec42d39ecae14e916627a18bb661 # v3
+        with:
+          subject-path: dist/release/frontend-design-ultra-*.tar.gz
+
+      - name: Create draft GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          release_flags=(--draft --verify-tag --generate-notes --title "$GITHUB_REF_NAME")
+          if [[ "$GITHUB_REF_NAME" =~ ^v[0-9]+\.[0-9]+\.[0-9]+- ]]; then
+            release_flags+=(--prerelease)
+          fi
+          gh release create "$GITHUB_REF_NAME" \
+            dist/release/frontend-design-ultra-*.tar.gz \
+            dist/release/release-manifest.json \
+            dist/release/SHA256SUMS \
+            "${release_flags[@]}"
