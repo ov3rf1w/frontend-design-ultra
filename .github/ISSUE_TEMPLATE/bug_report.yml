@@ -3,12 +3,56 @@ description: Report incorrect, unclear, or unsafe skill behavior.
 title: "[Bug]: "
 labels: ["bug"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Frontend Design Ultra. Remove credentials, customer data, private URLs, and confidential screenshots before submitting.
+  - type: input
+    id: version
+    attributes:
+      label: Skill version or commit
+      description: Use a release tag when possible; otherwise provide the full commit SHA.
+      placeholder: "v0.9.0-rc.1 or 0123456789abcdef..."
+    validations:
+      required: true
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Agent surface
+      options:
+        - OpenAI Codex
+        - Claude Code manual adapter
+        - Cursor manual adapter
+        - GitHub Copilot manual adapter
+        - Generic manual adapter
+        - Other / unknown
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Include OS, Node version, framework, and model/version when known.
+      placeholder: "Windows 11, Node 24, Next.js 16, Codex"
+    validations:
+      required: true
   - type: textarea
     id: invocation
     attributes:
       label: Invocation
       description: Paste the exact request or slash parameters.
       placeholder: "/analyse https://example.com /playwright /performance"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: List the smallest deterministic steps, inputs, or fixture needed to reproduce the problem.
+      placeholder: |
+        1. Install commit ...
+        2. Run ...
+        3. Observe ...
     validations:
       required: true
   - type: textarea
@@ -28,8 +72,18 @@ body:
   - type: textarea
     id: context
     attributes:
-      label: Context
-      description: Framework, UI type, screenshots, or constraints. Do not include private data.
+      label: Sanitized evidence
+      description: Add relevant logs, screenshots, or fixture links only after removing private and customer data.
     validations:
       required: false
-
+  - type: checkboxes
+    id: safeguards
+    attributes:
+      label: Submission safeguards
+      options:
+        - label: I searched existing issues for a duplicate.
+          required: true
+        - label: This report contains no credentials, customer data, private URLs, or confidential screenshots.
+          required: true
+        - label: This is not a security vulnerability; security issues must use a private advisory.
+          required: true
