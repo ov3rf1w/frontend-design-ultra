@@ -1,0 +1,34 @@
+{
+  "$schema": "../schemas/condition.schema.json",
+  "schemaVersion": 1,
+  "id": "compact-subject-grounded",
+  "label": "Compact subject-grounded comparison skill",
+  "category": "competitor",
+  "status": "pending-selection-and-license-review",
+  "source": {
+    "kind": "external-skill",
+    "repository": null,
+    "commit": null,
+    "license": "to-be-verified"
+  },
+  "runtime": {
+    "instructionSurface": "Use the selected skill's documented native instruction surface without adding Frontend Design Ultra rules.",
+    "installMethod": "to-be-pinned",
+    "effectiveContextSha256": null
+  },
+  "capabilities": {
+    "commonToolsOnly": true,
+    "networkDuringRun": false,
+    "imageGenerationCalls": 0
+  },
+  "runReady": false,
+  "unresolved": [
+    "public candidate selection",
+    "license and redistribution review",
+    "source commit",
+    "effective runtime context hash",
+    "common model snapshot",
+    "starter commit"
+  ]
+}
+
