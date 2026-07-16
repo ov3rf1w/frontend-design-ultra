@@ -1,0 +1,354 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Frontend Design Ultra Reference Corpus",
+  "description": "Schema for public, derived reference intelligence. Candidate records are hypotheses until a documented browser scan promotes them.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "capturedAt",
+    "datasetStatus",
+    "entryCount",
+    "statusCounts",
+    "observationCatalog",
+    "observationCount",
+    "scanOutcomeCatalog",
+    "scanOutcomeCount",
+    "methodology",
+    "rightsPolicy",
+    "entries"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri-reference"
+    },
+    "schemaVersion": {
+      "const": "1.2.0"
+    },
+    "capturedAt": {
+      "type": "string",
+      "format": "date"
+    },
+    "datasetStatus": {
+      "const": "mixed-lifecycle"
+    },
+    "entryCount": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "statusCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate", "scanned", "promoted", "retired"],
+      "properties": {
+        "candidate": { "type": "integer", "minimum": 0 },
+        "scanned": { "type": "integer", "minimum": 0 },
+        "promoted": { "type": "integer", "minimum": 0 },
+        "retired": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "observationCatalog": { "const": "./reference-observations.json" },
+    "observationCount": { "type": "integer", "minimum": 0 },
+    "scanOutcomeCatalog": { "const": "./reference-scan-outcomes.json" },
+    "scanOutcomeCount": { "type": "integer", "minimum": 0 },
+    "methodology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "candidateMeaning",
+        "reachabilityMethod",
+        "promotionRule"
+      ],
+      "properties": {
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidateMeaning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reachabilityMethod": {
+          "type": "string",
+          "minLength": 1
+        },
+        "promotionRule": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "rightsPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "publicData",
+        "excludedData",
+        "captureRule",
+        "implementationRule"
+      ],
+      "properties": {
+        "publicData": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "excludedData": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "captureRule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "implementationRule": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/referenceEntry"
+      }
+    }
+  },
+  "$defs": {
+    "referenceEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "sourceUrl",
+        "status",
+        "industry",
+        "designLane",
+        "heroMechanicHypothesis",
+        "motionSignatureHypothesis",
+        "assetDependency",
+        "scanRisk",
+        "provenance",
+        "scanPriority"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^ref-[0-9]{3}$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "scanned",
+            "promoted",
+            "retired"
+          ]
+        },
+        "industry": {
+          "type": "string",
+          "minLength": 1
+        },
+        "designLane": {
+          "enum": [
+            "archive-catalog",
+            "calm-luxury",
+            "cinematic-immersion",
+            "data-narrative",
+            "editorial-engine",
+            "expressive-typography",
+            "playful-interaction",
+            "product-choreography",
+            "spatial-webgl",
+            "systemic-clarity",
+            "trust-narrative"
+          ]
+        },
+        "heroMechanicHypothesis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "motionSignatureHypothesis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assetDependency": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "scanRisk": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "level",
+            "reasons"
+          ],
+          "properties": {
+            "level": {
+              "enum": [
+                "low",
+                "medium",
+                "high"
+              ]
+            },
+            "reasons": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "provenance": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "sourceType",
+            "observedAt",
+            "reachability"
+          ],
+          "properties": {
+            "sourceType": {
+              "const": "official-live-site"
+            },
+            "observedAt": {
+              "type": "string",
+              "format": "date"
+            },
+            "reachability": {
+              "enum": [
+                "http-200",
+                "http-200-challenge",
+                "http-403",
+                "http-429"
+              ]
+            },
+            "notes": {
+              "type": "string",
+              "minLength": 1
+            },
+            "discoveryReferences": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "url",
+                  "relationship",
+                  "verification"
+                ],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "relationship": {
+                    "enum": [
+                      "award-directory-category",
+                      "award-site-profile",
+                      "award-editorial-article"
+                    ]
+                  },
+                  "verification": {
+                    "const": "discovery-only"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "scanPriority": {
+          "enum": [
+            "must-scan",
+            "high",
+            "standard",
+            "fallback"
+          ]
+        },
+        "scanEvidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "scannedAt",
+            "viewports",
+            "evidencePaths",
+            "verifiedMechanics"
+          ],
+          "properties": {
+            "scannedAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "viewports": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "evidencePaths": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "verifiedMechanics": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "scanned",
+                  "promoted"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "scanEvidence"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
