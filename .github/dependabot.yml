@@ -1,0 +1,50 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Vienna
+    groups:
+      npm-development:
+        dependency-type: development
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "chore(deps)"
+
+  - package-ecosystem: npm
+    directory: "/showcase"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:10"
+      timezone: Europe/Vienna
+    groups:
+      showcase-development:
+        dependency-type: development
+        patterns:
+          - "*"
+      showcase-runtime:
+        dependency-type: production
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "chore(showcase-deps)"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:15"
+      timezone: Europe/Vienna
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "chore(actions)"
