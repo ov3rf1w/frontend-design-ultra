@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ov3rf1w/frontend-design-ultra/main/frontend-design-ultra/assets/motion-patterns.schema.json",
+  "title": "Frontend Design Ultra Motion Pattern Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "catalogVersion", "updatedAt", "patterns"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 2 },
+    "catalogVersion": { "const": "0.2.0" },
+    "updatedAt": { "type": "string", "format": "date" },
+    "patterns": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/pattern" }
+    }
+  },
+  "$defs": {
+    "stringList": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "pattern": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "status",
+        "effectJob",
+        "narrativeRole",
+        "suitableFor",
+        "avoidFor",
+        "trigger",
+        "assetCost",
+        "performanceBudget",
+        "timeline",
+        "desktopPlan",
+        "mobileAlternative",
+        "reducedMotion",
+        "noJsPlan",
+        "implementation",
+        "failureModes",
+        "verificationContract",
+        "sourceReferences",
+        "rights"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "title": { "type": "string", "minLength": 3 },
+        "status": { "enum": ["idea", "candidate", "recipe", "verified", "promoted"] },
+        "effectJob": { "enum": ["orientation", "hierarchy", "causality", "continuity", "pacing", "delight"] },
+        "narrativeRole": { "type": "string", "minLength": 3 },
+        "suitableFor": { "$ref": "#/$defs/stringList" },
+        "avoidFor": { "$ref": "#/$defs/stringList" },
+        "trigger": { "enum": ["load", "scroll", "hover", "pointer", "drag", "route", "state", "continuous"] },
+        "assetCost": { "enum": ["low", "medium", "high"] },
+        "performanceBudget": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["runtimeJsKbMax", "mediaMbMax", "preferredProperties", "fallbackRequired"],
+          "properties": {
+            "runtimeJsKbMax": { "type": "number", "minimum": 0 },
+            "mediaMbMax": { "type": "number", "minimum": 0 },
+            "preferredProperties": { "$ref": "#/$defs/stringList" },
+            "fallbackRequired": { "type": "boolean" }
+          }
+        },
+        "timeline": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["at", "layer", "action", "durationMs", "easing"],
+            "properties": {
+              "at": { "type": "number", "minimum": 0, "maximum": 1 },
+              "layer": { "type": "string" },
+              "action": { "type": "string" },
+              "durationMs": { "type": "number", "minimum": 0 },
+              "easing": { "type": "string" }
+            }
+          }
+        },
+        "desktopPlan": { "type": "string", "minLength": 10 },
+        "mobileAlternative": { "type": "string", "minLength": 10 },
+        "reducedMotion": { "type": "string", "minLength": 10 },
+        "noJsPlan": { "type": "string", "minLength": 10 },
+        "implementation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["preferred", "fallback", "ownershipRule"],
+          "properties": {
+            "preferred": { "$ref": "#/$defs/stringList" },
+            "fallback": { "type": "string" },
+            "ownershipRule": { "type": "string" }
+          }
+        },
+        "failureModes": { "$ref": "#/$defs/stringList" },
+        "verificationContract": { "$ref": "#/$defs/stringList" },
+        "sourceReferences": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["referenceId", "relationship", "status"],
+            "properties": {
+              "referenceId": { "type": "string" },
+              "relationship": { "type": "string" },
+              "status": { "enum": ["hypothesis", "machine-captured", "visually-reviewed", "publication-rights-documented"] },
+              "evidenceDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+            },
+            "allOf": [
+              {
+                "if": { "properties": { "status": { "enum": ["machine-captured", "visually-reviewed", "publication-rights-documented"] } } },
+                "then": { "required": ["evidenceDigest"] }
+              }
+            ]
+          }
+        },
+        "verificationEvidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "buildId",
+            "implementationPath",
+            "verifiedAt",
+            "commit",
+            "evidenceDigest",
+            "viewports",
+            "checks",
+            "reviewType"
+          ],
+          "properties": {
+            "buildId": { "type": "string", "minLength": 1 },
+            "implementationPath": {
+              "type": "string",
+              "pattern": "^(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"
+            },
+            "verifiedAt": { "type": "string", "format": "date" },
+            "commit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+            "evidenceDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+            "viewports": {
+              "allOf": [
+                { "$ref": "#/$defs/stringList" },
+                { "type": "array", "minItems": 2 }
+              ]
+            },
+            "checks": {
+              "allOf": [
+                { "$ref": "#/$defs/stringList" },
+                { "type": "array", "minItems": 1 }
+              ]
+            },
+            "reviewType": { "enum": ["maintainer-visual-review", "independent-review", "blind-jury"] }
+          }
+        },
+        "rights": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["recipeOwnership", "implementationLicense", "thirdPartyAssetsAllowed"],
+          "properties": {
+            "recipeOwnership": { "enum": ["original-abstraction", "licensed-reconstruction"] },
+            "implementationLicense": { "type": "string" },
+            "thirdPartyAssetsAllowed": { "type": "boolean" },
+            "sourceLicense": { "type": "string", "minLength": 1 },
+            "provenanceUrl": { "type": "string", "format": "uri" }
+          },
+          "allOf": [
+            {
+              "if": { "properties": { "recipeOwnership": { "const": "licensed-reconstruction" } } },
+              "then": { "required": ["sourceLicense", "provenanceUrl"] }
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "status": { "enum": ["verified", "promoted"] } },
+            "required": ["status"]
+          },
+          "then": { "required": ["verificationEvidence"] },
+          "else": { "not": { "required": ["verificationEvidence"] } }
+        }
+      ]
+    }
+  }
+}
