@@ -1,0 +1,32 @@
+{
+  "$schema": "../schemas/condition.schema.json",
+  "schemaVersion": 1,
+  "id": "frontend-design-ultra",
+  "label": "Frontend Design Ultra",
+  "category": "candidate",
+  "status": "pending-source-pin",
+  "source": {
+    "kind": "local-skill",
+    "repository": "repository-under-test",
+    "commit": null,
+    "license": "MIT"
+  },
+  "runtime": {
+    "instructionSurface": "Install the exact tagged skill release and allow its documented progressive-disclosure references inside the common budget.",
+    "installMethod": "exact release artifact or pinned repository commit",
+    "effectiveContextSha256": null
+  },
+  "capabilities": {
+    "commonToolsOnly": true,
+    "networkDuringRun": false,
+    "imageGenerationCalls": 0
+  },
+  "runReady": false,
+  "unresolved": [
+    "skill commit or release artifact digest",
+    "effective runtime context hash",
+    "common model snapshot",
+    "starter commit"
+  ]
+}
+
