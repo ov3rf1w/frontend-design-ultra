@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-design-ultra/benchmark/environment.schema.json",
+  "title": "Benchmark Environment Lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "status", "canonicalPlatform", "runtime", "browserHarness", "execution", "rendering", "runReady", "reason"],
+  "properties": {
+    "$schema": { "const": "schemas/environment.schema.json" },
+    "schemaVersion": { "const": 1 },
+    "status": { "enum": ["pending-pin", "frozen"] },
+    "canonicalPlatform": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["os", "architecture", "timezone", "locale", "colorScheme"],
+      "properties": {
+        "os": { "type": "string", "minLength": 1 },
+        "architecture": { "enum": ["x64", "arm64"] },
+        "timezone": { "type": "string", "minLength": 1 },
+        "locale": { "type": "string", "pattern": "^[a-z]{2}-[A-Z]{2}$" },
+        "colorScheme": { "enum": ["light", "dark"] }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["nodeMajor", "nodeExact", "packageManager", "packageManagerExact"],
+      "properties": {
+        "nodeMajor": { "type": "integer", "minimum": 24 },
+        "nodeExact": { "type": ["string", "null"], "pattern": "^v?[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "packageManager": { "const": "npm" },
+        "packageManagerExact": { "type": ["string", "null"], "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" }
+      }
+    },
+    "browserHarness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["playwrightExact", "browser", "browserRevision", "headless"],
+      "properties": {
+        "playwrightExact": { "type": ["string", "null"], "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+        "browser": { "const": "chromium" },
+        "browserRevision": { "type": ["string", "null"], "minLength": 1 },
+        "headless": { "const": true }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["modelSnapshot", "modelConfigurationSha256", "starterCommit", "starterLockfileSha256", "runAssignmentSeed"],
+      "properties": {
+        "modelSnapshot": { "type": ["string", "null"], "minLength": 1 },
+        "modelConfigurationSha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "starterCommit": { "type": ["string", "null"], "pattern": "^[a-f0-9]{40}$" },
+        "starterLockfileSha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "runAssignmentSeed": { "type": ["string", "null"], "minLength": 1 }
+      }
+    },
+    "rendering": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fonts", "animationsDisabledForStaticScreenshots", "serviceWorkers", "networkAfterDependencyInstall"],
+      "properties": {
+        "fonts": { "const": "fixture-local-only" },
+        "animationsDisabledForStaticScreenshots": { "type": "boolean" },
+        "serviceWorkers": { "const": "block" },
+        "networkAfterDependencyInstall": { "const": "off" }
+      }
+    },
+    "runReady": { "type": "boolean" },
+    "reason": { "type": "string", "minLength": 1 }
+  }
+}
