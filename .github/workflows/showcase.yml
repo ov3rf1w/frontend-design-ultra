@@ -1,0 +1,100 @@
+name: Validate showcase
+
+on:
+  push:
+    paths:
+      - "showcase/**"
+      - "docs/assets/showcase/**"
+      - "docs/assets/media-provenance.json"
+      - "docs/assets/media-provenance.schema.json"
+      - "scripts/audit-showcase.mjs"
+      - "scripts/capture-showcase-gallery.mjs"
+      - "scripts/update-media-provenance.mjs"
+      - "scripts/validate-repo.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/showcase.yml"
+  pull_request:
+    paths:
+      - "showcase/**"
+      - "docs/assets/showcase/**"
+      - "docs/assets/media-provenance.json"
+      - "docs/assets/media-provenance.schema.json"
+      - "scripts/audit-showcase.mjs"
+      - "scripts/capture-showcase-gallery.mjs"
+      - "scripts/update-media-provenance.mjs"
+      - "scripts/validate-repo.mjs"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/showcase.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: showcase-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: showcase
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            showcase/package-lock.json
+
+      - name: Install locked browser-audit dependencies
+        working-directory: ${{ github.workspace }}
+        run: npm ci --ignore-scripts
+
+      - name: Install locked dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Install pinned Chromium
+        working-directory: ${{ github.workspace }}
+        run: npx playwright-core install --with-deps chromium
+
+      - name: Check showcase automation syntax
+        working-directory: ${{ github.workspace }}
+        run: |
+          node --check scripts/audit-showcase.mjs
+          node --check scripts/capture-showcase-gallery.mjs
+          node --check scripts/update-media-provenance.mjs
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type-check
+        run: npm run typecheck
+
+      - name: Validate contrast token contract
+        run: npm run validate:contrast
+
+      - name: Build static export
+        run: npm run build
+
+      - name: Validate static export contract
+        run: npm run validate:export
+
+      - name: Run browser QA contract
+        working-directory: ${{ github.workspace }}
+        run: npm run showcase:audit
+
+      - name: Validate public showcase evidence
+        working-directory: ${{ github.workspace }}
+        run: node scripts/validate-repo.mjs
