@@ -1,0 +1,31 @@
+{
+  "$schema": "../schemas/condition.schema.json",
+  "schemaVersion": 1,
+  "id": "baseline-no-design-skill",
+  "label": "Baseline without a design skill",
+  "category": "baseline",
+  "status": "pending-common-model-pin",
+  "source": {
+    "kind": "none",
+    "repository": null,
+    "commit": null,
+    "license": "not-applicable"
+  },
+  "runtime": {
+    "instructionSurface": "Neutral implementation prompt plus the frozen brief and common project instructions.",
+    "installMethod": "none",
+    "effectiveContextSha256": null
+  },
+  "capabilities": {
+    "commonToolsOnly": true,
+    "networkDuringRun": false,
+    "imageGenerationCalls": 0
+  },
+  "runReady": false,
+  "unresolved": [
+    "common model snapshot",
+    "neutral baseline prompt hash",
+    "starter commit"
+  ]
+}
+
