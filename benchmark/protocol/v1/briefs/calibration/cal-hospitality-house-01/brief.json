@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../schemas/brief.schema.json",
+  "schemaVersion": 1,
+  "id": "cal-hospitality-house-01",
+  "split": "calibration",
+  "fictional": true,
+  "title": "Alpine House H-01",
+  "industry": "hospitality",
+  "projectType": "greenfield",
+  "locale": "de-AT",
+  "audience": [
+    "design-conscious couples planning a quiet three-to-five-night mountain stay",
+    "small international groups looking for a private seasonal retreat"
+  ],
+  "pageJob": "Make a fictional twelve-room alpine house tangible and guide qualified guests toward checking seasonal availability without inventing photography, awards, or reviews.",
+  "targetAction": "Check seasonal availability",
+  "facts": [
+    { "id": "location", "statement": "HOUSE 01 is a benchmark-authored twelve-room house fixture in a car-free Austrian mountain village.", "publicClaimAllowed": true },
+    { "id": "season", "statement": "The house operates from December through April and from June through October.", "publicClaimAllowed": true },
+    { "id": "minimum-stay", "statement": "The minimum stay is three nights in summer and four nights in winter.", "publicClaimAllowed": true },
+    { "id": "food", "statement": "Breakfast and a four-course evening menu are included; lunch is not served.", "publicClaimAllowed": true },
+    { "id": "arrival", "statement": "Guests arrive by village shuttle from a fictional rail station 18 minutes away.", "publicClaimAllowed": true },
+    { "id": "wellness", "statement": "The house has one timber sauna and a cold outdoor plunge, not a full spa.", "publicClaimAllowed": true }
+  ],
+  "requiredContent": [
+    "seasonal availability action",
+    "room count and minimum-stay terms",
+    "included dining information",
+    "arrival and shuttle explanation",
+    "clear statement that the location and brand are fictional"
+  ],
+  "constraints": [
+    "Do not invent guest reviews, press logos, awards, or sustainability certifications.",
+    "No photography, video, logo, map, or third-party font is supplied.",
+    "An editorial opening may be quiet, but the availability path must remain discoverable.",
+    "Reduced motion must provide a complete static reading order."
+  ],
+  "assetPolicy": {
+    "remoteAssets": false,
+    "generatedMedia": false,
+    "suppliedAssetCount": 0,
+    "instruction": "Use typography, spatial composition, benchmark-authored CSS, and fact-derived diagrams; do not fabricate the place through borrowed media."
+  },
+  "shippingBudgets": {
+    "maximumInitialJavaScriptKbGzip": 130,
+    "maximumImageBytes": 0,
+    "minimumTapTargetPx": 44,
+    "accessibilityTarget": "WCAG 2.2 AA practical floor; conformance requires complete evidence"
+  }
+}
