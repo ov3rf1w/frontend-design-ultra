@@ -1,0 +1,39 @@
+{
+  "$schema": "schemas/environment.schema.json",
+  "schemaVersion": 1,
+  "status": "pending-pin",
+  "canonicalPlatform": {
+    "os": "ubuntu-24.04",
+    "architecture": "x64",
+    "timezone": "UTC",
+    "locale": "en-US",
+    "colorScheme": "light"
+  },
+  "runtime": {
+    "nodeMajor": 24,
+    "nodeExact": null,
+    "packageManager": "npm",
+    "packageManagerExact": null
+  },
+  "browserHarness": {
+    "playwrightExact": null,
+    "browser": "chromium",
+    "browserRevision": null,
+    "headless": true
+  },
+  "execution": {
+    "modelSnapshot": null,
+    "modelConfigurationSha256": null,
+    "starterCommit": null,
+    "starterLockfileSha256": null,
+    "runAssignmentSeed": null
+  },
+  "rendering": {
+    "fonts": "fixture-local-only",
+    "animationsDisabledForStaticScreenshots": false,
+    "serviceWorkers": "block",
+    "networkAfterDependencyInstall": "off"
+  },
+  "runReady": false,
+  "reason": "Exact runtime, Playwright, Chromium, package-manager, starter, and model pins have not been frozen."
+}
