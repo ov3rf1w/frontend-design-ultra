@@ -2,6 +2,18 @@
 
 Use this for `/research`, `/trend`, `/premium`, `/awwward`, `/brandkit`, `/redesign`, and any substantial design when the user has not supplied a complete brand/design system.
 
+## Contents
+
+- Research Contract
+- Provenance And Recency
+- Research Output
+- UX Evaluation Loop
+- Failure Map
+- Source Quality Rules
+- Professional Baselines
+- Anti-Research Slop
+- Source-Informed Baselines
+
 ## Research Contract
 
 Before final design decisions, extract mechanisms from evidence:
@@ -26,6 +38,21 @@ Minimum packet:
 
 If browsing is unavailable, state `Research unavailable` and proceed with domain heuristics, but do not pretend the result is trend-validated.
 
+## Provenance And Recency
+
+Keep a compact source ledger for every external claim or reference mechanism:
+
+- title, publisher/owner, and direct URL
+- source type: standard, official documentation, field data, research, live product, portfolio/gallery, or commentary
+- published/updated date when available and access date in `YYYY-MM-DD`
+- route, state, viewport, and locale for live-interface observations
+- mechanism extracted, project relevance, and what was deliberately not copied
+- confidence tier and any unresolved limitation
+
+Do not write `current`, `trending`, `best practice`, or `users prefer` without a dated source or clearly labeled expert hypothesis. Re-check volatile sources such as framework guidance, browser support, live product behavior, rankings, and trend claims near delivery. For stable standards, cite the exact version and verify that it is still the current target.
+
+Screenshots and browser inspection are evidence only when authorized by the user or host/project policy. A `/research`, `/trend`, `/reference`, or `/playwright` parameter is not authorization. Ask first for authenticated, private, paid, admin, client-confidential, or destructive surfaces; otherwise use supplied artifacts or mark the observation `Needs Browser Verification`.
+
 ## Research Output
 
 Return:
@@ -36,6 +63,7 @@ Return:
 - Design-System Implications: type, color, grid, components, motion.
 - Evidence Gaps: what needs URL, screenshot, brand asset, product image, analytics, or stakeholder input.
 - Confidence Tier: High, Medium, or Low per major claim.
+- Source Ledger: direct sources, dates, evidence type, extracted mechanism, and limitations.
 - Change Impact Memo: what changes, why it should help, how success will be measured, and when to re-test.
 
 ## UX Evaluation Loop
@@ -65,6 +93,8 @@ Track:
 
 - Prefer primary sources: official design systems, standards, platform docs, recognized UX research, and live product evidence.
 - Use galleries/trend sites only for mechanics, not proof of usability.
+- Separate observed facts, source claims, and design inference. Cite the source nearest the claim and label inference explicitly.
+- Distinguish field/RUM performance evidence from lab diagnostics; record source population/date range for field data and tool/profile/date for lab data.
 - Do not copy layouts, copy, proprietary visuals, or brand-specific art direction.
 - Convert references into a local grammar: tokens, grids, section jobs, state logic, and motion intent.
 
@@ -77,7 +107,7 @@ Research-informed UI must satisfy:
 - evidence near claims
 - readable content hierarchy
 - accessible focus, contrast, labels, and states
-- motion that explains or orients
+- motion that explains, orients, or clarifies state
 - performance budget for media, fonts, JavaScript, and canvas
 
 ## Anti-Research Slop
@@ -86,6 +116,8 @@ Reject:
 
 - moodboard-only output with no decisions
 - trend name-dropping without implementation consequences
+- undated trend claims or source lists with no extracted mechanism
+- gallery popularity presented as usability, conversion, or accessibility evidence
 - cloning reference identity
 - treating Awwwards mechanics as usability proof
 - ignoring domain friction
