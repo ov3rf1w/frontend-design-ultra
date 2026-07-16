@@ -1,0 +1,2680 @@
+{
+  "$schema": "./reference-scan-outcomes.schema.json",
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-16T12:52:16.996Z",
+  "sourceCorpusVersion": "1.2.0",
+  "publicationClass": "diagnostic-only",
+  "outcomeCount": 20,
+  "rightsPolicy": "sanitized-scan-metadata-only-no-raw-artifacts",
+  "summary": {
+    "relevantNewestAttempts": 20,
+    "statusCounts": {
+      "complete": 11,
+      "partial": 7,
+      "failed": 0,
+      "unsupported": 2
+    },
+    "eligibilityCounts": {
+      "eligibleCompleteObservation": 7,
+      "diagnosticOnly": 13
+    },
+    "viewportStatusCounts": {
+      "complete": 24,
+      "partial": 11,
+      "unsupported": 5,
+      "missing": 0
+    }
+  },
+  "outcomes": [
+    {
+      "refId": "ref-001",
+      "capturedAt": "2026-07-16T11:43:45.801Z",
+      "status": "partial",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "capture-contract-partial",
+        "entrance-timing-missed"
+      ],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "incomplete-viewport-coverage",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "partial",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 6,
+            "missed": 1,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 200,
+            "runtimeErrors": 0,
+            "requestFailures": 30,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 157,
+            "runtimeErrors": 0,
+            "requestFailures": 24,
+            "reducedMotionFailures": 0
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-002",
+      "capturedAt": "2026-07-16T11:46:14.846Z",
+      "status": "complete",
+      "eligibility": "eligible-complete-observation",
+      "issues": [],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "network-policy-subresources-blocked"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 53,
+            "runtimeErrors": 0,
+            "requestFailures": 55,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 51,
+            "runtimeErrors": 0,
+            "requestFailures": 54,
+            "reducedMotionFailures": 0
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-004",
+      "capturedAt": "2026-07-16T11:49:09.861Z",
+      "status": "complete",
+      "eligibility": "eligible-complete-observation",
+      "issues": [],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "network-policy-subresources-blocked"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 48,
+            "runtimeErrors": 0,
+            "requestFailures": 33,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 42,
+            "runtimeErrors": 0,
+            "requestFailures": 33,
+            "reducedMotionFailures": 0
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-011",
+      "capturedAt": "2026-07-16T11:51:16.076Z",
+      "status": "complete",
+      "eligibility": "eligible-complete-observation",
+      "issues": [],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "network-policy-subresources-blocked"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 8,
+            "runtimeErrors": 0,
+            "requestFailures": 8,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 8,
+            "runtimeErrors": 0,
+            "requestFailures": 8,
+            "reducedMotionFailures": 0
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-017",
+      "capturedAt": "2026-07-16T11:53:27.088Z",
+      "status": "complete",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "observation-complete-contract-integrity-failed"
+      ],
+      "limitations": [
+        "complete-attempt-not-published-as-observation",
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence",
+        "reduced-motion-runtime-errors-recorded"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 200,
+            "runtimeErrors": 18,
+            "requestFailures": 170,
+            "reducedMotionFailures": 3
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 200,
+            "runtimeErrors": 15,
+            "requestFailures": 181,
+            "reducedMotionFailures": 3
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-021",
+      "capturedAt": "2026-07-16T11:55:50.120Z",
+      "status": "complete",
+      "eligibility": "eligible-complete-observation",
+      "issues": [],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "network-policy-subresources-blocked"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 6,
+            "runtimeErrors": 0,
+            "requestFailures": 13,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 6,
+            "runtimeErrors": 0,
+            "requestFailures": 13,
+            "reducedMotionFailures": 0
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-022",
+      "capturedAt": "2026-07-16T11:56:36.866Z",
+      "status": "unsupported",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "capture-contract-unsupported"
+      ],
+      "limitations": [
+        "canvas-or-virtual-scroll-journey-unverified",
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence",
+        "unsupported-scroll-journey"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "unsupported",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 2,
+            "artifactsCaptured": 2,
+            "met": 0,
+            "missed": 0,
+            "unsupported": 1,
+            "notApplicable": 1
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 12,
+            "runtimeErrors": 0,
+            "requestFailures": 8,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "unsupported",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 2,
+            "artifactsCaptured": 2,
+            "met": 0,
+            "missed": 0,
+            "unsupported": 1,
+            "notApplicable": 1
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 8,
+            "runtimeErrors": 0,
+            "requestFailures": 8,
+            "reducedMotionFailures": 0
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-023",
+      "capturedAt": "2026-07-16T11:57:19.437Z",
+      "status": "unsupported",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "capture-contract-unsupported"
+      ],
+      "limitations": [
+        "canvas-or-virtual-scroll-journey-unverified",
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence",
+        "reduced-motion-runtime-errors-recorded",
+        "unsupported-scroll-journey",
+        "zero-waapi-does-not-establish-zero-motion"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "unsupported",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 2,
+            "artifactsCaptured": 2,
+            "met": 0,
+            "missed": 0,
+            "unsupported": 1,
+            "notApplicable": 1
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 14,
+            "runtimeErrors": 6,
+            "requestFailures": 14,
+            "reducedMotionFailures": 1
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "unsupported",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 2,
+            "artifactsCaptured": 2,
+            "met": 0,
+            "missed": 0,
+            "unsupported": 1,
+            "notApplicable": 1
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 14,
+            "runtimeErrors": 6,
+            "requestFailures": 14,
+            "reducedMotionFailures": 1
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-024",
+      "capturedAt": "2026-07-16T11:58:04.258Z",
+      "status": "partial",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "capture-contract-partial",
+        "entrance-sample-failed"
+      ],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "incomplete-viewport-coverage",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "partial",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 6,
+            "met": 5,
+            "missed": 0,
+            "failed": 2
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 2,
+            "artifactsCaptured": 2,
+            "met": 0,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 2
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 14,
+            "runtimeErrors": 0,
+            "requestFailures": 30,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "partial",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 6,
+            "met": 6,
+            "missed": 0,
+            "failed": 1
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 2,
+            "artifactsCaptured": 2,
+            "met": 0,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 2
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 15,
+            "runtimeErrors": 0,
+            "requestFailures": 31,
+            "reducedMotionFailures": 0
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-035",
+      "capturedAt": "2026-07-16T11:59:51.956Z",
+      "status": "complete",
+      "eligibility": "eligible-complete-observation",
+      "issues": [],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 0,
+            "runtimeErrors": 0,
+            "requestFailures": 8,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 0,
+            "runtimeErrors": 0,
+            "requestFailures": 13,
+            "reducedMotionFailures": 0
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-038",
+      "capturedAt": "2026-07-16T12:02:04.599Z",
+      "status": "complete",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "observation-complete-contract-integrity-failed"
+      ],
+      "limitations": [
+        "complete-attempt-not-published-as-observation",
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence",
+        "reduced-motion-runtime-errors-recorded"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 6,
+            "runtimeErrors": 0,
+            "requestFailures": 37,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 7,
+            "runtimeErrors": 2,
+            "requestFailures": 32,
+            "reducedMotionFailures": 1
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-040",
+      "capturedAt": "2026-07-16T12:04:09.549Z",
+      "status": "partial",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "capture-contract-partial",
+        "entrance-timing-missed"
+      ],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "incomplete-viewport-coverage",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 18,
+            "runtimeErrors": 0,
+            "requestFailures": 15,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "partial",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 6,
+            "missed": 1,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 21,
+            "runtimeErrors": 0,
+            "requestFailures": 17,
+            "reducedMotionFailures": 0
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-048",
+      "capturedAt": "2026-07-16T12:05:46.432Z",
+      "status": "complete",
+      "eligibility": "eligible-complete-observation",
+      "issues": [],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 0,
+            "runtimeErrors": 0,
+            "requestFailures": 0,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 0,
+            "runtimeErrors": 0,
+            "requestFailures": 0,
+            "reducedMotionFailures": 0
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-052",
+      "capturedAt": "2026-07-16T12:08:04.711Z",
+      "status": "partial",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "capture-contract-partial",
+        "entrance-timing-missed"
+      ],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "incomplete-viewport-coverage",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence",
+        "reduced-motion-runtime-errors-recorded"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "partial",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 6,
+            "missed": 1,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 105,
+            "runtimeErrors": 40,
+            "requestFailures": 118,
+            "reducedMotionFailures": 6
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "partial",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 6,
+            "missed": 1,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 123,
+            "runtimeErrors": 50,
+            "requestFailures": 138,
+            "reducedMotionFailures": 8
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-058",
+      "capturedAt": "2026-07-16T12:10:25.531Z",
+      "status": "complete",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "observation-complete-contract-integrity-failed"
+      ],
+      "limitations": [
+        "complete-attempt-not-published-as-observation",
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence",
+        "reduced-motion-runtime-errors-recorded"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 6,
+            "runtimeErrors": 70,
+            "requestFailures": 6,
+            "reducedMotionFailures": 10
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 5,
+            "runtimeErrors": 50,
+            "requestFailures": 5,
+            "reducedMotionFailures": 10
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-061",
+      "capturedAt": "2026-07-16T12:12:41.277Z",
+      "status": "partial",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "capture-contract-partial",
+        "entrance-timing-missed"
+      ],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "incomplete-viewport-coverage",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence",
+        "reduced-motion-runtime-errors-recorded"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "partial",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 5,
+            "missed": 2,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 45,
+            "runtimeErrors": 8,
+            "requestFailures": 22,
+            "reducedMotionFailures": 1
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "partial",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 5,
+            "missed": 2,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 46,
+            "runtimeErrors": 8,
+            "requestFailures": 24,
+            "reducedMotionFailures": 1
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-064",
+      "capturedAt": "2026-07-16T12:14:39.036Z",
+      "status": "partial",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "capture-contract-partial",
+        "scroll-target-missed"
+      ],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "incomplete-viewport-coverage",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence",
+        "reduced-motion-runtime-errors-recorded"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "partial",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 9,
+            "missed": 1,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 26,
+            "runtimeErrors": 0,
+            "requestFailures": 61,
+            "reducedMotionFailures": 1
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "partial",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 9,
+            "missed": 1,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 26,
+            "runtimeErrors": 0,
+            "requestFailures": 54,
+            "reducedMotionFailures": 1
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-067",
+      "capturedAt": "2026-07-16T12:16:11.623Z",
+      "status": "complete",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "observation-complete-contract-integrity-failed"
+      ],
+      "limitations": [
+        "complete-attempt-not-published-as-observation",
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence",
+        "reduced-motion-runtime-errors-recorded"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 8,
+            "runtimeErrors": 4,
+            "requestFailures": 8,
+            "reducedMotionFailures": 1
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 8,
+            "runtimeErrors": 0,
+            "requestFailures": 8,
+            "reducedMotionFailures": 1
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-070",
+      "capturedAt": "2026-07-16T12:18:18.603Z",
+      "status": "complete",
+      "eligibility": "eligible-complete-observation",
+      "issues": [],
+      "limitations": [
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "network-policy-subresources-blocked"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 32,
+            "runtimeErrors": 0,
+            "requestFailures": 32,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "complete",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 10,
+            "artifactsCaptured": 10,
+            "met": 10,
+            "missed": 0,
+            "unsupported": 0,
+            "notApplicable": 0
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 32,
+            "runtimeErrors": 0,
+            "requestFailures": 32,
+            "reducedMotionFailures": 0
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    },
+    {
+      "refId": "ref-071",
+      "capturedAt": "2026-07-16T12:21:37.299Z",
+      "status": "partial",
+      "eligibility": "diagnostic-only",
+      "issues": [
+        "capture-contract-partial",
+        "entrance-timing-missed"
+      ],
+      "limitations": [
+        "canvas-or-virtual-scroll-journey-unverified",
+        "direct-timeline-introspection-unavailable",
+        "human-visual-review-required",
+        "incomplete-viewport-coverage",
+        "network-policy-subresources-blocked",
+        "not-normal-observation-evidence",
+        "unsupported-scroll-journey"
+      ],
+      "viewportCoverage": [
+        {
+          "viewport": "desktop",
+          "viewportStatus": "partial",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 5,
+            "missed": 2,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 2,
+            "artifactsCaptured": 2,
+            "met": 0,
+            "missed": 0,
+            "unsupported": 1,
+            "notApplicable": 1
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 52,
+            "runtimeErrors": 0,
+            "requestFailures": 8,
+            "reducedMotionFailures": 0
+          }
+        },
+        {
+          "viewport": "mobile",
+          "viewportStatus": "unsupported",
+          "entranceSamples": {
+            "requested": 7,
+            "recorded": 7,
+            "artifactsCaptured": 7,
+            "met": 7,
+            "missed": 0,
+            "failed": 0
+          },
+          "scrollSamples": {
+            "requested": 10,
+            "recorded": 2,
+            "artifactsCaptured": 2,
+            "met": 0,
+            "missed": 0,
+            "unsupported": 1,
+            "notApplicable": 1
+          },
+          "interactionSamples": {
+            "requested": 0,
+            "recorded": 0,
+            "artifactsCaptured": 0,
+            "met": 0,
+            "failed": 0,
+            "policyBlocked": 0,
+            "notApplicable": 0
+          },
+          "settledSamples": {
+            "requested": 1,
+            "recorded": 1,
+            "artifactsCaptured": 1,
+            "met": 1
+          },
+          "reducedMotionArtifacts": {
+            "requested": 2,
+            "captured": 2
+          },
+          "videoArtifacts": {
+            "requested": 1,
+            "captured": 1
+          },
+          "traceArtifacts": {
+            "requested": 0,
+            "captured": 0
+          },
+          "runtimeCounts": {
+            "consoleMessages": 36,
+            "runtimeErrors": 0,
+            "requestFailures": 8,
+            "reducedMotionFailures": 0
+          }
+        }
+      ],
+      "rights": {
+        "publicSurface": "sanitized-diagnostic-scan-metadata-only",
+        "rawArtifactsPublished": false,
+        "copiedCode": false,
+        "copiedAssets": false,
+        "usableForMotionVerification": false
+      }
+    }
+  ]
+}
