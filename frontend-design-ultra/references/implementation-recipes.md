@@ -2,6 +2,19 @@
 
 Use this for `/implement`, `/premium`, `/awwward`, `/responsive`, `/dashboard`, `/ecommerce`, `/gsap`, and `/framer`.
 
+## Contents
+
+- Responsive Hero
+- Editorial Split
+- Full-Bleed Media
+- Sticky Chapter
+- Cursor-Follow Preview
+- Product Object Stage
+- Dashboard Density Layout
+- Pricing / Proof Board
+- Immersive Footer
+- Mobile Recomposition
+
 ## Responsive Hero
 
 Contract:
@@ -107,4 +120,3 @@ Rules:
 - fixed controls avoid content overlap
 - tap targets around 44px
 - media focal point preserved
-
