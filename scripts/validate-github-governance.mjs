@@ -131,6 +131,17 @@ function validateReleaseWorkflow(source, diagnostics) {
       "The build job must upload once and the publish job must download; artifact transfer may not be reversed.",
     ));
   }
+  const publishActions = actionReferences(publishSource);
+  if (publishActions.length !== 2
+    || publishActions[0] !== downloadReference
+    || !/^actions\/attest-build-provenance@[a-f0-9]{40}$/i.test(publishActions[1])
+    || /actions\/checkout@|\b(?:npm|npx)\b|\bnode\s+(?:scripts\/|\.)/.test(publishSource)) {
+    diagnostics.push(diagnostic(
+      "RELEASE_PUBLISH_SURFACE",
+      file,
+      "The privileged publish job may only download, reverify, attest, and create the draft release; it must not check out or execute repository code.",
+    ));
+  }
   if (/actions\/attest-build-provenance@|gh release create/.test(buildSource)
     || !/actions\/attest-build-provenance@[a-f0-9]{40}/i.test(publishSource)
     || !/gh release create/.test(publishSource)) {
