@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-design-ultra/benchmark/blind-packet.schema.json",
+  "title": "Blind Jury Packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "benchmarkVersion", "status", "mappingRevealedAt", "blindPacketSha256", "randomization", "entryCount", "comparisonCount", "entries", "comparisons"],
+  "properties": {
+    "$schema": { "type": "string", "minLength": 1 },
+    "schemaVersion": { "const": 2 },
+    "benchmarkVersion": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$" },
+    "status": { "enum": ["blind", "revealed"] },
+    "mappingRevealedAt": { "type": ["string", "null"], "format": "date-time" },
+    "blindPacketSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "randomization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "seed", "seedSha256", "keyCommitmentSha256"],
+      "properties": {
+        "algorithm": { "const": "hmac-sha256-v1" },
+        "seed": { "type": "string", "minLength": 1, "maxLength": 128, "pattern": "^[A-Za-z0-9._:-]+$" },
+        "seedSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "keyCommitmentSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "entryCount": { "type": "integer", "minimum": 2 },
+    "comparisonCount": { "type": "integer", "minimum": 1 },
+    "entries": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["entryId", "artifactSetSha256", "artifacts"],
+        "properties": {
+          "entryId": { "type": "string", "pattern": "^E-[A-Z2-7]+$" },
+          "artifactSetSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "artifacts": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["artifactId", "evidenceType", "path", "mediaType", "blindDigest", "capture"],
+              "properties": {
+                "artifactId": { "type": "string", "pattern": "^A-[A-Z2-7]+$" },
+                "evidenceType": {
+                  "enum": [
+                    "desktop-first-viewport",
+                    "desktop-full-page",
+                    "desktop-motion",
+                    "mobile-first-viewport",
+                    "mobile-full-page",
+                    "mobile-motion"
+                  ]
+                },
+                "path": { "type": "string", "pattern": "^entries/E-[A-Z2-7]+/A-[A-Z2-7]+\\.[a-z0-9]+$" },
+                "mediaType": { "type": "string", "pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+$" },
+                "blindDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+                "capture": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["profileId", "width", "height", "durationMs", "frameCount", "actionTimelineBlindDigest", "probe"],
+                  "properties": {
+                    "profileId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+                    "width": { "type": "integer", "minimum": 320, "maximum": 7680 },
+                    "height": { "type": "integer", "minimum": 1, "maximum": 50000 },
+                    "durationMs": { "type": "integer", "minimum": 0 },
+                    "frameCount": { "type": "integer", "minimum": 1 },
+                    "actionTimelineBlindDigest": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+                    "probe": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": ["tool", "version", "decodable"],
+                      "properties": {
+                        "tool": { "type": "string", "minLength": 1 },
+                        "version": { "type": "string", "minLength": 1 },
+                        "decodable": { "const": true }
+                      }
+                    }
+                  }
+                }
+              },
+              "allOf": [
+                {
+                  "if": {
+                    "type": "object",
+                    "properties": {
+                      "evidenceType": { "enum": ["desktop-motion", "mobile-motion"] }
+                    }
+                  },
+                  "then": {
+                    "type": "object",
+                    "properties": {
+                      "mediaType": { "enum": ["video/mp4", "video/webm"] },
+                      "capture": {
+                        "type": "object",
+                        "properties": {
+                          "durationMs": { "type": "integer", "minimum": 3000 },
+                          "frameCount": { "type": "integer", "minimum": 2 },
+                          "actionTimelineBlindDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+                        }
+                      }
+                    }
+                  },
+                  "else": {
+                    "type": "object",
+                    "properties": {
+                      "mediaType": { "enum": ["image/jpeg", "image/png", "image/webp"] },
+                      "capture": {
+                        "type": "object",
+                        "properties": {
+                          "durationMs": { "const": 0 },
+                          "frameCount": { "const": 1 },
+                          "actionTimelineBlindDigest": { "type": "null" }
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "comparisons": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["assignmentId", "briefId", "replicate", "left", "right", "requiredEvidence"],
+        "properties": {
+          "assignmentId": { "type": "string", "pattern": "^P-[A-Z2-7]+$" },
+          "briefId": { "type": "string", "minLength": 1 },
+          "replicate": { "type": "integer", "minimum": 1 },
+          "left": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["entryId"],
+            "properties": {
+              "entryId": { "type": "string", "pattern": "^E-[A-Z2-7]+$" }
+            }
+          },
+          "right": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["entryId"],
+            "properties": {
+              "entryId": { "type": "string", "pattern": "^E-[A-Z2-7]+$" }
+            }
+          },
+          "requiredEvidence": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "desktop-first-viewport",
+                "desktop-full-page",
+                "desktop-motion",
+                "mobile-first-viewport",
+                "mobile-full-page",
+                "mobile-motion"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "status": { "const": "blind" },
+        "mappingRevealedAt": { "type": "null" }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "status": { "const": "revealed" },
+        "mappingRevealedAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  ]
+}
