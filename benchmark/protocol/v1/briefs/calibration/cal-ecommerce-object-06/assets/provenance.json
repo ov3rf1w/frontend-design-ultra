@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../../schemas/provenance.schema.json",
+  "schemaVersion": 1,
+  "briefId": "cal-ecommerce-object-06",
+  "factsProvenance": {
+    "kind": "benchmark-authored-fixture",
+    "author": "Frontend Design Ultra benchmark maintainers",
+    "fictional": true,
+    "externalClaims": false
+  },
+  "assets": [],
+  "redistributionStatus": "no-third-party-assets"
+}
