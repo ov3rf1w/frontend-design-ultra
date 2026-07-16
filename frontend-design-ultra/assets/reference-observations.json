@@ -1,0 +1,857 @@
+{
+  "$schema": "./reference-observations.schema.json",
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-16T12:40:25.975Z",
+  "sourceCorpusVersion": "1.2.0",
+  "observationCount": 7,
+  "rightsPolicy": "source-links-and-derived-mechanics-only",
+  "observations": [
+    {
+      "referenceId": "ref-002",
+      "sourceUrl": "https://www.salterra.com",
+      "capturedAt": "2026-07-16T11:46:14.846Z",
+      "status": "machine-captured-needs-human-review",
+      "evidenceDigest": "63082933a7ccb33d47023687084cfacdb65f9361112c6d6c683b5b927f273715",
+      "evidenceDigestAlgorithm": "sha256-aggregate-artifact-set-v1",
+      "captureProfile": {
+        "evidenceTier": "benchmark",
+        "evidenceArtifactCount": 45,
+        "measurementCoverage": [
+          "screenshots",
+          "continuous-video",
+          "waapi-css-animation-sampling",
+          "element-animate-instrumentation",
+          "computed-composition-signals"
+        ],
+        "viewports": [
+          {
+            "id": "desktop",
+            "width": 1440,
+            "height": 900,
+            "deviceScaleFactor": 1
+          },
+          {
+            "id": "mobile",
+            "width": 393,
+            "height": 852,
+            "deviceScaleFactor": 3
+          }
+        ],
+        "entranceSamples": 7,
+        "scrollSamples": 10,
+        "reducedMotion": true,
+        "video": true,
+        "trace": false
+      },
+      "mechanics": {
+        "sampledAnimationInstances": 61,
+        "maximumConcurrentAnimations": 7,
+        "durationBuckets": {
+          "instant": 0,
+          "micro": 0,
+          "component": 0,
+          "section": 10,
+          "signature": 51,
+          "unknown": 0
+        },
+        "infiniteAnimations": 30,
+        "animatedProperties": [
+          {
+            "property": "left",
+            "observations": 240
+          },
+          {
+            "property": "top",
+            "observations": 240
+          },
+          {
+            "property": "transform",
+            "observations": 76
+          },
+          {
+            "property": "opacity",
+            "observations": 38
+          },
+          {
+            "property": "zIndex",
+            "observations": 6
+          },
+          {
+            "property": "backgroundPositionX",
+            "observations": 2
+          }
+        ],
+        "easings": [
+          {
+            "easing": "linear",
+            "observations": 30
+          },
+          {
+            "easing": "ease-in-out",
+            "observations": 15
+          },
+          {
+            "easing": "cubic-bezier(0.18, 0.32, 0.17, 0.99)",
+            "observations": 12
+          },
+          {
+            "easing": "ease-in",
+            "observations": 4
+          }
+        ],
+        "maximumCompositionSignals": {
+          "animations": 7,
+          "sticky": 0,
+          "fixed": 9,
+          "canvases": 0,
+          "videos": 9,
+          "clipped": 0
+        },
+        "librarySignals": {
+          "gsap": false,
+          "scrollTrigger": false,
+          "lenis": false,
+          "locomotiveScroll": false,
+          "barba": false,
+          "three": false,
+          "webflow": false,
+          "swiper": true,
+          "motion": false
+        },
+        "candidateMechanics": [
+          "cinematic-media-sequence",
+          "staged-transform-opacity-reveal",
+          "layered-fixed-chrome"
+        ]
+      },
+      "runtime": {
+        "consoleMessages": 104,
+        "runtimeErrors": 0,
+        "requestFailures": 109
+      },
+      "humanReview": {
+        "status": "pending",
+        "requiredBeforePromotion": [
+          "Inspect entrance, scroll, mobile, and reduced-motion frames.",
+          "Name the information job and separate observation from inference.",
+          "Reject bot walls, incomplete loads, and misleading machine detections.",
+          "Create an original, visibly distinct reconstruction and document its publication-rights basis before publishing reusable code."
+        ]
+      },
+      "rights": {
+        "rawArtifactsPublished": false,
+        "publicSurface": "derived-mechanics-only",
+        "copiedCode": false,
+        "copiedAssets": false
+      }
+    },
+    {
+      "referenceId": "ref-004",
+      "sourceUrl": "https://www.here-away.com",
+      "capturedAt": "2026-07-16T11:49:09.861Z",
+      "status": "machine-captured-needs-human-review",
+      "evidenceDigest": "355602523a288707750598a079d9f180692f2a4a2350f66c796fcacab7219155",
+      "evidenceDigestAlgorithm": "sha256-aggregate-artifact-set-v1",
+      "captureProfile": {
+        "evidenceTier": "benchmark",
+        "evidenceArtifactCount": 45,
+        "measurementCoverage": [
+          "screenshots",
+          "continuous-video",
+          "waapi-css-animation-sampling",
+          "element-animate-instrumentation",
+          "computed-composition-signals"
+        ],
+        "viewports": [
+          {
+            "id": "desktop",
+            "width": 1440,
+            "height": 900,
+            "deviceScaleFactor": 1
+          },
+          {
+            "id": "mobile",
+            "width": 393,
+            "height": 852,
+            "deviceScaleFactor": 3
+          }
+        ],
+        "entranceSamples": 7,
+        "scrollSamples": 10,
+        "reducedMotion": true,
+        "video": true,
+        "trace": false
+      },
+      "mechanics": {
+        "sampledAnimationInstances": 556,
+        "maximumConcurrentAnimations": 72,
+        "durationBuckets": {
+          "instant": 0,
+          "micro": 0,
+          "component": 1,
+          "section": 228,
+          "signature": 327,
+          "unknown": 0
+        },
+        "infiniteAnimations": 327,
+        "animatedProperties": [
+          {
+            "property": "opacity",
+            "observations": 1261
+          },
+          {
+            "property": "transform",
+            "observations": 216
+          },
+          {
+            "property": "color",
+            "observations": 10
+          },
+          {
+            "property": "visibility",
+            "observations": 8
+          },
+          {
+            "property": "backgroundColor",
+            "observations": 4
+          }
+        ],
+        "easings": [
+          {
+            "easing": "linear",
+            "observations": 383
+          },
+          {
+            "easing": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "observations": 163
+          },
+          {
+            "easing": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+            "observations": 10
+          }
+        ],
+        "maximumCompositionSignals": {
+          "animations": 72,
+          "sticky": 0,
+          "fixed": 9,
+          "canvases": 1,
+          "videos": 0,
+          "clipped": 28
+        },
+        "librarySignals": {
+          "gsap": false,
+          "scrollTrigger": false,
+          "lenis": false,
+          "locomotiveScroll": false,
+          "barba": false,
+          "three": false,
+          "webflow": false,
+          "swiper": false,
+          "motion": false
+        },
+        "candidateMechanics": [
+          "canvas-spatial-stage",
+          "mask-or-curtain-reveal",
+          "staged-transform-opacity-reveal",
+          "layered-fixed-chrome"
+        ]
+      },
+      "runtime": {
+        "consoleMessages": 90,
+        "runtimeErrors": 0,
+        "requestFailures": 66
+      },
+      "humanReview": {
+        "status": "pending",
+        "requiredBeforePromotion": [
+          "Inspect entrance, scroll, mobile, and reduced-motion frames.",
+          "Name the information job and separate observation from inference.",
+          "Reject bot walls, incomplete loads, and misleading machine detections.",
+          "Create an original, visibly distinct reconstruction and document its publication-rights basis before publishing reusable code."
+        ]
+      },
+      "rights": {
+        "rawArtifactsPublished": false,
+        "publicSurface": "derived-mechanics-only",
+        "copiedCode": false,
+        "copiedAssets": false
+      }
+    },
+    {
+      "referenceId": "ref-011",
+      "sourceUrl": "https://wepresent.wetransfer.com",
+      "capturedAt": "2026-07-16T11:51:16.076Z",
+      "status": "machine-captured-needs-human-review",
+      "evidenceDigest": "c28c293335d46cac98d1c754d5671210b8e14d40ab713972dcac2f33a72fa9da",
+      "evidenceDigestAlgorithm": "sha256-aggregate-artifact-set-v1",
+      "captureProfile": {
+        "evidenceTier": "benchmark",
+        "evidenceArtifactCount": 45,
+        "measurementCoverage": [
+          "screenshots",
+          "continuous-video",
+          "waapi-css-animation-sampling",
+          "element-animate-instrumentation",
+          "computed-composition-signals"
+        ],
+        "viewports": [
+          {
+            "id": "desktop",
+            "width": 1440,
+            "height": 900,
+            "deviceScaleFactor": 1
+          },
+          {
+            "id": "mobile",
+            "width": 393,
+            "height": 852,
+            "deviceScaleFactor": 3
+          }
+        ],
+        "entranceSamples": 7,
+        "scrollSamples": 10,
+        "reducedMotion": true,
+        "video": true,
+        "trace": false
+      },
+      "mechanics": {
+        "sampledAnimationInstances": 0,
+        "maximumConcurrentAnimations": 0,
+        "durationBuckets": {
+          "instant": 0,
+          "micro": 0,
+          "component": 0,
+          "section": 0,
+          "signature": 0,
+          "unknown": 0
+        },
+        "infiniteAnimations": 0,
+        "animatedProperties": [],
+        "easings": [],
+        "maximumCompositionSignals": {
+          "animations": 0,
+          "sticky": 7,
+          "fixed": 3,
+          "canvases": 0,
+          "videos": 0,
+          "clipped": 0
+        },
+        "librarySignals": {
+          "gsap": false,
+          "scrollTrigger": false,
+          "lenis": false,
+          "locomotiveScroll": false,
+          "barba": false,
+          "three": false,
+          "webflow": false,
+          "swiper": false,
+          "motion": false
+        },
+        "candidateMechanics": [
+          "sticky-scroll-chapter",
+          "layered-fixed-chrome"
+        ]
+      },
+      "runtime": {
+        "consoleMessages": 16,
+        "runtimeErrors": 0,
+        "requestFailures": 16
+      },
+      "humanReview": {
+        "status": "pending",
+        "requiredBeforePromotion": [
+          "Inspect entrance, scroll, mobile, and reduced-motion frames.",
+          "Name the information job and separate observation from inference.",
+          "Reject bot walls, incomplete loads, and misleading machine detections.",
+          "Create an original, visibly distinct reconstruction and document its publication-rights basis before publishing reusable code."
+        ]
+      },
+      "rights": {
+        "rawArtifactsPublished": false,
+        "publicSurface": "derived-mechanics-only",
+        "copiedCode": false,
+        "copiedAssets": false
+      }
+    },
+    {
+      "referenceId": "ref-021",
+      "sourceUrl": "https://www.rejouice.com",
+      "capturedAt": "2026-07-16T11:55:50.120Z",
+      "status": "machine-captured-needs-human-review",
+      "evidenceDigest": "591b50b8163de73a805c92cadb7cc3ea1dc0c8c53a01eb8ce640b623ce724e39",
+      "evidenceDigestAlgorithm": "sha256-aggregate-artifact-set-v1",
+      "captureProfile": {
+        "evidenceTier": "benchmark",
+        "evidenceArtifactCount": 45,
+        "measurementCoverage": [
+          "screenshots",
+          "continuous-video",
+          "waapi-css-animation-sampling",
+          "element-animate-instrumentation",
+          "computed-composition-signals"
+        ],
+        "viewports": [
+          {
+            "id": "desktop",
+            "width": 1440,
+            "height": 900,
+            "deviceScaleFactor": 1
+          },
+          {
+            "id": "mobile",
+            "width": 393,
+            "height": 852,
+            "deviceScaleFactor": 3
+          }
+        ],
+        "entranceSamples": 7,
+        "scrollSamples": 10,
+        "reducedMotion": true,
+        "video": true,
+        "trace": false
+      },
+      "mechanics": {
+        "sampledAnimationInstances": 954,
+        "maximumConcurrentAnimations": 52,
+        "durationBuckets": {
+          "instant": 0,
+          "micro": 1,
+          "component": 88,
+          "section": 847,
+          "signature": 18,
+          "unknown": 0
+        },
+        "infiniteAnimations": 0,
+        "animatedProperties": [
+          {
+            "property": "transform",
+            "observations": 1390
+          },
+          {
+            "property": "opacity",
+            "observations": 502
+          },
+          {
+            "property": "clipPath",
+            "observations": 12
+          },
+          {
+            "property": "transformOrigin",
+            "observations": 4
+          }
+        ],
+        "easings": [
+          {
+            "easing": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            "observations": 680
+          },
+          {
+            "easing": "ease",
+            "observations": 250
+          },
+          {
+            "easing": "cubic-bezier(0.19, 1, 0.22, 1)",
+            "observations": 12
+          },
+          {
+            "easing": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+            "observations": 6
+          },
+          {
+            "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+            "observations": 5
+          },
+          {
+            "easing": "linear",
+            "observations": 1
+          }
+        ],
+        "maximumCompositionSignals": {
+          "animations": 52,
+          "sticky": 0,
+          "fixed": 6,
+          "canvases": 0,
+          "videos": 9,
+          "clipped": 5
+        },
+        "librarySignals": {
+          "gsap": false,
+          "scrollTrigger": false,
+          "lenis": false,
+          "locomotiveScroll": false,
+          "barba": false,
+          "three": false,
+          "webflow": false,
+          "swiper": false,
+          "motion": false
+        },
+        "candidateMechanics": [
+          "cinematic-media-sequence",
+          "mask-or-curtain-reveal",
+          "staged-transform-opacity-reveal",
+          "layered-fixed-chrome"
+        ]
+      },
+      "runtime": {
+        "consoleMessages": 12,
+        "runtimeErrors": 0,
+        "requestFailures": 26
+      },
+      "humanReview": {
+        "status": "pending",
+        "requiredBeforePromotion": [
+          "Inspect entrance, scroll, mobile, and reduced-motion frames.",
+          "Name the information job and separate observation from inference.",
+          "Reject bot walls, incomplete loads, and misleading machine detections.",
+          "Create an original, visibly distinct reconstruction and document its publication-rights basis before publishing reusable code."
+        ]
+      },
+      "rights": {
+        "rawArtifactsPublished": false,
+        "publicSurface": "derived-mechanics-only",
+        "copiedCode": false,
+        "copiedAssets": false
+      }
+    },
+    {
+      "referenceId": "ref-035",
+      "sourceUrl": "https://linear.app",
+      "capturedAt": "2026-07-16T11:59:51.956Z",
+      "status": "machine-captured-needs-human-review",
+      "evidenceDigest": "357a06c5013d3f1b0294ca43aad114bd1e0d8e8ca619a489db501c573a13258a",
+      "evidenceDigestAlgorithm": "sha256-aggregate-artifact-set-v1",
+      "captureProfile": {
+        "evidenceTier": "benchmark",
+        "evidenceArtifactCount": 45,
+        "measurementCoverage": [
+          "screenshots",
+          "continuous-video",
+          "waapi-css-animation-sampling",
+          "element-animate-instrumentation",
+          "computed-composition-signals"
+        ],
+        "viewports": [
+          {
+            "id": "desktop",
+            "width": 1440,
+            "height": 900,
+            "deviceScaleFactor": 1
+          },
+          {
+            "id": "mobile",
+            "width": 393,
+            "height": 852,
+            "deviceScaleFactor": 3
+          }
+        ],
+        "entranceSamples": 7,
+        "scrollSamples": 10,
+        "reducedMotion": true,
+        "video": true,
+        "trace": false
+      },
+      "mechanics": {
+        "sampledAnimationInstances": 5613,
+        "maximumConcurrentAnimations": 139,
+        "durationBuckets": {
+          "instant": 0,
+          "micro": 0,
+          "component": 100,
+          "section": 17,
+          "signature": 5496,
+          "unknown": 0
+        },
+        "infiniteAnimations": 5302,
+        "animatedProperties": [
+          {
+            "property": "opacity",
+            "observations": 73315
+          },
+          {
+            "property": "transform",
+            "observations": 186
+          },
+          {
+            "property": "filter",
+            "observations": 94
+          },
+          {
+            "property": "visibility",
+            "observations": 90
+          },
+          {
+            "property": "backgroundPositionX",
+            "observations": 52
+          },
+          {
+            "property": "backgroundPositionY",
+            "observations": 52
+          }
+        ],
+        "easings": [
+          {
+            "easing": "linear",
+            "observations": 5412
+          },
+          {
+            "easing": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+            "observations": 141
+          },
+          {
+            "easing": "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+            "observations": 40
+          },
+          {
+            "easing": "ease-out",
+            "observations": 20
+          }
+        ],
+        "maximumCompositionSignals": {
+          "animations": 139,
+          "sticky": 0,
+          "fixed": 3,
+          "canvases": 0,
+          "videos": 0,
+          "clipped": 10
+        },
+        "librarySignals": {
+          "gsap": false,
+          "scrollTrigger": false,
+          "lenis": false,
+          "locomotiveScroll": false,
+          "barba": false,
+          "three": false,
+          "webflow": false,
+          "swiper": false,
+          "motion": false
+        },
+        "candidateMechanics": [
+          "mask-or-curtain-reveal",
+          "staged-transform-opacity-reveal",
+          "layered-fixed-chrome"
+        ]
+      },
+      "runtime": {
+        "consoleMessages": 0,
+        "runtimeErrors": 0,
+        "requestFailures": 21
+      },
+      "humanReview": {
+        "status": "pending",
+        "requiredBeforePromotion": [
+          "Inspect entrance, scroll, mobile, and reduced-motion frames.",
+          "Name the information job and separate observation from inference.",
+          "Reject bot walls, incomplete loads, and misleading machine detections.",
+          "Create an original, visibly distinct reconstruction and document its publication-rights basis before publishing reusable code."
+        ]
+      },
+      "rights": {
+        "rawArtifactsPublished": false,
+        "publicSurface": "derived-mechanics-only",
+        "copiedCode": false,
+        "copiedAssets": false
+      }
+    },
+    {
+      "referenceId": "ref-048",
+      "sourceUrl": "https://teenage.engineering",
+      "capturedAt": "2026-07-16T12:05:46.432Z",
+      "status": "machine-captured-needs-human-review",
+      "evidenceDigest": "b77c0213e98e2eb4db0af8f87a1cf11174dc2d1bddcdaca17572fe69f5b12c99",
+      "evidenceDigestAlgorithm": "sha256-aggregate-artifact-set-v1",
+      "captureProfile": {
+        "evidenceTier": "benchmark",
+        "evidenceArtifactCount": 45,
+        "measurementCoverage": [
+          "screenshots",
+          "continuous-video",
+          "waapi-css-animation-sampling",
+          "element-animate-instrumentation",
+          "computed-composition-signals"
+        ],
+        "viewports": [
+          {
+            "id": "desktop",
+            "width": 1440,
+            "height": 900,
+            "deviceScaleFactor": 1
+          },
+          {
+            "id": "mobile",
+            "width": 393,
+            "height": 852,
+            "deviceScaleFactor": 3
+          }
+        ],
+        "entranceSamples": 7,
+        "scrollSamples": 10,
+        "reducedMotion": true,
+        "video": true,
+        "trace": false
+      },
+      "mechanics": {
+        "sampledAnimationInstances": 0,
+        "maximumConcurrentAnimations": 0,
+        "durationBuckets": {
+          "instant": 0,
+          "micro": 0,
+          "component": 0,
+          "section": 0,
+          "signature": 0,
+          "unknown": 0
+        },
+        "infiniteAnimations": 0,
+        "animatedProperties": [],
+        "easings": [],
+        "maximumCompositionSignals": {
+          "animations": 0,
+          "sticky": 0,
+          "fixed": 3,
+          "canvases": 0,
+          "videos": 0,
+          "clipped": 30
+        },
+        "librarySignals": {
+          "gsap": false,
+          "scrollTrigger": false,
+          "lenis": false,
+          "locomotiveScroll": false,
+          "barba": false,
+          "three": false,
+          "webflow": false,
+          "swiper": false,
+          "motion": false
+        },
+        "candidateMechanics": [
+          "mask-or-curtain-reveal",
+          "layered-fixed-chrome"
+        ]
+      },
+      "runtime": {
+        "consoleMessages": 0,
+        "runtimeErrors": 0,
+        "requestFailures": 0
+      },
+      "humanReview": {
+        "status": "pending",
+        "requiredBeforePromotion": [
+          "Inspect entrance, scroll, mobile, and reduced-motion frames.",
+          "Name the information job and separate observation from inference.",
+          "Reject bot walls, incomplete loads, and misleading machine detections.",
+          "Create an original, visibly distinct reconstruction and document its publication-rights basis before publishing reusable code."
+        ]
+      },
+      "rights": {
+        "rawArtifactsPublished": false,
+        "publicSurface": "derived-mechanics-only",
+        "copiedCode": false,
+        "copiedAssets": false
+      }
+    },
+    {
+      "referenceId": "ref-070",
+      "sourceUrl": "https://eyes.nasa.gov",
+      "capturedAt": "2026-07-16T12:18:18.603Z",
+      "status": "machine-captured-needs-human-review",
+      "evidenceDigest": "71fe74955888187df425dd0e8b5ec5f0736e8805dfcd24f919e96dde9ccab994",
+      "evidenceDigestAlgorithm": "sha256-aggregate-artifact-set-v1",
+      "captureProfile": {
+        "evidenceTier": "benchmark",
+        "evidenceArtifactCount": 45,
+        "measurementCoverage": [
+          "screenshots",
+          "continuous-video",
+          "waapi-css-animation-sampling",
+          "element-animate-instrumentation",
+          "computed-composition-signals"
+        ],
+        "viewports": [
+          {
+            "id": "desktop",
+            "width": 1440,
+            "height": 900,
+            "deviceScaleFactor": 1
+          },
+          {
+            "id": "mobile",
+            "width": 393,
+            "height": 852,
+            "deviceScaleFactor": 3
+          }
+        ],
+        "entranceSamples": 7,
+        "scrollSamples": 10,
+        "reducedMotion": true,
+        "video": true,
+        "trace": false
+      },
+      "mechanics": {
+        "sampledAnimationInstances": 486,
+        "maximumConcurrentAnimations": 98,
+        "durationBuckets": {
+          "instant": 0,
+          "micro": 0,
+          "component": 123,
+          "section": 363,
+          "signature": 0,
+          "unknown": 0
+        },
+        "infiniteAnimations": 0,
+        "animatedProperties": [
+          {
+            "property": "visibility",
+            "observations": 972
+          }
+        ],
+        "easings": [
+          {
+            "easing": "ease",
+            "observations": 486
+          }
+        ],
+        "maximumCompositionSignals": {
+          "animations": 98,
+          "sticky": 0,
+          "fixed": 1,
+          "canvases": 0,
+          "videos": 1,
+          "clipped": 0
+        },
+        "librarySignals": {
+          "gsap": false,
+          "scrollTrigger": false,
+          "lenis": false,
+          "locomotiveScroll": false,
+          "barba": false,
+          "three": false,
+          "webflow": false,
+          "swiper": false,
+          "motion": false
+        },
+        "candidateMechanics": [
+          "cinematic-media-sequence"
+        ]
+      },
+      "runtime": {
+        "consoleMessages": 64,
+        "runtimeErrors": 0,
+        "requestFailures": 64
+      },
+      "humanReview": {
+        "status": "pending",
+        "requiredBeforePromotion": [
+          "Inspect entrance, scroll, mobile, and reduced-motion frames.",
+          "Name the information job and separate observation from inference.",
+          "Reject bot walls, incomplete loads, and misleading machine detections.",
+          "Create an original, visibly distinct reconstruction and document its publication-rights basis before publishing reusable code."
+        ]
+      },
+      "rights": {
+        "rawArtifactsPublished": false,
+        "publicSurface": "derived-mechanics-only",
+        "copiedCode": false,
+        "copiedAssets": false
+      }
+    }
+  ]
+}
