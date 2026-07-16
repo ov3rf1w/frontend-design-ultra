@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-design-ultra/benchmark/capture-profiles.schema.json",
+  "title": "Benchmark Capture Profiles",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "status", "readyMarker", "fontReadiness", "profiles", "motionSequence"],
+  "properties": {
+    "$schema": { "const": "schemas/capture-profiles.schema.json" },
+    "schemaVersion": { "const": 1 },
+    "status": { "enum": ["pending-toolchain-pin", "frozen"] },
+    "readyMarker": { "type": "string", "minLength": 5 },
+    "fontReadiness": { "const": true },
+    "profiles": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "width", "height", "deviceScaleFactor", "reducedMotion", "jury", "screenshots", "video"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "width": { "type": "integer", "minimum": 320, "maximum": 7680 },
+          "height": { "type": "integer", "minimum": 480, "maximum": 4320 },
+          "deviceScaleFactor": { "type": "number", "minimum": 1, "maximum": 4 },
+          "reducedMotion": { "enum": ["no-preference", "reduce"] },
+          "jury": { "type": "boolean" },
+          "screenshots": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "enum": ["first-viewport", "full-page", "motion-keyframes", "final-states"]
+            }
+          },
+          "video": { "type": "boolean" }
+        }
+      }
+    },
+    "motionSequence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "heroIdleMilliseconds",
+        "wheelDeltaPixels",
+        "pauseAfterWheelMilliseconds",
+        "pauseAtSectionMilliseconds",
+        "recordActualScrollPositions",
+        "recordActionsAndTimestamps"
+      ],
+      "properties": {
+        "heroIdleMilliseconds": { "type": "integer", "minimum": 0 },
+        "wheelDeltaPixels": { "type": "integer", "minimum": 1 },
+        "pauseAfterWheelMilliseconds": { "type": "integer", "minimum": 0 },
+        "pauseAtSectionMilliseconds": { "type": "integer", "minimum": 0 },
+        "recordActualScrollPositions": { "const": true },
+        "recordActionsAndTimestamps": { "const": true }
+      }
+    }
+  }
+}
