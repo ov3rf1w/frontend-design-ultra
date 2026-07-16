@@ -3,6 +3,10 @@ description: Suggest a new routing rule, protocol, or quality gate.
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Proposals should change observable behavior, routing, evidence quality, or release safety. Do not attach proprietary reference material.
   - type: textarea
     id: problem
     attributes:
@@ -17,6 +21,20 @@ body:
       description: Describe the smallest operational rule or output change that would help.
     validations:
       required: true
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Concrete use case
+      description: Provide a representative prompt, project type, and expected observable outcome.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What existing parameter, reference, or workflow did you try first?
+    validations:
+      required: false
   - type: dropdown
     id: area
     attributes:
@@ -29,7 +47,17 @@ body:
         - Mobile QA
         - Motion / 3D
         - Playwright verification
+        - Benchmark / evidence
+        - Installation / release
         - Documentation
     validations:
       required: true
-
+  - type: checkboxes
+    id: safeguards
+    attributes:
+      label: Submission safeguards
+      options:
+        - label: I searched existing issues and documentation for this capability.
+          required: true
+        - label: Any linked reference or asset is public and may be reviewed; no confidential customer material is included.
+          required: true
