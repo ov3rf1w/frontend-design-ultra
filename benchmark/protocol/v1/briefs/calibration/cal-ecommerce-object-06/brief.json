@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../schemas/brief.schema.json",
+  "schemaVersion": 1,
+  "id": "cal-ecommerce-object-06",
+  "split": "calibration",
+  "fictional": true,
+  "title": "Pendant Fixture E-06",
+  "industry": "ecommerce",
+  "projectType": "redesign",
+  "locale": "en-GB",
+  "audience": [
+    "design-conscious homeowners choosing a made-to-order pendant light",
+    "interior designers comparing material, size, lead time, and installation needs"
+  ],
+  "pageJob": "Help a buyer configure one fictional made-to-order pendant with confidence by making material, dimensions, price, lead time, installation, returns, and repairability legible.",
+  "targetAction": "Configure the pendant",
+  "facts": [
+    { "id": "materials", "statement": "The fictional pendant is available in brushed aluminium, oxidised brass, and blackened steel.", "publicClaimAllowed": true },
+    { "id": "sizes", "statement": "Diameter options are 320 mm, 480 mm, and 640 mm with dimension-specific prices of GBP 420, 560, and 720.", "publicClaimAllowed": true },
+    { "id": "lead-time", "statement": "The fictional made-to-order lead time is four to six weeks before dispatch.", "publicClaimAllowed": true },
+    { "id": "installation", "statement": "Hardwired ceiling installation by a qualified electrician is required; the ceiling rose and two-metre cable are included.", "publicClaimAllowed": true },
+    { "id": "returns", "statement": "Configured made-to-order pieces may be returned only for defect or damage; statutory rights are not reduced.", "publicClaimAllowed": true },
+    { "id": "repair", "statement": "The fictional LED module and driver are replaceable through a paid repair service for eight years after purchase.", "publicClaimAllowed": true }
+  ],
+  "requiredContent": [
+    "material and size selector with price updates",
+    "millimetre dimensions and installation requirement",
+    "four-to-six-week lead time before purchase action",
+    "made-to-order returns boundary and statutory-rights statement",
+    "replaceable module and eight-year repair-service information"
+  ],
+  "constraints": [
+    "Do not invent product photography, lifestyle rooms, reviews, awards, stock status, or sustainability certification.",
+    "Selection cannot depend on colour alone and must be keyboard operable.",
+    "Price, lead time, and selected configuration must stay synchronized.",
+    "Do not hide installation or returns information below an irreversible purchase action."
+  ],
+  "assetPolicy": {
+    "remoteAssets": false,
+    "generatedMedia": false,
+    "suppliedAssetCount": 0,
+    "instruction": "Use benchmark-authored CSS, material notation, dimension drawings, and configuration UI; no external product or lifestyle media is supplied."
+  },
+  "shippingBudgets": {
+    "maximumInitialJavaScriptKbGzip": 145,
+    "maximumImageBytes": 0,
+    "minimumTapTargetPx": 44,
+    "accessibilityTarget": "WCAG 2.2 AA practical floor; conformance requires complete evidence"
+  }
+}
