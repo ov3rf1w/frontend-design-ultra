@@ -4,9 +4,13 @@ Use when `/performance`, `/verify`, `/landing`, `/ecommerce`, `/mobile`, media-h
 
 ## Targets
 
+Use these as the `good` thresholds for real-user field/RUM data at the 75th percentile, segmented by device class and tied to a named source and date range:
+
 - LCP <= 2.5s
 - INP <= 200ms
 - CLS <= 0.1
+
+Lab runs are diagnostics, not field proof. Record tool/version, route, device/network profile, date, and run count; lab interaction traces can expose long tasks and event latency but cannot establish field INP. Never relabel a single Lighthouse run as a Core Web Vitals pass.
 
 ## LCP Debug
 
@@ -52,4 +56,3 @@ Fixes:
 - video hero: poster, muted, metadata preload, compressed WebM/MP4 fallback
 - image hero: responsive source, explicit dimensions, `sizes`, modern format
 - 3D/canvas: lazy load, static poster fallback, disable or simplify on mobile/reduced motion
-
