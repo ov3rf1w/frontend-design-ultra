@@ -12,3 +12,4 @@ Before opening an issue, include:
 
 Do not include private URLs, credentials, customer data, or confidential screenshots in public issues.
 
+For a rights, attribution, removal, privacy, or confidential-data concern, use the private process in [RIGHTS.md](RIGHTS.md). If private reporting is unavailable, open only a minimal issue asking for a private contact and omit the sensitive details.
