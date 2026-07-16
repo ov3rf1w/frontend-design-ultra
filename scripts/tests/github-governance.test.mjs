@@ -127,18 +127,22 @@ test("DCO range checker fails on any unsigned PR commit and passes after repair"
   await git("-c", "commit.gpgsign=false", "commit", "--signoff", "-m", "Base");
   const base = await git("rev-parse", "HEAD");
 
-  await writeFile(path.join(root, "fixture.txt"), "head\n");
+  await writeFile(path.join(root, "fixture.txt"), "signed head\n");
+  await git("add", "fixture.txt");
+  await git("-c", "commit.gpgsign=false", "commit", "--signoff", "-m", "Signed change");
+
+  await writeFile(path.join(root, "fixture.txt"), "unsigned head\n");
   await git("add", "fixture.txt");
   await git("-c", "commit.gpgsign=false", "commit", "-m", "Unsigned change");
   const unsignedHead = await git("rev-parse", "HEAD");
   await assert.rejects(
     checkDcoRange({ root, base, head: unsignedHead }),
-    /DCO verification failed for 1 of 1/,
+    /DCO verification failed for 1 of 2/,
   );
 
   await git("-c", "commit.gpgsign=false", "commit", "--amend", "--signoff", "--no-edit");
   const signedHead = await git("rev-parse", "HEAD");
   const result = await checkDcoRange({ root, base, head: signedHead });
-  assert.equal(result.commits.length, 1);
-  assert.equal(result.commits[0], signedHead);
+  assert.equal(result.commits.length, 2);
+  assert.equal(result.commits.at(-1), signedHead);
 });
