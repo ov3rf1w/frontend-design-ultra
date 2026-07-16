@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Frontend Design Ultra Derived Reference Observations",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "generatedAt", "sourceCorpusVersion", "observationCount", "rightsPolicy", "observations"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 2 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "sourceCorpusVersion": { "type": "string" },
+    "observationCount": { "type": "integer", "minimum": 0 },
+    "rightsPolicy": { "const": "source-links-and-derived-mechanics-only" },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["referenceId", "sourceUrl", "capturedAt", "status", "evidenceDigest", "evidenceDigestAlgorithm", "captureProfile", "mechanics", "runtime", "humanReview", "rights"],
+        "properties": {
+          "referenceId": { "type": "string", "pattern": "^ref-[0-9]{3}$" },
+          "sourceUrl": { "type": "string", "pattern": "^https://" },
+          "capturedAt": { "type": "string", "format": "date-time" },
+          "status": { "const": "machine-captured-needs-human-review" },
+          "evidenceDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "evidenceDigestAlgorithm": { "const": "sha256-aggregate-artifact-set-v1" },
+          "captureProfile": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["evidenceTier", "evidenceArtifactCount", "measurementCoverage", "viewports", "entranceSamples", "scrollSamples", "reducedMotion", "video", "trace"],
+            "properties": {
+              "evidenceTier": { "enum": ["exploratory", "benchmark"] },
+              "evidenceArtifactCount": { "type": "integer", "minimum": 1 },
+              "measurementCoverage": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+              "viewports": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["id", "width", "height", "deviceScaleFactor"],
+                  "properties": {
+                    "id": { "enum": ["desktop", "mobile"] },
+                    "width": { "type": "integer", "minimum": 1 },
+                    "height": { "type": "integer", "minimum": 1 },
+                    "deviceScaleFactor": { "type": "number", "exclusiveMinimum": 0 }
+                  }
+                }
+              },
+              "entranceSamples": { "type": "integer", "minimum": 1 },
+              "scrollSamples": { "type": "integer", "minimum": 1 },
+              "reducedMotion": { "type": "boolean" },
+              "video": { "type": "boolean" },
+              "trace": { "type": "boolean" }
+            }
+          },
+          "mechanics": { "type": "object" },
+          "runtime": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["consoleMessages", "runtimeErrors", "requestFailures"],
+            "properties": {
+              "consoleMessages": { "type": "integer", "minimum": 0 },
+              "runtimeErrors": { "type": "integer", "minimum": 0 },
+              "requestFailures": { "type": "integer", "minimum": 0 }
+            }
+          },
+          "humanReview": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["status", "requiredBeforePromotion"],
+            "properties": {
+              "status": { "const": "pending" },
+              "requiredBeforePromotion": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+            }
+          },
+          "rights": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["rawArtifactsPublished", "publicSurface", "copiedCode", "copiedAssets"],
+            "properties": {
+              "rawArtifactsPublished": { "const": false },
+              "publicSurface": { "const": "derived-mechanics-only" },
+              "copiedCode": { "const": false },
+              "copiedAssets": { "const": false }
+            }
+          }
+        }
+      }
+    }
+  }
+}
