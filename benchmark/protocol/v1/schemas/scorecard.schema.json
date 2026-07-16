@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-design-ultra/benchmark/scorecard.schema.json",
+  "title": "Deterministic Benchmark Scorecard",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "benchmarkVersion", "status", "inputs", "method", "creative", "shipping", "claimEligibility"],
+  "properties": {
+    "$schema": { "const": "../../protocol/v1/schemas/scorecard.schema.json" },
+    "schemaVersion": { "const": 1 },
+    "benchmarkVersion": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$" },
+    "status": { "const": "computed" },
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blindPacketSha256", "voteFreezeSha256", "juryRevealSha256", "runManifestSetSha256"],
+      "properties": {
+        "blindPacketSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "voteFreezeSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "juryRevealSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "runManifestSetSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "method": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "tiePointsNumerator", "tiePointsDenominator", "bootstrap"],
+      "properties": {
+        "id": { "const": "fdu-score-v1" },
+        "tiePointsNumerator": { "const": 1 },
+        "tiePointsDenominator": { "const": 2 },
+        "bootstrap": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["algorithm", "iterations", "confidenceLevelPpm", "seedSha256"],
+          "properties": {
+            "algorithm": { "const": "sha256-counter-brief-bootstrap-v1" },
+            "iterations": { "const": 10000 },
+            "confidenceLevelPpm": { "const": 950000 },
+            "seedSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+          }
+        }
+      }
+    },
+    "creative": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary"],
+      "properties": {
+        "primary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["conditionId", "comparatorConditionId", "wins", "losses", "ties", "validVotes", "invalidVotes", "pointsTwice", "possiblePointsTwice", "preferenceSharePpm", "briefClusters", "ci95"],
+          "properties": {
+            "conditionId": { "const": "frontend-design-ultra" },
+            "comparatorConditionId": { "const": "baseline-no-design-skill" },
+            "wins": { "type": "integer", "minimum": 0 },
+            "losses": { "type": "integer", "minimum": 0 },
+            "ties": { "type": "integer", "minimum": 0 },
+            "validVotes": { "type": "integer", "minimum": 1 },
+            "invalidVotes": { "type": "integer", "minimum": 0 },
+            "pointsTwice": { "type": "integer", "minimum": 0 },
+            "possiblePointsTwice": { "type": "integer", "minimum": 2 },
+            "preferenceSharePpm": { "type": "integer", "minimum": 0, "maximum": 1000000 },
+            "briefClusters": { "type": "integer", "minimum": 1 },
+            "ci95": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["lowerPpm", "upperPpm"],
+              "properties": {
+                "lowerPpm": { "type": "integer", "minimum": 0, "maximum": 1000000 },
+                "upperPpm": { "type": "integer", "minimum": 0, "maximum": 1000000 }
+              }
+            }
+          }
+        }
+      }
+    },
+    "shipping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["byCondition", "nonInferiority"],
+      "properties": {
+        "byCondition": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["conditionId", "totalRuns", "successfulRuns", "conditionFailures", "infrastructureInvalid", "pendingRuns", "successRatePpm"],
+            "properties": {
+              "conditionId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+              "totalRuns": { "type": "integer", "minimum": 1 },
+              "successfulRuns": { "type": "integer", "minimum": 0 },
+              "conditionFailures": { "type": "integer", "minimum": 0 },
+              "infrastructureInvalid": { "type": "integer", "minimum": 0 },
+              "pendingRuns": { "type": "integer", "minimum": 0 },
+              "successRatePpm": { "type": "integer", "minimum": 0, "maximum": 1000000 }
+            }
+          }
+        },
+        "nonInferiority": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["marginPpm", "differencePpm", "passes"],
+          "properties": {
+            "marginPpm": { "const": 50000 },
+            "differencePpm": { "type": "integer", "minimum": -1000000, "maximum": 1000000 },
+            "passes": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "claimEligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["improvementVsBaseline"],
+      "properties": {
+        "improvementVsBaseline": { "type": "boolean" }
+      }
+    }
+  }
+}
