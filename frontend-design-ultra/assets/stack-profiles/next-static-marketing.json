@@ -1,0 +1,62 @@
+{
+  "profileVersion": 1,
+  "id": "next-static-marketing",
+  "purpose": "Capability contract for an independently versioned Next.js App Router marketing or editorial starter using static export.",
+  "detection": {
+    "framework": "Next.js",
+    "router": "App Router",
+    "rendering": "Static export"
+  },
+  "versionPolicy": {
+    "authority": ["package.json", "lockfile", "green compatibility CI"],
+    "rule": "Verify current stable compatible releases in primary documentation, then pin and test them in the starter. Do not copy package ranges from skill prose."
+  },
+  "requiredMachineCapabilities": [
+    "static-out-preview",
+    "semantic-css-tokens",
+    "lint",
+    "typecheck",
+    "production-build",
+    "browser-test-harness"
+  ],
+  "expectedScripts": [
+    "lint",
+    "typecheck",
+    "build",
+    "preview",
+    "test:e2e"
+  ],
+  "optionalCapabilities": [
+    "gsap-and-usegsap",
+    "opt-in-lenis",
+    "cms-backed-content",
+    "seo-verification",
+    "axe-smoke"
+  ],
+  "rejectedMachineDefaults": [
+    "next-start-as-static-export-preview",
+    "experimental-framework-flags"
+  ],
+  "manualReviewCapabilities": [
+    "server-components-by-default",
+    "small-client-motion-leaves",
+    "responsive-evidence",
+    "reduced-motion-evidence"
+  ],
+  "manualRiskChecks": [
+    "request-time-server-features-without-runtime",
+    "global-client-component-sections",
+    "global-scrolltrigger-cleanup",
+    "automatic-smooth-scroll",
+    "autoplay-media-without-motion-and-control-policy"
+  ],
+  "projectArtifacts": [
+    "brief",
+    "research",
+    "design-contract",
+    "page-spec",
+    "asset-budget",
+    "seo",
+    "quality-gates"
+  ]
+}
