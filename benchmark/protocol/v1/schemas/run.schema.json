@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-design-ultra/benchmark/run.schema.json",
+  "title": "Benchmark Run Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "benchmarkVersion", "runId", "briefId", "conditionId", "replicate", "status", "selectedAttempt", "attemptHistory", "pins", "usage", "checkpoints", "artifacts", "failure"],
+  "properties": {
+    "$schema": { "type": "string", "minLength": 1 },
+    "schemaVersion": { "const": 1 },
+    "benchmarkVersion": { "type": "string", "minLength": 1 },
+    "runId": { "type": "string", "minLength": 5 },
+    "briefId": { "type": "string", "minLength": 3 },
+    "conditionId": { "type": "string", "minLength": 3 },
+    "replicate": { "type": "integer", "minimum": 1 },
+    "status": { "enum": ["pending", "success", "condition-failure", "infrastructure-invalid"] },
+    "selectedAttempt": { "type": ["integer", "null"], "minimum": 1 },
+    "attemptHistory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["ordinal", "attemptId", "startedAt", "completedAt", "status", "finalSourceSha256", "usage", "failure", "captureAttempts", "selectedCapture"],
+        "properties": {
+          "ordinal": { "type": "integer", "minimum": 1 },
+          "attemptId": { "type": "string", "minLength": 8 },
+          "startedAt": { "type": "string", "format": "date-time" },
+          "completedAt": { "type": "string", "format": "date-time" },
+          "status": { "enum": ["success", "condition-failure", "infrastructure-invalid"] },
+          "finalSourceSha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+          "usage": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["inputTokens", "outputTokens", "toolCalls", "wallClockSeconds", "repairLoops"],
+            "properties": {
+              "inputTokens": { "type": "integer", "minimum": 0 },
+              "outputTokens": { "type": "integer", "minimum": 0 },
+              "toolCalls": { "type": "integer", "minimum": 0 },
+              "wallClockSeconds": { "type": "integer", "minimum": 0 },
+              "repairLoops": { "type": "integer", "minimum": 0 }
+            }
+          },
+          "failure": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "required": ["category", "code", "message", "retryEligible", "originalAttemptRetained"],
+            "properties": {
+              "category": { "enum": ["condition", "infrastructure"] },
+              "code": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]+$" },
+              "message": { "type": "string", "minLength": 10 },
+              "retryEligible": { "type": "boolean" },
+              "originalAttemptRetained": { "const": true }
+            }
+          },
+          "captureAttempts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["ordinal", "startedAt", "completedAt", "status", "sourceSha256", "artifactSetSha256", "failure"],
+              "properties": {
+                "ordinal": { "type": "integer", "minimum": 1 },
+                "startedAt": { "type": "string", "format": "date-time" },
+                "completedAt": { "type": "string", "format": "date-time" },
+                "status": { "enum": ["success", "infrastructure-invalid"] },
+                "sourceSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+                "artifactSetSha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+                "failure": {
+                  "type": ["object", "null"],
+                  "additionalProperties": false,
+                  "required": ["code", "message"],
+                  "properties": {
+                    "code": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]+$" },
+                    "message": { "type": "string", "minLength": 10 }
+                  }
+                }
+              }
+            }
+          },
+          "selectedCapture": { "type": ["integer", "null"], "minimum": 1 }
+        }
+      }
+    },
+    "pins": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model", "modelConfigurationSha256", "starterCommit", "starterLockfileSha256", "conditionCommit", "conditionContextSha256", "briefSha256", "environmentDigest"],
+      "properties": {
+        "model": { "type": "string", "minLength": 1 },
+        "modelConfigurationSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "starterCommit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "starterLockfileSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "conditionCommit": { "type": ["string", "null"], "pattern": "^[a-f0-9]{40}$" },
+        "conditionContextSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "briefSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "environmentDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputTokens", "outputTokens", "toolCalls", "wallClockSeconds", "repairLoops"],
+      "properties": {
+        "inputTokens": { "type": "integer", "minimum": 0 },
+        "outputTokens": { "type": "integer", "minimum": 0 },
+        "toolCalls": { "type": "integer", "minimum": 0 },
+        "wallClockSeconds": { "type": "integer", "minimum": 0 },
+        "repairLoops": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "checkpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "createdAt", "sourceSha256"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "createdAt": { "type": "string", "format": "date-time" },
+          "sourceSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["evidenceType", "path", "mediaType", "bytes", "sha256", "capture"],
+        "properties": {
+          "evidenceType": {
+            "enum": [
+              "desktop-first-viewport",
+              "desktop-full-page",
+              "desktop-motion",
+              "mobile-first-viewport",
+              "mobile-full-page",
+              "mobile-motion"
+            ]
+          },
+          "path": { "type": "string", "minLength": 1 },
+          "mediaType": { "type": "string", "pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+$" },
+          "bytes": { "type": "integer", "minimum": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "capture": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["profileId", "width", "height", "durationMs", "frameCount", "actionTimelineSha256", "capturedAt", "probe"],
+            "properties": {
+              "profileId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+              "width": { "type": "integer", "minimum": 320, "maximum": 7680 },
+              "height": { "type": "integer", "minimum": 1, "maximum": 50000 },
+              "durationMs": { "type": "integer", "minimum": 0 },
+              "frameCount": { "type": "integer", "minimum": 1 },
+              "actionTimelineSha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+              "capturedAt": { "type": "string", "format": "date-time" },
+              "probe": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["tool", "version", "decodable"],
+                "properties": {
+                  "tool": { "type": "string", "minLength": 1 },
+                  "version": { "type": "string", "minLength": 1 },
+                  "decodable": { "const": true }
+                }
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "type": "object",
+              "properties": {
+                "evidenceType": { "enum": ["desktop-motion", "mobile-motion"] }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "mediaType": { "enum": ["video/mp4", "video/webm"] },
+                "capture": {
+                  "type": "object",
+                  "properties": {
+                    "durationMs": { "type": "integer", "minimum": 3000 },
+                    "frameCount": { "type": "integer", "minimum": 2 },
+                    "actionTimelineSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+                  }
+                }
+              }
+            },
+            "else": {
+              "type": "object",
+              "properties": {
+                "mediaType": { "enum": ["image/jpeg", "image/png", "image/webp"] },
+                "capture": {
+                  "type": "object",
+                  "properties": {
+                    "durationMs": { "const": 0 },
+                    "frameCount": { "const": 1 },
+                    "actionTimelineSha256": { "type": "null" }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "failure": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["category", "code", "message", "retryEligible", "originalAttemptRetained"],
+      "properties": {
+        "category": { "enum": ["condition", "infrastructure"] },
+        "code": { "type": "string", "pattern": "^[A-Z][A-Z0-9_]+$" },
+        "message": { "type": "string", "minLength": 10 },
+        "retryEligible": { "type": "boolean" },
+        "originalAttemptRetained": { "const": true }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "type": "object", "properties": { "status": { "const": "success" } } },
+      "then": {
+        "type": "object",
+        "properties": {
+          "artifacts": { "type": "array", "minItems": 6, "maxItems": 6 },
+          "failure": { "type": "null" },
+          "selectedAttempt": { "type": "integer", "minimum": 1 },
+          "attemptHistory": { "type": "array", "minItems": 1 }
+        }
+      },
+      "else": {
+        "type": "object",
+        "if": { "type": "object", "properties": { "status": { "enum": ["condition-failure", "infrastructure-invalid"] } } },
+        "then": {
+          "type": "object",
+          "properties": {
+            "failure": {
+              "type": "object",
+              "minProperties": 1
+            },
+            "selectedAttempt": { "type": "integer", "minimum": 1 },
+            "attemptHistory": { "type": "array", "minItems": 1 }
+          }
+        },
+        "else": {
+          "type": "object",
+          "properties": {
+            "artifacts": { "type": "array", "maxItems": 0 },
+            "failure": { "type": "null" },
+            "selectedAttempt": { "type": "null" },
+            "attemptHistory": { "type": "array", "maxItems": 0 }
+          }
+        }
+      }
+    },
+    {
+      "if": { "type": "object", "properties": { "status": { "const": "condition-failure" } } },
+      "then": {
+        "type": "object",
+        "properties": {
+          "failure": {
+            "type": "object",
+            "properties": {
+              "category": { "const": "condition" },
+              "retryEligible": { "const": false }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": { "type": "object", "properties": { "status": { "const": "infrastructure-invalid" } } },
+      "then": {
+        "type": "object",
+        "properties": {
+          "failure": {
+            "type": "object",
+            "properties": {
+              "category": { "const": "infrastructure" },
+              "retryEligible": { "const": true }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
