@@ -1,0 +1,13 @@
+{
+  "$schema": "../../../../schemas/provenance.schema.json",
+  "schemaVersion": 1,
+  "briefId": "cal-saas-work-05",
+  "factsProvenance": {
+    "kind": "benchmark-authored-fixture",
+    "author": "Frontend Design Ultra benchmark maintainers",
+    "fictional": true,
+    "externalClaims": false
+  },
+  "assets": [],
+  "redistributionStatus": "no-third-party-assets"
+}
