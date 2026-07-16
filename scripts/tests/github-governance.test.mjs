@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { execFile } from "node:child_process";
-import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -31,7 +31,7 @@ test("repository workflows preserve the release permission boundary and DCO cont
 
 test("all external workflow actions use immutable full commit pins", async () => {
   const workflows = path.join(repositoryRoot, ".github", "workflows");
-  for (const file of await (await import("node:fs/promises")).readdir(workflows)) {
+  for (const file of await readdir(workflows)) {
     if (!/\.ya?ml$/i.test(file)) continue;
     const source = await readFile(path.join(workflows, file), "utf8");
     for (const line of source.split(/\r?\n/)) {
