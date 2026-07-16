@@ -1,0 +1,101 @@
+{
+  "$schema": "schemas/protocol.schema.json",
+  "schemaVersion": 1,
+  "benchmarkVersion": "v1-calibration-mvp",
+  "evidenceTier": "calibration",
+  "status": "pending",
+  "resultsStatus": "pending",
+  "createdDate": "2026-07-15",
+  "objective": "Measure whether Frontend Design Ultra improves premium multi-industry website outcomes under equal model, stack, asset, tool, and budget conditions.",
+  "scope": {
+    "calibrationBriefs": 6,
+    "scoredBriefTarget": 30,
+    "publicScoredBriefTarget": 20,
+    "sealedHoldoutTarget": 10,
+    "replicatesPerCondition": 3
+  },
+  "conditionIds": [
+    "baseline-no-design-skill",
+    "frontend-design-ultra",
+    "compact-subject-grounded",
+    "workflow-detector"
+  ],
+  "tracks": [
+    {
+      "id": "frozen-assets-primary",
+      "status": "pending",
+      "networkDuringRun": false,
+      "imageGenerationCalls": 0,
+      "description": "All conditions receive the same frozen facts, content requirements, and original benchmark asset packet."
+    },
+    {
+      "id": "reference-assisted-secondary",
+      "status": "deferred",
+      "networkDuringRun": false,
+      "imageGenerationCalls": 0,
+      "description": "All conditions receive the same original, licensed, or otherwise permitted mechanics-level reference packet with documented publication rights."
+    }
+  ],
+  "budgets": {
+    "maximumWallClockMinutes": 50,
+    "maximumTotalTokens": 120000,
+    "maximumToolCalls": 120,
+    "maximumRepairLoops": 2,
+    "maximumGenerationAttempts": 2,
+    "maximumCaptureAttemptsPerGeneration": 2,
+    "humanCodeEdits": 0
+  },
+  "primaryEndpoint": {
+    "id": "blind-pairwise-preference-vs-baseline",
+    "description": "Condition-blind pairwise preference share for final Frontend Design Ultra outputs versus the no-design-skill baseline.",
+    "tieValue": 0.5,
+    "confidenceInterval": "95% brief-clustered bootstrap"
+  },
+  "creativeDimensions": [
+    { "id": "design", "weight": 0.4 },
+    { "id": "usability", "weight": 0.3 },
+    { "id": "creativity", "weight": 0.2 },
+    { "id": "content", "weight": 0.1 }
+  ],
+  "shippingGates": [
+    "build-and-route-completion",
+    "semantic-and-keyboard-accessibility",
+    "responsive-fit-and-content-integrity",
+    "runtime-console-and-network-health",
+    "reduced-motion-completeness",
+    "agreed-performance-budget",
+    "truthful-proof-and-public-output-integrity"
+  ],
+  "jury": {
+    "minimumIndependentJurors": 5,
+    "minimumValidVotesPerComparison": 3,
+    "minimumIndependentPanelShare": 0.5,
+    "identifierMode": "pseudonymous",
+    "consentRequired": true,
+    "consentRecords": "private-not-published",
+    "privateIdentityMapRetentionDays": 180,
+    "privateConsentRecordRetentionDays": 730,
+    "publicVoteData": "pseudonymous-redacted",
+    "freeTextRedactionRequired": true,
+    "invalidVotePolicy": "reason-required-no-dimension-scores"
+  },
+  "randomization": {
+    "conditionLabelsHidden": true,
+    "leftRightRandomized": true,
+    "assignmentOrderRandomized": true,
+    "mappingRevealedAfterVoteFreeze": true
+  },
+  "holdout": {
+    "status": "pending",
+    "commitmentAlgorithm": "sha256-salted-freeze-bound-canonical-manifest-v3",
+    "revealAfterVoteFreeze": true
+  },
+  "publication": {
+    "publishFailedRuns": true,
+    "publishPseudonymousRedactedVotes": true,
+    "publishExactConditionPins": true,
+    "publishKnownLimitations": true,
+    "largeArtifactsByDigest": true,
+    "publishRightsReview": true
+  }
+}
