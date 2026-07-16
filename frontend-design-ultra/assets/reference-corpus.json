@@ -1,0 +1,1710 @@
+{
+  "$schema": "./reference-corpus.schema.json",
+  "schemaVersion": "1.2.0",
+  "capturedAt": "2026-07-15",
+  "datasetStatus": "mixed-lifecycle",
+  "entryCount": 76,
+  "statusCounts": {
+    "candidate": 76,
+    "scanned": 0,
+    "promoted": 0,
+    "retired": 0
+  },
+  "observationCatalog": "./reference-observations.json",
+  "observationCount": 7,
+  "scanOutcomeCatalog": "./reference-scan-outcomes.json",
+  "scanOutcomeCount": 20,
+  "methodology": {
+    "scope": "A deliberately diverse public corpus spanning hospitality, editorial, luxury, agencies, SaaS, ecommerce, legal, finance, healthcare, data storytelling and spatial experiments.",
+    "candidateMeaning": "Every hero and motion description is a research hypothesis, not a verified claim about the current live implementation.",
+    "reachabilityMethod": "A redirect-following HTTP probe was run on 2026-07-15; it was not a browser render, interaction test or rights review.",
+    "promotionRule": "A candidate may become scanned only after documented Playwright evidence across desktop, mobile and reduced-motion states plus completed human visual review; promotion additionally requires a reusable mechanic, original reconstruction guidance and an explicit publication-rights classification."
+  },
+  "rightsPolicy": {
+    "publicData": [
+      "source URLs",
+      "derived taxonomy",
+      "scan metadata",
+      "abstracted mechanics",
+      "original reconstruction guidance"
+    ],
+    "excludedData": [
+      "third-party screenshots without permission",
+      "third-party videos without permission",
+      "copied production source code",
+      "third-party fonts or brand assets",
+      "private filesystem paths"
+    ],
+    "captureRule": "Raw third-party captures remain private unless publication rights are documented; public evidence uses links, permitted excerpts or original recreations.",
+    "implementationRule": "Reproduce the mechanic with original code and licensed or original assets; never present copied third-party implementation or assets as repository-owned work."
+  },
+  "entries": [
+    {
+      "id": "ref-001",
+      "title": "Son Daven",
+      "sourceUrl": "https://sondaven.com",
+      "status": "candidate",
+      "industry": "hospitality and resort investment",
+      "designLane": "cinematic-immersion",
+      "heroMechanicHypothesis": "A loading prologue opens into a place-led mountain and architecture narrative.",
+      "motionSignatureHypothesis": "Preloader progression, seasonal states, scroll chapters and image galleries.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["long-form page", "media-heavy", "preloader state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "notes": "Redirected to the Ukrainian locale during the reachability check.",
+        "discoveryReferences": [
+          {
+            "url": "https://www.awwwards.com/websites/hotel-restaurant/",
+            "relationship": "award-directory-category",
+            "verification": "discovery-only"
+          }
+        ]
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-002",
+      "title": "Salterra Resort & Spa",
+      "sourceUrl": "https://www.salterra.com",
+      "status": "candidate",
+      "industry": "luxury hospitality",
+      "designLane": "calm-luxury",
+      "heroMechanicHypothesis": "Full-bleed coastal imagery establishes a quiet, high-value destination world.",
+      "motionSignatureHypothesis": "Images appear to float toward center through scroll, sliders and restrained parallax.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large photography", "scroll effects", "booking context"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "discoveryReferences": [
+          {
+            "url": "https://www.awwwards.com/sites/salterra-resort-spa",
+            "relationship": "award-site-profile",
+            "verification": "discovery-only"
+          }
+        ]
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-003",
+      "title": "Units",
+      "sourceUrl": "https://units.gr",
+      "status": "candidate",
+      "industry": "hospitality and food",
+      "designLane": "expressive-typography",
+      "heroMechanicHypothesis": "A high-impact type and image takeover introduces the venue.",
+      "motionSignatureHypothesis": "Loader, elastic reveals and strong scroll rhythm.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["verification wall", "automation challenge", "unknown post-challenge states"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200-challenge",
+        "discoveryReferences": [
+          {
+            "url": "https://www.awwwards.com/websites/hotel-restaurant/",
+            "relationship": "award-directory-category",
+            "verification": "discovery-only"
+          }
+        ]
+      },
+      "scanPriority": "fallback"
+    },
+    {
+      "id": "ref-004",
+      "title": "Here & Away",
+      "sourceUrl": "https://www.here-away.com",
+      "status": "candidate",
+      "industry": "travel discovery and hospitality commerce",
+      "designLane": "archive-catalog",
+      "heroMechanicHypothesis": "Rotating destinations connect editorial discovery with a searchable stay catalog.",
+      "motionSignatureHypothesis": "Image swaps, filters, card transitions and travel-mood interactions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large image catalog", "filters", "commerce states"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "discoveryReferences": [
+          {
+            "url": "https://www.awwwards.com/websites/hotel-restaurant/",
+            "relationship": "award-directory-category",
+            "verification": "discovery-only"
+          }
+        ]
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-005",
+      "title": "The Bend Club",
+      "sourceUrl": "https://www.thebendclub.com",
+      "status": "candidate",
+      "industry": "luxury residence club",
+      "designLane": "calm-luxury",
+      "heroMechanicHypothesis": "A river-led headline and landscape imagery frame a small premium residence concept.",
+      "motionSignatureHypothesis": "Measured reveals and a morning-to-evening lifestyle montage.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "low",
+        "reasons": ["compact concept site"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "discoveryReferences": [
+          {
+            "url": "https://www.awwwards.com/websites/hotel-restaurant/",
+            "relationship": "award-directory-category",
+            "verification": "discovery-only"
+          }
+        ]
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-006",
+      "title": "Hotel Corazon",
+      "sourceUrl": "https://hotelcorazon.com",
+      "status": "candidate",
+      "industry": "boutique hospitality",
+      "designLane": "editorial-engine",
+      "heroMechanicHypothesis": "Landscape and art are composed as an organic editorial collage.",
+      "motionSignatureHypothesis": "Layered collage, tactile parallax and route-like story reveals.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["verification wall", "automation challenge"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200-challenge"
+      },
+      "scanPriority": "fallback"
+    },
+    {
+      "id": "ref-007",
+      "title": "Fogo Island Inn",
+      "sourceUrl": "https://www.fogoislandinn.ca",
+      "status": "candidate",
+      "industry": "place-based hospitality",
+      "designLane": "editorial-engine",
+      "heroMechanicHypothesis": "Architecture is framed directly against remote landscape and local context.",
+      "motionSignatureHypothesis": "Restrained fades, maps and story transitions preserve a documentary tone.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large photography", "multi-page content"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-008",
+      "title": "Aman",
+      "sourceUrl": "https://www.aman.com",
+      "status": "candidate",
+      "industry": "global luxury hospitality",
+      "designLane": "calm-luxury",
+      "heroMechanicHypothesis": "A destination image or film carries a global luxury navigation system.",
+      "motionSignatureHypothesis": "Slow crossfades, map states and restrained carousel movement.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["geo state", "consent state", "large media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-009",
+      "title": "Waldhaus Sils",
+      "sourceUrl": "https://www.waldhaus-sils.ch",
+      "status": "candidate",
+      "industry": "heritage hospitality",
+      "designLane": "editorial-engine",
+      "heroMechanicHypothesis": "Alpine history and hospitality are introduced through an archival visual frame.",
+      "motionSignatureHypothesis": "Archive and image-panel reveals with restrained navigation transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["multilingual states", "booking integration"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-010",
+      "title": "Reverie Safaris",
+      "sourceUrl": "https://reveriesafaris.com",
+      "status": "candidate",
+      "industry": "luxury travel and safari",
+      "designLane": "cinematic-immersion",
+      "heroMechanicHypothesis": "Wildlife and landscape imagery establish an immersive itinerary world.",
+      "motionSignatureHypothesis": "Slow pans, measured reveals and itinerary transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large photography", "media-led transitions"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "discoveryReferences": [
+          {
+            "url": "https://www.awwwards.com/websites/hotel-restaurant/",
+            "relationship": "award-directory-category",
+            "verification": "discovery-only"
+          }
+        ]
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-011",
+      "title": "WePresent",
+      "sourceUrl": "https://wepresent.wetransfer.com",
+      "status": "candidate",
+      "industry": "culture and editorial publishing",
+      "designLane": "editorial-engine",
+      "heroMechanicHypothesis": "A modular story collage supports frequently changing art directions.",
+      "motionSignatureHypothesis": "Hover image swaps, section reveals and content filters.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large editorial archive", "variable story templates"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-012",
+      "title": "NOWNESS",
+      "sourceUrl": "https://www.nowness.com",
+      "status": "candidate",
+      "industry": "film and culture publishing",
+      "designLane": "cinematic-immersion",
+      "heroMechanicHypothesis": "A featured film leads a visually quiet editorial interface.",
+      "motionSignatureHypothesis": "Autoplay loops, carousels and hover previews.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["video autoplay", "consent state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-013",
+      "title": "MUBI Notebook",
+      "sourceUrl": "https://mubi.com/en/notebook",
+      "status": "candidate",
+      "industry": "film criticism and publishing",
+      "designLane": "editorial-engine",
+      "heroMechanicHypothesis": "A dense article lead prioritizes reading and cinema imagery.",
+      "motionSignatureHypothesis": "Restrained article and media transitions.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["geo context", "account state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-014",
+      "title": "Monocle",
+      "sourceUrl": "https://monocle.com",
+      "status": "candidate",
+      "industry": "news and lifestyle publishing",
+      "designLane": "editorial-engine",
+      "heroMechanicHypothesis": "A lead-story grid balances current affairs, lifestyle and commercial content.",
+      "motionSignatureHypothesis": "Measured hover and carousel movement.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["subscription context", "large publishing surface"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-015",
+      "title": "It's Nice That",
+      "sourceUrl": "https://www.itsnicethat.com",
+      "status": "candidate",
+      "industry": "creative culture publishing",
+      "designLane": "editorial-engine",
+      "heroMechanicHypothesis": "A graphic story collage creates a playful editorial entry point.",
+      "motionSignatureHypothesis": "Cursor states, hover previews and image swaps.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["advertising state", "consent state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-016",
+      "title": "Dropbox Brand",
+      "sourceUrl": "https://brand.dropbox.com",
+      "status": "candidate",
+      "industry": "brand system and archive",
+      "designLane": "archive-catalog",
+      "heroMechanicHypothesis": "An oversized identity frame introduces an explorable brand system.",
+      "motionSignatureHypothesis": "Reels, icon motion and category transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large brand archive", "media reels"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "discoveryReferences": [
+          {
+            "url": "https://www.cssdesignawards.com/blog/2025-website-of-the-year-winners/430/",
+            "relationship": "award-editorial-article",
+            "verification": "discovery-only"
+          }
+        ]
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-017",
+      "title": "Loewe",
+      "sourceUrl": "https://www.loewe.com",
+      "status": "candidate",
+      "industry": "luxury fashion ecommerce",
+      "designLane": "calm-luxury",
+      "heroMechanicHypothesis": "Campaign film or photography carries a conversion-ready product system.",
+      "motionSignatureHypothesis": "Campaign crossfades, product transitions and layered navigation.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["geo state", "consent state", "commerce complexity"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "notes": "Redirected to a regional locale during the reachability check."
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-018",
+      "title": "Miu Miu",
+      "sourceUrl": "https://www.miumiu.com",
+      "status": "candidate",
+      "industry": "luxury fashion ecommerce",
+      "designLane": "cinematic-immersion",
+      "heroMechanicHypothesis": "A campaign film establishes the seasonal fashion narrative.",
+      "motionSignatureHypothesis": "Video chapters, horizontal sequences and gallery transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["geo state", "consent state", "large media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "notes": "Redirected to a regional locale during the reachability check."
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-019",
+      "title": "Jacquemus",
+      "sourceUrl": "https://www.jacquemus.com",
+      "status": "candidate",
+      "industry": "luxury fashion ecommerce",
+      "designLane": "calm-luxury",
+      "heroMechanicHypothesis": "A minimal full-bleed campaign frame controls attention.",
+      "motionSignatureHypothesis": "Restrained fades and product image crossfades.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["HTTP 403 probe", "bot protection", "commerce state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-403"
+      },
+      "scanPriority": "fallback"
+    },
+    {
+      "id": "ref-020",
+      "title": "Hermes",
+      "sourceUrl": "https://www.hermes.com",
+      "status": "candidate",
+      "industry": "luxury fashion ecommerce",
+      "designLane": "playful-interaction",
+      "heroMechanicHypothesis": "A seasonal illustrated world gives the storefront a distinctive narrative frame.",
+      "motionSignatureHypothesis": "Playful navigation, illustration transitions and microinteractions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["HTTP 403 probe", "geo state", "bot protection"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-403"
+      },
+      "scanPriority": "fallback"
+    },
+    {
+      "id": "ref-021",
+      "title": "REJOUICE",
+      "sourceUrl": "https://www.rejouice.com",
+      "status": "candidate",
+      "industry": "creative agency",
+      "designLane": "cinematic-immersion",
+      "heroMechanicHypothesis": "A video-led statement presents positioning before the case-study index.",
+      "motionSignatureHypothesis": "Masked text and video reveals with strong route rhythm.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large video", "route transitions"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-022",
+      "title": "Obys",
+      "sourceUrl": "https://obys.agency",
+      "status": "candidate",
+      "industry": "design agency",
+      "designLane": "expressive-typography",
+      "heroMechanicHypothesis": "An oversized manifesto establishes the studio voice immediately.",
+      "motionSignatureHypothesis": "Variable typography, smooth scroll and image reveals.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["smooth-scroll runtime", "large media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-023",
+      "title": "Resn",
+      "sourceUrl": "https://resn.co.nz",
+      "status": "candidate",
+      "industry": "interactive studio",
+      "designLane": "playful-interaction",
+      "heroMechanicHypothesis": "An interactive canvas or character turns the portfolio into a playful object.",
+      "motionSignatureHypothesis": "Pointer input, WebGL, sound and state changes.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["WebGL", "audio", "nonlinear interaction"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-024",
+      "title": "Active Theory",
+      "sourceUrl": "https://activetheory.net",
+      "status": "candidate",
+      "industry": "immersive digital studio",
+      "designLane": "spatial-webgl",
+      "heroMechanicHypothesis": "A spatial showreel introduces projects through a navigable 3D environment.",
+      "motionSignatureHypothesis": "WebGL camera movement, scene transitions and scroll coupling.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["GPU-heavy", "WebGL", "scene loading"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-025",
+      "title": "Locomotive",
+      "sourceUrl": "https://locomotive.ca",
+      "status": "candidate",
+      "industry": "digital agency",
+      "designLane": "editorial-engine",
+      "heroMechanicHypothesis": "A project reel introduces the studio through selected work.",
+      "motionSignatureHypothesis": "Smooth scroll, hover previews and route transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["smooth scroll", "route transitions", "large video"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-026",
+      "title": "Studio Freight",
+      "sourceUrl": "https://studiofreight.com",
+      "status": "candidate",
+      "industry": "creative development studio",
+      "designLane": "expressive-typography",
+      "heroMechanicHypothesis": "A kinetic identity and project index demonstrate motion craft directly.",
+      "motionSignatureHypothesis": "Text splits, timeline reveals and cursor states.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["timeline animation", "route transitions"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-027",
+      "title": "Unseen",
+      "sourceUrl": "https://unseen.co",
+      "status": "candidate",
+      "industry": "creative technology studio",
+      "designLane": "cinematic-immersion",
+      "heroMechanicHypothesis": "A cinematic project showreel frames the studio as an experience maker.",
+      "motionSignatureHypothesis": "Shader effects, scene cuts, hover and scroll transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["WebGL", "large video", "GPU load"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-028",
+      "title": "Build in Amsterdam",
+      "sourceUrl": "https://www.buildinamsterdam.com",
+      "status": "candidate",
+      "industry": "digital commerce agency",
+      "designLane": "archive-catalog",
+      "heroMechanicHypothesis": "A retail project carousel presents a selective portfolio.",
+      "motionSignatureHypothesis": "Horizontal navigation and progressive project reveals.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["horizontal interactions", "large case-study media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-029",
+      "title": "Dogstudio",
+      "sourceUrl": "https://dogstudio.co",
+      "status": "candidate",
+      "industry": "digital experience studio",
+      "designLane": "spatial-webgl",
+      "heroMechanicHypothesis": "An interactive portfolio object makes exploration part of the studio identity.",
+      "motionSignatureHypothesis": "Cursor, 3D and scroll-linked interaction.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["WebGL", "pointer dependence", "GPU load"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-030",
+      "title": "Immersive Garden",
+      "sourceUrl": "https://immersive-g.com",
+      "status": "candidate",
+      "industry": "immersive digital studio",
+      "designLane": "spatial-webgl",
+      "heroMechanicHypothesis": "A full-screen experience reel introduces spatial and campaign work.",
+      "motionSignatureHypothesis": "Camera motion and full-screen route transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["WebGL", "GPU load", "large media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-031",
+      "title": "Basement",
+      "sourceUrl": "https://basement.studio",
+      "status": "candidate",
+      "industry": "branding and digital studio",
+      "designLane": "expressive-typography",
+      "heroMechanicHypothesis": "Large typography and case-work indexing establish a direct studio voice.",
+      "motionSignatureHypothesis": "Marquees, hover previews and page transitions.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["continuous motion", "case-study media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-032",
+      "title": "COLLINS",
+      "sourceUrl": "https://www.wearecollins.com",
+      "status": "candidate",
+      "industry": "brand transformation agency",
+      "designLane": "editorial-engine",
+      "heroMechanicHypothesis": "A typographic case-study grid makes brand work the main narrative.",
+      "motionSignatureHypothesis": "Video loops and measured scroll reveals.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large case-study archive", "video loops"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-033",
+      "title": "Koto",
+      "sourceUrl": "https://koto.com",
+      "status": "candidate",
+      "industry": "brand studio",
+      "designLane": "systemic-clarity",
+      "heroMechanicHypothesis": "A systematic case-study selection foregrounds identity work.",
+      "motionSignatureHypothesis": "Restrained reveals, hover states and video excerpts.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large case-study media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "notes": "The previously observed koto.studio URL redirected to this canonical domain."
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-034",
+      "title": "PORTO ROCHA",
+      "sourceUrl": "https://www.portorocha.com",
+      "status": "candidate",
+      "industry": "brand and design studio",
+      "designLane": "editorial-engine",
+      "heroMechanicHypothesis": "A poster-like composition presents graphic work with minimal interface chrome.",
+      "motionSignatureHypothesis": "Type and image swaps with restrained transitions.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "low",
+        "reasons": ["primarily editorial interaction"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-035",
+      "title": "Linear",
+      "sourceUrl": "https://linear.app",
+      "status": "candidate",
+      "industry": "product development SaaS",
+      "designLane": "systemic-clarity",
+      "heroMechanicHypothesis": "Product UI and restrained atmosphere communicate a precise software system.",
+      "motionSignatureHypothesis": "Small scroll reveals and focused interface demonstrations.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "low",
+        "reasons": ["controlled product media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-036",
+      "title": "Raycast",
+      "sourceUrl": "https://www.raycast.com",
+      "status": "candidate",
+      "industry": "productivity software",
+      "designLane": "product-choreography",
+      "heroMechanicHypothesis": "Command UI and dimensional icons make an abstract productivity product tangible.",
+      "motionSignatureHypothesis": "3D icons, pinned panels and short product loops.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["3D media", "product video"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-037",
+      "title": "Vercel",
+      "sourceUrl": "https://vercel.com",
+      "status": "candidate",
+      "industry": "developer platform",
+      "designLane": "systemic-clarity",
+      "heroMechanicHypothesis": "A technical grid and product demonstration establish a precise platform identity.",
+      "motionSignatureHypothesis": "Interactive diagrams, demos and subtle microtransitions.",
+      "assetDependency": "low",
+      "scanRisk": {
+        "level": "low",
+        "reasons": ["mostly interface and diagram driven"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-038",
+      "title": "Stripe",
+      "sourceUrl": "https://stripe.com",
+      "status": "candidate",
+      "industry": "financial infrastructure",
+      "designLane": "product-choreography",
+      "heroMechanicHypothesis": "A financial visual system turns infrastructure into an understandable product story.",
+      "motionSignatureHypothesis": "Gradient fields, diagram transitions and scroll-linked explanations.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["region state", "complex diagrams", "animated fields"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "notes": "Redirected to a regional locale during the reachability check."
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-039",
+      "title": "Framer",
+      "sourceUrl": "https://www.framer.com",
+      "status": "candidate",
+      "industry": "website design platform",
+      "designLane": "product-choreography",
+      "heroMechanicHypothesis": "Live canvas and template examples demonstrate the product in place.",
+      "motionSignatureHypothesis": "Viewport demos, marquees and scroll-linked examples.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["embedded demos", "large media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-040",
+      "title": "Attio",
+      "sourceUrl": "https://attio.com",
+      "status": "candidate",
+      "industry": "CRM SaaS",
+      "designLane": "editorial-engine",
+      "heroMechanicHypothesis": "CRM interface states are composed as an editorial product narrative.",
+      "motionSignatureHypothesis": "Scroll focus and controlled interface choreography.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["product UI sequences", "responsive choreography"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-041",
+      "title": "Superlist",
+      "sourceUrl": "https://www.superlist.com",
+      "status": "candidate",
+      "industry": "productivity software",
+      "designLane": "playful-interaction",
+      "heroMechanicHypothesis": "A colorful device and interface collage gives a familiar product a distinctive character.",
+      "motionSignatureHypothesis": "3D composition, kinetic type and scroll scenes.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["3D media", "scroll choreography"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-042",
+      "title": "Pitch",
+      "sourceUrl": "https://pitch.com",
+      "status": "candidate",
+      "industry": "presentation software",
+      "designLane": "product-choreography",
+      "heroMechanicHypothesis": "A deck or video-led hero shows the product's output before its features.",
+      "motionSignatureHypothesis": "Carousel movement and interface choreography.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["embedded presentation media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-043",
+      "title": "Clerk",
+      "sourceUrl": "https://clerk.com",
+      "status": "candidate",
+      "industry": "developer authentication platform",
+      "designLane": "systemic-clarity",
+      "heroMechanicHypothesis": "Authentication UI and code examples lead a developer-focused explanation.",
+      "motionSignatureHypothesis": "Tabs, snippets and restrained interface transitions.",
+      "assetDependency": "low",
+      "scanRisk": {
+        "level": "low",
+        "reasons": ["interface and code driven"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-044",
+      "title": "Webflow",
+      "sourceUrl": "https://webflow.com",
+      "status": "candidate",
+      "industry": "website development platform",
+      "designLane": "product-choreography",
+      "heroMechanicHypothesis": "Animated canvas and site examples demonstrate a visual development platform.",
+      "motionSignatureHypothesis": "Video, 3D and interactive product demonstrations.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large media", "interactive demos"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-045",
+      "title": "Rogo",
+      "sourceUrl": "https://rogo.ai",
+      "status": "candidate",
+      "industry": "financial AI software",
+      "designLane": "trust-narrative",
+      "heroMechanicHypothesis": "Product interface and institutional proof introduce a specialist financial AI platform.",
+      "motionSignatureHypothesis": "Restrained product animation and feature-grid transitions.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "low",
+        "reasons": ["controlled product media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "notes": "The historical rogodata.com source redirected to rogo.ai.",
+        "discoveryReferences": [
+          {
+            "url": "https://www.awwwards.com/sites/rogo",
+            "relationship": "award-site-profile",
+            "verification": "discovery-only"
+          }
+        ]
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-046",
+      "title": "Figma",
+      "sourceUrl": "https://www.figma.com",
+      "status": "candidate",
+      "industry": "collaborative design software",
+      "designLane": "playful-interaction",
+      "heroMechanicHypothesis": "A configurable graphic collage presents both product and creative culture.",
+      "motionSignatureHypothesis": "Color-block transitions, cursor states and product demonstrations.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["geo state", "large media", "account prompts"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-047",
+      "title": "Aesop",
+      "sourceUrl": "https://www.aesop.com",
+      "status": "candidate",
+      "industry": "beauty ecommerce",
+      "designLane": "calm-luxury",
+      "heroMechanicHypothesis": "A tactile editorial campaign introduces product with quiet spatial composition.",
+      "motionSignatureHypothesis": "Slow crossfades and layered navigation states.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["HTTP 403 probe", "geo state", "commerce state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-403"
+      },
+      "scanPriority": "fallback"
+    },
+    {
+      "id": "ref-048",
+      "title": "Teenage Engineering",
+      "sourceUrl": "https://teenage.engineering",
+      "status": "candidate",
+      "industry": "consumer electronics ecommerce",
+      "designLane": "archive-catalog",
+      "heroMechanicHypothesis": "A color-coded product catalog creates a distinctive system without luxury conventions.",
+      "motionSignatureHypothesis": "Product spins, image sequences and hover previews.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large product catalog", "image sequences"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-049",
+      "title": "Nothing",
+      "sourceUrl": "https://nothing.tech",
+      "status": "candidate",
+      "industry": "consumer electronics ecommerce",
+      "designLane": "product-choreography",
+      "heroMechanicHypothesis": "Industrial device imagery and light define the product world.",
+      "motionSignatureHypothesis": "Light-field effects and scroll-linked specifications.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large video", "product media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-050",
+      "title": "Cowboy",
+      "sourceUrl": "https://cowboy.com",
+      "status": "candidate",
+      "industry": "mobility ecommerce",
+      "designLane": "product-choreography",
+      "heroMechanicHypothesis": "A bicycle is staged as a cinematic product object.",
+      "motionSignatureHypothesis": "Scroll zoom, pinned frames and configurator transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["pinned sequences", "configurator state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-051",
+      "title": "Gentle Monster",
+      "sourceUrl": "https://www.gentlemonster.com",
+      "status": "candidate",
+      "industry": "fashion eyewear ecommerce",
+      "designLane": "spatial-webgl",
+      "heroMechanicHypothesis": "A campaign world places products inside an experimental visual environment.",
+      "motionSignatureHypothesis": "Film, 3D scenes and horizontal exploration.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["HTTP 403 probe", "WebGL", "commerce state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-403"
+      },
+      "scanPriority": "fallback"
+    },
+    {
+      "id": "ref-052",
+      "title": "Officine Universelle Buly",
+      "sourceUrl": "https://buly1803.com",
+      "status": "candidate",
+      "industry": "heritage beauty ecommerce",
+      "designLane": "archive-catalog",
+      "heroMechanicHypothesis": "An illustrated apothecary world turns a product catalog into historical storytelling.",
+      "motionSignatureHypothesis": "Page-like transitions, custom cursor states and catalog reveals.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large catalog", "custom interaction", "commerce state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-053",
+      "title": "FRAMA",
+      "sourceUrl": "https://framacph.com",
+      "status": "candidate",
+      "industry": "furniture and lifestyle ecommerce",
+      "designLane": "calm-luxury",
+      "heroMechanicHypothesis": "Product and editorial imagery share a restrained object-led composition.",
+      "motionSignatureHypothesis": "Fades and product-image hover crossfades.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large photography", "commerce state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-054",
+      "title": "Bang & Olufsen",
+      "sourceUrl": "https://www.bang-olufsen.com",
+      "status": "candidate",
+      "industry": "luxury consumer technology",
+      "designLane": "product-choreography",
+      "heroMechanicHypothesis": "A product film presents audio hardware as a crafted object.",
+      "motionSignatureHypothesis": "Pinned image sequences, 3D product states and carousels.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["region state", "large media", "commerce state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "notes": "Redirected to a regional locale during the reachability check."
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-055",
+      "title": "Paloma Wool",
+      "sourceUrl": "https://palomawool.com",
+      "status": "candidate",
+      "industry": "art fashion ecommerce",
+      "designLane": "editorial-engine",
+      "heroMechanicHypothesis": "An irregular visual grid treats the storefront like an art publication.",
+      "motionSignatureHypothesis": "Hover swaps and simple route transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["large imagery", "commerce state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-056",
+      "title": "Houseplant",
+      "sourceUrl": "https://www.houseplant.com",
+      "status": "candidate",
+      "industry": "lifestyle ecommerce",
+      "designLane": "playful-interaction",
+      "heroMechanicHypothesis": "An illustrated product tableau establishes a humorous lifestyle world.",
+      "motionSignatureHypothesis": "Draggable elements, scroll reactions and whimsical hover states.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["custom interactions", "commerce state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-057",
+      "title": "Cooley",
+      "sourceUrl": "https://www.cooley.com",
+      "status": "candidate",
+      "industry": "corporate legal services",
+      "designLane": "trust-narrative",
+      "heroMechanicHypothesis": "A headline and matter index lead a restrained corporate legal system.",
+      "motionSignatureHypothesis": "Measured editorial reveals and filtering.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "low",
+        "reasons": ["conventional multi-page information architecture"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-058",
+      "title": "Gunderson Dettmer",
+      "sourceUrl": "https://www.gunder.com",
+      "status": "candidate",
+      "industry": "technology legal services",
+      "designLane": "trust-narrative",
+      "heroMechanicHypothesis": "A bold sector statement modernizes legal authority without hiding utility.",
+      "motionSignatureHypothesis": "Type transitions, matter filtering and restrained reveals.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "low",
+        "reasons": ["controlled editorial interactions"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-059",
+      "title": "YLaw",
+      "sourceUrl": "https://www.ylaw.ca",
+      "status": "candidate",
+      "industry": "consumer legal services",
+      "designLane": "trust-narrative",
+      "heroMechanicHypothesis": "Portraiture and direct narrative make legal expertise feel human and accessible.",
+      "motionSignatureHypothesis": "Measured scroll reveals and small interface transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "low",
+        "reasons": ["conventional service flow"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-060",
+      "title": "Loyd Bourgeois",
+      "sourceUrl": "https://www.ljblegal.com",
+      "status": "candidate",
+      "industry": "consumer legal services",
+      "designLane": "trust-narrative",
+      "heroMechanicHypothesis": "A human problem-and-solution narrative leads directly toward inquiry.",
+      "motionSignatureHypothesis": "Restrained reveals and form-state feedback.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "low",
+        "reasons": ["conventional service flow"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-061",
+      "title": "Wise",
+      "sourceUrl": "https://wise.com",
+      "status": "candidate",
+      "industry": "consumer finance",
+      "designLane": "systemic-clarity",
+      "heroMechanicHypothesis": "A transfer calculator makes utility and price transparency the primary visual object.",
+      "motionSignatureHypothesis": "Form states, rate updates, counters and country transitions.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["geo state", "live rates", "interactive forms"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-062",
+      "title": "Monzo",
+      "sourceUrl": "https://monzo.com",
+      "status": "candidate",
+      "industry": "consumer banking",
+      "designLane": "playful-interaction",
+      "heroMechanicHypothesis": "Phone and card imagery make a regulated product feel direct and approachable.",
+      "motionSignatureHypothesis": "Device scroll, card transitions and small product interactions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["product media", "region-specific offers"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-063",
+      "title": "Revolut",
+      "sourceUrl": "https://www.revolut.com",
+      "status": "candidate",
+      "industry": "consumer finance super-app",
+      "designLane": "product-choreography",
+      "heroMechanicHypothesis": "A device and card composition presents a broad financial product suite.",
+      "motionSignatureHypothesis": "3D card motion, video and pinned product scenes.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["HTTP 403 probe", "geo state", "product personalization"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-403"
+      },
+      "scanPriority": "fallback"
+    },
+    {
+      "id": "ref-064",
+      "title": "Neko Health",
+      "sourceUrl": "https://www.nekohealth.com",
+      "status": "candidate",
+      "industry": "preventive healthcare technology",
+      "designLane": "cinematic-immersion",
+      "heroMechanicHypothesis": "Body-scan technology and clinic environments create a premium future-health narrative.",
+      "motionSignatureHypothesis": "Device and space choreography with clinical film sequences.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["HTTP 429 probe", "geo state", "large media"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-429"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-065",
+      "title": "Function Health",
+      "sourceUrl": "https://www.functionhealth.com",
+      "status": "candidate",
+      "industry": "health data service",
+      "designLane": "trust-narrative",
+      "heroMechanicHypothesis": "Dashboard and body narratives combine clinical proof with product clarity.",
+      "motionSignatureHypothesis": "Interface scroll sequences and measured evidence reveals.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["product UI media", "medical claims context"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-066",
+      "title": "Maven Clinic",
+      "sourceUrl": "https://www.mavenclinic.com",
+      "status": "candidate",
+      "industry": "digital healthcare services",
+      "designLane": "trust-narrative",
+      "heroMechanicHypothesis": "Human photography and a direct care promise prioritize accessibility and reassurance.",
+      "motionSignatureHypothesis": "Restrained animation, carousel states and clear service transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "low",
+        "reasons": ["conventional service architecture"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "standard"
+    },
+    {
+      "id": "ref-067",
+      "title": "The Pudding",
+      "sourceUrl": "https://pudding.cool",
+      "status": "candidate",
+      "industry": "data storytelling",
+      "designLane": "data-narrative",
+      "heroMechanicHypothesis": "Each story begins with a visual thesis tailored to the subject.",
+      "motionSignatureHypothesis": "Scrollytelling and chart state transitions driven by narrative progress.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "low",
+        "reasons": ["story-specific implementations require route selection"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-068",
+      "title": "Bloomberg Graphics",
+      "sourceUrl": "https://www.bloomberg.com/graphics/",
+      "status": "candidate",
+      "industry": "financial news and data journalism",
+      "designLane": "data-narrative",
+      "heroMechanicHypothesis": "A story-specific lead graphic anchors newsroom analysis.",
+      "motionSignatureHypothesis": "Scrollytelling, chart transitions and embedded media.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["HTTP 403 probe", "paywall", "consent state"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-403"
+      },
+      "scanPriority": "fallback"
+    },
+    {
+      "id": "ref-069",
+      "title": "The New York Times Graphics",
+      "sourceUrl": "https://www.nytimes.com/spotlight/graphics",
+      "status": "candidate",
+      "industry": "news and data journalism",
+      "designLane": "data-narrative",
+      "heroMechanicHypothesis": "A lead interactive story introduces an editorial graphics index.",
+      "motionSignatureHypothesis": "Article-specific scroll scenes and chart transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["paywall", "consent state", "route-specific mechanics"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-070",
+      "title": "NASA Eyes",
+      "sourceUrl": "https://eyes.nasa.gov",
+      "status": "candidate",
+      "industry": "science and public data",
+      "designLane": "spatial-webgl",
+      "heroMechanicHypothesis": "A globe or space canvas turns scientific data into a navigable environment.",
+      "motionSignatureHypothesis": "Real-time data, WebGL camera movement, drag and zoom.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["WebGL", "GPU load", "data loading"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "notes": "Redirected to the NASA Science Eyes route during the reachability check."
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-071",
+      "title": "Bruno Simon",
+      "sourceUrl": "https://bruno-simon.com",
+      "status": "candidate",
+      "industry": "interactive portfolio",
+      "designLane": "playful-interaction",
+      "heroMechanicHypothesis": "A drivable 3D world makes navigation itself the portfolio demonstration.",
+      "motionSignatureHypothesis": "Physics, input and camera movement across a spatial scene.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["WebGL", "keyboard input", "physics runtime"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200",
+        "discoveryReferences": [
+          {
+            "url": "https://www.cssdesignawards.com/blog/2025-website-of-the-year-winners/430/",
+            "relationship": "award-editorial-article",
+            "verification": "discovery-only"
+          }
+        ]
+      },
+      "scanPriority": "must-scan"
+    },
+    {
+      "id": "ref-072",
+      "title": "Lusion",
+      "sourceUrl": "https://lusion.co",
+      "status": "candidate",
+      "industry": "immersive digital studio",
+      "designLane": "spatial-webgl",
+      "heroMechanicHypothesis": "A 3D scene demonstrates immersive craft before conventional project detail.",
+      "motionSignatureHypothesis": "Cursor, shader and camera motion.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["WebGL", "GPU load", "scene loading"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-073",
+      "title": "Obys Experiment Space",
+      "sourceUrl": "https://experiment.obys.agency",
+      "status": "candidate",
+      "industry": "experimental design archive",
+      "designLane": "playful-interaction",
+      "heroMechanicHypothesis": "A dynamic canvas introduces an archive of visual experiments.",
+      "motionSignatureHypothesis": "Pointer and scroll-driven experimental transitions.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["experimental interactions", "GPU load", "nonlinear states"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-074",
+      "title": "Neal.fun",
+      "sourceUrl": "https://neal.fun",
+      "status": "candidate",
+      "industry": "interactive experiments",
+      "designLane": "playful-interaction",
+      "heroMechanicHypothesis": "A simple experiment index routes users into focused game-like experiences.",
+      "motionSignatureHypothesis": "Pointer, scroll and game loops that vary by experiment.",
+      "assetDependency": "medium",
+      "scanRisk": {
+        "level": "medium",
+        "reasons": ["route-specific mechanics", "nonlinear interaction"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-075",
+      "title": "earth.nullschool.net",
+      "sourceUrl": "https://earth.nullschool.net",
+      "status": "candidate",
+      "industry": "environmental data visualization",
+      "designLane": "data-narrative",
+      "heroMechanicHypothesis": "A full-screen atmospheric map makes live environmental data the interface.",
+      "motionSignatureHypothesis": "Canvas flow, real-time data, drag and zoom.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["real-time data", "canvas rendering", "GPU load"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-200"
+      },
+      "scanPriority": "high"
+    },
+    {
+      "id": "ref-076",
+      "title": "Radio Garden",
+      "sourceUrl": "https://radio.garden",
+      "status": "candidate",
+      "industry": "audio discovery and mapping",
+      "designLane": "spatial-webgl",
+      "heroMechanicHypothesis": "An interactive globe turns global radio discovery into spatial navigation.",
+      "motionSignatureHypothesis": "WebGL globe movement, drag, zoom and live audio state changes.",
+      "assetDependency": "high",
+      "scanRisk": {
+        "level": "high",
+        "reasons": ["HTTP 403 probe", "WebGL", "audio streaming"]
+      },
+      "provenance": {
+        "sourceType": "official-live-site",
+        "observedAt": "2026-07-15",
+        "reachability": "http-403"
+      },
+      "scanPriority": "fallback"
+    }
+  ]
+}
