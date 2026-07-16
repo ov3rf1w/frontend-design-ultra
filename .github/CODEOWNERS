@@ -1,0 +1,14 @@
+* @ov3rf1w
+
+# Release-critical surfaces
+/frontend-design-ultra/ @ov3rf1w
+/scripts/ @ov3rf1w
+/install.sh @ov3rf1w
+/install.ps1 @ov3rf1w
+/uninstall.sh @ov3rf1w
+/uninstall.ps1 @ov3rf1w
+/.github/ @ov3rf1w
+/benchmark/ @ov3rf1w
+/docs/assets/media-provenance.json @ov3rf1w
+/RIGHTS.md @ov3rf1w
+/THIRD_PARTY_NOTICES.md @ov3rf1w
