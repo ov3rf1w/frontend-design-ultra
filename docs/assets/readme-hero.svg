@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" role="img" aria-labelledby="title description">
+  <title id="title">Frontend Design Ultra</title>
+  <description id="description">An editorial black, warm white, vermilion, and mint title graphic describing research, systems, build, and evidence.</description>
+  <rect width="1600" height="720" fill="#0b0b0c"/>
+  <path d="M0 72H1600M0 648H1600M96 0V720M1504 0V720" stroke="#2c2c2e" stroke-width="1"/>
+  <path d="M1120 72V648" stroke="#2c2c2e" stroke-width="1"/>
+  <circle cx="154" cy="126" r="10" fill="#ff583d"/>
+  <text x="182" y="135" fill="#f4f0e8" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="4">OPEN AGENT SKILL / RC 01</text>
+  <text x="1408" y="135" fill="#a9ffd8" font-family="Arial, Helvetica, sans-serif" font-size="19" text-anchor="end" letter-spacing="3">DESIGN → SHIP</text>
+  <text x="96" y="295" fill="#f4f0e8" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="150" font-weight="900" letter-spacing="-9">FRONTEND</text>
+  <text x="96" y="446" fill="#f4f0e8" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="150" font-weight="900" letter-spacing="-9">DESIGN</text>
+  <text x="96" y="597" fill="#ff583d" font-family="Georgia, Times, serif" font-size="176" font-style="italic" letter-spacing="-10">Ultra.</text>
+  <g transform="translate(1180 230)">
+    <rect width="324" height="304" rx="162" fill="#a9ffd8"/>
+    <path d="M162 0V304M0 152H324" stroke="#0b0b0c" stroke-width="1" opacity=".35"/>
+    <circle cx="162" cy="152" r="54" fill="#0b0b0c"/>
+    <path d="M138 152h48M162 128v48" stroke="#f4f0e8" stroke-width="3"/>
+  </g>
+  <text x="1180" y="590" fill="#f4f0e8" font-family="Arial, Helvetica, sans-serif" font-size="19" letter-spacing="3">RESEARCH / SYSTEM / BUILD / EVIDENCE</text>
+  <text x="96" y="684" fill="#8f8f92" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="2">PROJECT-AWARE · MOTION-LITERATE · ACCESSIBLE · REPRODUCIBLE</text>
+  <text x="1504" y="684" fill="#8f8f92" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="end" letter-spacing="2">MIT / 2026</text>
+</svg>
