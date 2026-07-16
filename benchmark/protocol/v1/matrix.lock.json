@@ -1,0 +1,35 @@
+{
+  "$schema": "schemas/matrix.schema.json",
+  "schemaVersion": 1,
+  "benchmarkVersion": "v1-calibration-mvp",
+  "status": "pending-pins",
+  "locked": false,
+  "briefIds": [
+    "cal-ecommerce-object-06",
+    "cal-finance-five-03",
+    "cal-healthcare-pulse-04",
+    "cal-hospitality-house-01",
+    "cal-legal-matter-02",
+    "cal-saas-work-05"
+  ],
+  "conditionIds": [
+    "baseline-no-design-skill",
+    "compact-subject-grounded",
+    "frontend-design-ultra",
+    "workflow-detector"
+  ],
+  "replicates": [1, 2, 3],
+  "expectedRunSlots": 72,
+  "executedRunSlots": 0,
+  "runIdTemplate": "{briefId}--{conditionId}--r{replicate}",
+  "resultsStatus": "pending",
+  "unresolvedLocks": [
+    "model snapshot and configuration digest",
+    "starter commit and lockfile",
+    "condition commits and effective-context hashes",
+    "Node, npm, Playwright, and Chromium exact versions",
+    "holdout commitment",
+    "jury eligibility, consent, retention, redaction, and assignment seed",
+    "publication rights-review owner and procedure"
+  ]
+}
