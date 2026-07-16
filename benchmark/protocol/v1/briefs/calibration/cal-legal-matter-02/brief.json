@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../schemas/brief.schema.json",
+  "schemaVersion": 1,
+  "id": "cal-legal-matter-02",
+  "split": "calibration",
+  "fictional": true,
+  "title": "Litigation Office L-02",
+  "industry": "legal",
+  "projectType": "constrained-brand",
+  "locale": "en-US",
+  "audience": [
+    "regional business owners facing an active commercial dispute",
+    "in-house counsel evaluating local trial support"
+  ],
+  "pageJob": "Establish precise, calm litigation capability and route a qualified visitor into a confidential matter-review request without promising an outcome or implying an attorney-client relationship.",
+  "targetAction": "Request a confidential matter review",
+  "facts": [
+    { "id": "jurisdiction", "statement": "The fictional firm handles commercial disputes in two unnamed neighboring state jurisdictions.", "publicClaimAllowed": true },
+    { "id": "team", "statement": "The fictional team consists of four partners, three associates, and two litigation support specialists.", "publicClaimAllowed": true },
+    { "id": "matters", "statement": "Matter categories are contract disputes, shareholder conflicts, emergency injunctions, and trial support.", "publicClaimAllowed": true },
+    { "id": "response", "statement": "A submitted request is reviewed within one business day but does not create an attorney-client relationship.", "publicClaimAllowed": true },
+    { "id": "conflicts", "statement": "The firm must complete a conflicts check before receiving detailed confidential documents.", "publicClaimAllowed": true },
+    { "id": "outcomes", "statement": "No case outcomes, win rates, rankings, awards, or client names are available for this fixture.", "publicClaimAllowed": false }
+  ],
+  "requiredContent": [
+    "jurisdiction and matter-scope explanation",
+    "team structure without invented biographies",
+    "conflicts-check and confidentiality boundary",
+    "one-business-day review expectation",
+    "no-attorney-client-relationship disclaimer near the form"
+  ],
+  "constraints": [
+    "Do not claim guaranteed outcomes, rankings, awards, verdict totals, or client logos.",
+    "Do not request detailed privileged documents in the first-contact form.",
+    "The interface must remain calm and credible without defaulting to a generic serious-serif template.",
+    "Keyboard focus and form errors are shipping gates."
+  ],
+  "assetPolicy": {
+    "remoteAssets": false,
+    "generatedMedia": false,
+    "suppliedAssetCount": 0,
+    "instruction": "Use benchmark-authored typography, document grammar, procedural diagrams, and CSS; no courthouse, gavel, portrait, or stock imagery is available."
+  },
+  "shippingBudgets": {
+    "maximumInitialJavaScriptKbGzip": 110,
+    "maximumImageBytes": 0,
+    "minimumTapTargetPx": 44,
+    "accessibilityTarget": "WCAG 2.2 AA practical floor; conformance requires complete evidence"
+  }
+}
