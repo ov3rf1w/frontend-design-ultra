@@ -1,0 +1,23 @@
+{
+  "$schema": "../../protocol/v1/schemas/result.schema.json",
+  "schemaVersion": 1,
+  "benchmarkVersion": "v1-calibration-mvp",
+  "evidenceTier": "calibration",
+  "status": "pending",
+  "completedRuns": 0,
+  "expectedRuns": 72,
+  "validJuryVotes": 0,
+  "invalidJuryVotes": 0,
+  "creativeResults": null,
+  "shippingResults": null,
+  "scorecard": null,
+  "claims": [],
+  "rightsReview": null,
+  "limitations": [
+    "No model runs have been executed.",
+    "No browser evidence has been captured.",
+    "No independent juror has voted.",
+    "Condition and environment pins are incomplete.",
+    "The included briefs are calibration fixtures, not scored holdout evidence."
+  ]
+}
