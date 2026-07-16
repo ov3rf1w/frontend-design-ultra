@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-design-ultra/benchmark/result.schema.json",
+  "title": "Benchmark Result Status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "benchmarkVersion", "evidenceTier", "status", "completedRuns", "expectedRuns", "validJuryVotes", "invalidJuryVotes", "creativeResults", "shippingResults", "scorecard", "claims", "limitations", "rightsReview"],
+  "properties": {
+    "$schema": { "type": "string", "minLength": 1 },
+    "schemaVersion": { "const": 1 },
+    "benchmarkVersion": { "type": "string", "minLength": 1 },
+    "evidenceTier": { "enum": ["calibration", "scored"] },
+    "status": { "enum": ["pending", "partial", "complete"] },
+    "completedRuns": { "type": "integer", "minimum": 0 },
+    "expectedRuns": { "type": "integer", "minimum": 1 },
+    "validJuryVotes": { "type": "integer", "minimum": 0 },
+    "invalidJuryVotes": { "type": "integer", "minimum": 0 },
+    "creativeResults": { "type": "null" },
+    "shippingResults": { "type": "null" },
+    "scorecard": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "const": "scorecard.json" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "conditionId", "comparatorConditionId"],
+        "properties": {
+          "id": { "const": "improvement-vs-baseline" },
+          "conditionId": { "const": "frontend-design-ultra" },
+          "comparatorConditionId": { "const": "baseline-no-design-skill" }
+        }
+      }
+    },
+    "limitations": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "rightsReview": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": [
+        "reviewType",
+        "evidenceBundleSha256",
+        "modelProviderTerms",
+        "assetAndNetworkInventory",
+        "logoTrademarkReview",
+        "humanSimilarityReview",
+        "publicationDecision",
+        "redactions",
+        "reviewer",
+        "reviewedAt",
+        "statement"
+      ],
+      "properties": {
+        "reviewType": { "const": "publication-rights-review" },
+        "evidenceBundleSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "modelProviderTerms": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reviewed", "providers", "notes"],
+          "properties": {
+            "reviewed": { "const": true },
+            "providers": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+            "notes": { "type": "string", "minLength": 10 }
+          }
+        },
+        "assetAndNetworkInventory": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reviewed", "inventorySha256", "assetCount", "networkSourceCount", "notes"],
+          "properties": {
+            "reviewed": { "const": true },
+            "inventorySha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+            "assetCount": { "type": "integer", "minimum": 0 },
+            "networkSourceCount": { "type": "integer", "minimum": 0 },
+            "notes": { "type": "string", "minLength": 10 }
+          }
+        },
+        "logoTrademarkReview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reviewed", "notes"],
+          "properties": {
+            "reviewed": { "const": true },
+            "notes": { "type": "string", "minLength": 10 }
+          }
+        },
+        "humanSimilarityReview": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["reviewed", "method", "notes"],
+          "properties": {
+            "reviewed": { "const": true },
+            "method": { "type": "string", "minLength": 10 },
+            "notes": { "type": "string", "minLength": 10 }
+          }
+        },
+        "publicationDecision": { "enum": ["approved", "approved-with-redactions", "withheld"] },
+        "redactions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "manifestPath", "manifestSha256", "count"],
+          "properties": {
+            "status": { "enum": ["none", "applied"] },
+            "manifestPath": { "type": ["string", "null"], "pattern": "^redactions\\.json$" },
+            "manifestSha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+            "count": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "reviewer": { "type": "string", "minLength": 2 },
+        "reviewedAt": { "type": "string", "format": "date-time" },
+        "statement": { "const": "Documented publication review; not legal clearance." }
+      },
+      "allOf": [
+        {
+          "if": {
+            "type": "object",
+            "properties": {
+              "publicationDecision": { "const": "approved" }
+            }
+          },
+          "then": {
+            "type": "object",
+            "properties": {
+              "redactions": {
+                "type": "object",
+                "properties": {
+                  "status": { "const": "none" },
+                  "manifestPath": { "type": "null" },
+                  "manifestSha256": { "type": "null" },
+                  "count": { "const": 0 }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "type": "object",
+            "properties": {
+              "publicationDecision": { "const": "approved-with-redactions" }
+            }
+          },
+          "then": {
+            "type": "object",
+            "properties": {
+              "redactions": {
+                "type": "object",
+                "properties": {
+                  "status": { "const": "applied" },
+                  "manifestPath": { "const": "redactions.json" },
+                  "manifestSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+                  "count": { "type": "integer", "minimum": 1 }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "status": { "const": "pending" },
+        "completedRuns": { "const": 0 },
+        "validJuryVotes": { "const": 0 },
+        "invalidJuryVotes": { "const": 0 },
+        "creativeResults": { "type": "null" },
+        "shippingResults": { "type": "null" },
+        "scorecard": { "type": "null" },
+        "claims": { "type": "array", "maxItems": 0 },
+        "rightsReview": { "type": "null" }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "status": { "const": "partial" },
+        "completedRuns": { "type": "integer", "minimum": 1 },
+        "creativeResults": { "type": "null" },
+        "shippingResults": { "type": "null" },
+        "scorecard": { "type": "null" },
+        "claims": { "type": "array", "maxItems": 0 },
+        "rightsReview": { "type": "object" }
+      }
+    },
+    {
+      "type": "object",
+      "properties": {
+        "status": { "const": "complete" },
+        "completedRuns": { "type": "integer", "minimum": 1 },
+        "validJuryVotes": { "type": "integer", "minimum": 1 },
+        "creativeResults": { "type": "null" },
+        "shippingResults": { "type": "null" },
+        "scorecard": { "type": "object" },
+        "rightsReview": { "type": "object" }
+      }
+    }
+  ],
+  "allOf": [
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "evidenceTier": { "const": "calibration" }
+        }
+      },
+      "then": {
+        "type": "object",
+        "properties": {
+          "claims": { "type": "array", "maxItems": 0 }
+        }
+      }
+    }
+  ]
+}
