@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../schemas/brief.schema.json",
+  "schemaVersion": 1,
+  "id": "cal-healthcare-pulse-04",
+  "split": "calibration",
+  "fictional": true,
+  "title": "Heart Clinic H-04",
+  "industry": "healthcare",
+  "projectType": "constrained-brand",
+  "locale": "en-US",
+  "audience": [
+    "adults referred for a non-emergency outpatient cardiology assessment",
+    "family members helping a patient understand preparation and access needs"
+  ],
+  "pageJob": "Explain the fictional outpatient referral, appointment, preparation, privacy, and emergency boundaries and help an eligible patient request an appointment.",
+  "targetAction": "Request a non-emergency appointment",
+  "facts": [
+    { "id": "scope", "statement": "The fictional clinic provides non-emergency consultations, ECG review, ambulatory monitoring, and follow-up planning.", "publicClaimAllowed": true },
+    { "id": "referral", "statement": "A referral is preferred but not required for an initial appointment request.", "publicClaimAllowed": true },
+    { "id": "response", "statement": "Appointment requests receive a response within two business days; this is not a clinical triage guarantee.", "publicClaimAllowed": true },
+    { "id": "preparation", "statement": "Patients should bring a medicine list, prior reports, identification, and insurance information where applicable.", "publicClaimAllowed": true },
+    { "id": "access", "statement": "The fictional clinic offers step-free access, a quiet waiting option, and interpretation by advance request.", "publicClaimAllowed": true },
+    { "id": "emergency", "statement": "New severe chest pain, collapse, or severe breathing difficulty must be directed to local emergency services, not the form.", "publicClaimAllowed": true }
+  ],
+  "requiredContent": [
+    "non-emergency scope and emergency boundary",
+    "referral and two-business-day response explanation",
+    "appointment preparation checklist",
+    "accessibility and interpretation options",
+    "privacy-conscious appointment form guidance"
+  ],
+  "constraints": [
+    "Do not promise diagnosis, treatment outcome, waiting time, insurance coverage, or physician availability.",
+    "Do not invent clinician names, qualifications, testimonials, success rates, or hospital affiliations.",
+    "Emergency guidance must be visible before and near the form without creating panic.",
+    "The form must not request detailed clinical history in the first step."
+  ],
+  "assetPolicy": {
+    "remoteAssets": false,
+    "generatedMedia": false,
+    "suppliedAssetCount": 0,
+    "instruction": "Use benchmark-authored typography, care-path diagrams, preparation lists, and CSS; no patient, clinician, device, hospital, or anatomy media is supplied."
+  },
+  "shippingBudgets": {
+    "maximumInitialJavaScriptKbGzip": 110,
+    "maximumImageBytes": 0,
+    "minimumTapTargetPx": 44,
+    "accessibilityTarget": "WCAG 2.2 AA practical floor; conformance requires complete evidence"
+  }
+}
