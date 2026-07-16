@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-design-ultra/benchmark/provenance.schema.json",
+  "title": "Benchmark Asset And Fact Provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "briefId", "factsProvenance", "assets", "redistributionStatus"],
+  "properties": {
+    "$schema": { "type": "string", "minLength": 1 },
+    "schemaVersion": { "const": 1 },
+    "briefId": { "type": "string", "pattern": "^cal-[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "factsProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "author", "fictional", "externalClaims"],
+      "properties": {
+        "kind": { "const": "benchmark-authored-fixture" },
+        "author": { "const": "Frontend Design Ultra benchmark maintainers" },
+        "fictional": { "const": true },
+        "externalClaims": { "const": false }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256", "origin", "license", "redistributable"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "origin": { "type": "string", "minLength": 1 },
+          "license": { "type": "string", "minLength": 1 },
+          "redistributable": { "const": true }
+        }
+      }
+    },
+    "redistributionStatus": { "const": "no-third-party-assets" }
+  }
+}
+
