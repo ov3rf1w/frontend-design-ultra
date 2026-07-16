@@ -12,7 +12,9 @@ Use this when a domain token or brief implies a website type. Defaults can be ov
 | Portfolio/showroom | work/result first | press, awards, outcomes | view case/book consult | media, process, quote, CTA | low-mid | high-res work | full-bleed case chapter | rigid gallery grid |
 | Ecommerce | product/category intent | reviews, shipping, returns, security | buy/add/configure | product, value, proof, bundle, policy | low | product shots, variants | variant stage | animated promo clutter |
 | Dashboard/app | active data state | reliability, integrations, privacy | launch/demo | command, insight, detail, action | low-mid | real UI states | density choreography | marketing-card dashboard |
-| Legal/finance/healthcare | calm clarity + next step | licenses, safeguards, process | secure consult/download | trust, proof, process, safeguards | low | documents, people, diagrams | evidence board | fear tactics |
+| Legal | matter, jurisdiction, urgency, and confidentiality path | admissions/credentials, named counsel, process, source-safe case proof, jurisdiction-specific disclaimers | confidential case review or call | issue framing, counsel, process, evidence, next step | low | real counsel, practice documents, process diagrams | matter-path evidence board | outcome guarantees, courthouse prestige theatre, fake case metrics |
+| Finance | product/outcome plus eligibility, cost, or risk frame | regulatory status where applicable, security, methodology, fees, risk disclosures, data provenance | compare, check eligibility, calculate, or request regulated advice | outcome, numbers, method, risk, proof, action | low | real product states, sourced data, calculators, disclosure content | decision/calculator stage | guaranteed returns, unqualified advice, neon-fintech default |
+| Healthcare | care need plus access, location, and appropriate next step | named clinicians, qualifications, privacy, care pathway, availability, emergency boundary | book, request referral, call, or follow triage path | need, access, clinician, pathway, preparation, next step | low | clinicians, facility, care-process visuals, accessible forms | care-path navigator | diagnosis promises, fear tactics, generic wellness imagery |
 | Luxury/editorial | singular statement + art media | provenance, press, detail | private session/collection | airy, fewer sections | mid | premium photography/materials | immersive footer | SaaS card rhythm |
 | Startup/launch | thesis + status | validation, roadmap, milestones | join list/demo | tease, proof, roadmap, urgency | mid-high bounded | launch assets, demo | timeline reveal | fake traction |
 
@@ -27,4 +29,3 @@ If required assets are absent, choose a different visual carrier. Typography/pro
 ## Universal Motion Selection
 
 Motion defaults to the playbook budget. Increase only when the signature move needs it and gates remain intact.
-
