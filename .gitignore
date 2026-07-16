@@ -3,13 +3,16 @@
 Thumbs.db
 .vscode/
 .idea/
+.env*
 
 # Dependencies/build output
 node_modules/
 dist/
 build/
 .next/
+out/
 coverage/
+.playwright-cli/
 
 # Logs
 *.log
@@ -19,5 +22,24 @@ yarn-debug.log*
 
 # Internal construction artifacts
 analysis/
-upstream/
+u[p]stream/
+.[c]onstruction/
 
+# Private/local construction and visual evidence
+output/
+benchmark/private/
+benchmark/data/
+benchmark/results/**/artifacts/
+benchmark/results/**/captures/
+benchmark/results/**/runs/
+benchmark/results/**/*.private.*
+benchmark/**/*.salt
+benchmark/**/*.key
+benchmark/**/*.pem
+benchmark/**/blind-mapping.json
+benchmark/**/condition-mapping.json
+benchmark/**/*.mapping.private.json
+benchmark/**/*juror-map*.json
+benchmark/**/.env*
+benchmark/**/private/
+benchmark/site/dist/
