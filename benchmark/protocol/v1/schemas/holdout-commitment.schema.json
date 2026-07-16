@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-design-ultra/benchmark/holdout-commitment.schema.json",
+  "title": "Benchmark Holdout Commitment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "benchmarkVersion",
+    "protocolFreezeSha256",
+    "status",
+    "algorithm",
+    "generatedAt",
+    "bundleDigest",
+    "saltDigest",
+    "fileCount",
+    "totalBytes",
+    "disclosure"
+  ],
+  "properties": {
+    "$schema": { "const": "../schemas/holdout-commitment.schema.json" },
+    "schemaVersion": { "const": 3 },
+    "benchmarkVersion": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$" },
+    "protocolFreezeSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "status": { "const": "committed" },
+    "algorithm": { "const": "sha256-salted-freeze-bound-canonical-manifest-v3" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "bundleDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "saltDigest": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "fileCount": { "type": "integer", "minimum": 1 },
+    "totalBytes": { "type": "integer", "minimum": 1 },
+    "disclosure": { "type": "string", "minLength": 20 }
+  }
+}
