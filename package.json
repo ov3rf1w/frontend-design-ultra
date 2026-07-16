@@ -1,0 +1,53 @@
+{
+  "name": "frontend-design-ultra",
+  "version": "0.9.0-rc.1",
+  "description": "Project-aware Agent Skill for premium editorial frontend design, implementation, and evidence-led UI QA.",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ov3rf1w/frontend-design-ultra.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ov3rf1w/frontend-design-ultra/issues"
+  },
+  "homepage": "https://github.com/ov3rf1w/frontend-design-ultra#readme",
+  "keywords": [
+    "agent-skills",
+    "codex",
+    "frontend-design",
+    "web-design",
+    "ui-ux",
+    "playwright",
+    "gsap",
+    "accessibility"
+  ],
+  "scripts": {
+    "validate": "node scripts/validate-json-schemas.mjs && node scripts/validate-repo.mjs",
+    "benchmark:validate": "node benchmark/scripts/validate.mjs",
+    "benchmark:test": "node --test benchmark/scripts/tests/*.test.mjs",
+    "lint": "node --check scripts/validate-repo.mjs && node --check scripts/validate-json-schemas.mjs && node --check scripts/package-release.mjs && node --check scripts/scan-reference-corpus.mjs && node --check scripts/build-reference-observations.mjs && node --check scripts/build-reference-scan-outcomes.mjs && node --check scripts/audit-showcase.mjs && node --check scripts/capture-showcase-gallery.mjs && node --check scripts/update-media-provenance.mjs && node --check frontend-design-ultra/scripts/inspect-project.mjs && node --check frontend-design-ultra/scripts/scan-reference.mjs && node --check frontend-design-ultra/scripts/query-design-intelligence.mjs && node --check benchmark/scripts/validate.mjs && node --check benchmark/scripts/anonymize.mjs && node --check benchmark/scripts/commit-holdout.mjs && node --check benchmark/scripts/score-results.mjs",
+    "schema:validate": "node scripts/validate-json-schemas.mjs",
+    "test": "node --test",
+    "build": "npm run validate && npm run benchmark:validate",
+    "reference:query": "node scripts/query-design-intelligence.mjs",
+    "reference:scan": "node scripts/scan-reference.mjs",
+    "reference:scan:corpus": "node scripts/scan-reference-corpus.mjs",
+    "reference:observations": "node scripts/build-reference-observations.mjs",
+    "reference:scan:outcomes": "node scripts/build-reference-scan-outcomes.mjs",
+    "showcase:audit": "node scripts/audit-showcase.mjs",
+    "showcase:capture-gallery": "node scripts/capture-showcase-gallery.mjs",
+    "media:provenance": "node scripts/update-media-provenance.mjs",
+    "release:package": "node scripts/package-release.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "npm@11.1.0",
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "playwright-core": "1.61.1"
+  }
+}
