@@ -2,7 +2,7 @@
 
 ## Lifecycle
 
-Default sequence: analyse -> design -> implement -> verify -> polish only when useful. Shortcut modes run only their needed slice; do not duplicate checks.
+Default sequence: analyse -> design -> implement -> polish when useful -> final verify. Any polish after a verification pass re-enters the evidence loop and must be verified again. Shortcut modes run only their needed slice; do not duplicate checks.
 
 For substantial visual work, use this sequence before styling: define page job -> audience intent -> conversion/trust spine -> reference mechanics if relevant -> asset gate -> strategy lane -> signature move -> token contract -> UI spec -> implement -> evidence verification.
 
