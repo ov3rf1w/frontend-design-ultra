@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-design-ultra/benchmark/condition.schema.json",
+  "title": "Benchmark Condition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "id", "label", "category", "status", "source", "runtime", "capabilities", "runReady", "unresolved"],
+  "properties": {
+    "$schema": { "type": "string", "minLength": 1 },
+    "schemaVersion": { "const": 1 },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "label": { "type": "string", "minLength": 3 },
+    "category": { "enum": ["baseline", "candidate", "competitor"] },
+    "status": { "type": "string", "minLength": 3 },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "repository", "commit", "license"],
+      "properties": {
+        "kind": { "enum": ["none", "local-skill", "external-skill"] },
+        "repository": { "type": ["string", "null"], "minLength": 1 },
+        "commit": { "type": ["string", "null"], "pattern": "^[a-f0-9]{40}$" },
+        "license": { "type": "string", "minLength": 1 }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["instructionSurface", "installMethod", "effectiveContextSha256"],
+      "properties": {
+        "instructionSurface": { "type": "string", "minLength": 20 },
+        "installMethod": { "type": "string", "minLength": 1 },
+        "effectiveContextSha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commonToolsOnly", "networkDuringRun", "imageGenerationCalls"],
+      "properties": {
+        "commonToolsOnly": { "const": true },
+        "networkDuringRun": { "const": false },
+        "imageGenerationCalls": { "const": 0 }
+      }
+    },
+    "runReady": { "type": "boolean" },
+    "unresolved": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } }
+  }
+}
