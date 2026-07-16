@@ -2,6 +2,18 @@
 
 Use this for `/responsive`, `/mobile`, hero/first-viewport work, premium landing pages, wide desktop QA, laptop polish, sticky/pinned sections, and any layout where the design must feel excellent on both compact laptops and large monitors.
 
+## Contents
+
+- Principle
+- Viewport Bands
+- First-Viewport Contract
+- Laptop-Fit Techniques
+- Wide-Monitor Techniques
+- Pinned / Scroll Section Responsiveness
+- Container And Grid Rules
+- Verification Matrix
+- Implementation Checklist
+
 ## Principle
 
 Responsive design is not a set of breakpoints. It is a set of authored compositions across real viewport bands.
@@ -101,4 +113,3 @@ Fail if:
 - Define no-pin/reduced-motion layout.
 - Verify element bounds for hero CTA/headline/trust on laptop.
 - Verify wide monitor composition by eye, not only CSS breakpoints.
-
