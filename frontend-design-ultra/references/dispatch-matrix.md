@@ -5,23 +5,26 @@
 | Group | Effect |
 |---|---|
 | Mode | Selects the one primary workflow. Precedence: `/verify` > `/implement` > `/polish` > `/design` > `/analyse`. |
-| Domain | Changes heuristics: `/landing` first viewport + conversion; `/dashboard` density + control semantics; `/saas` repeated workflows; `/ecommerce` product/funnel trust; `/mobile` recomposition; `/redesign` audit-first; `/image-to-code` reference mechanics; `/brandkit` identity system; `/showroom` craft/result proof; `/services` offer-choice clarity; `/about` capability trust; `/contact` direct action path; `/local` relevance/location/availability; `/agency`, `/studio`, `/portfolio`, `/hospitality`, `/legal`, `/finance`, `/healthcare`, `/luxury`, `/editorial`, `/startup`, `/app` select website-type playbooks. |
-| Quality | Adds gates: `/premium` composition/detail; `/awwward` signature mechanism; `/conversion` proof + CTA; `/trust` proof/risk reducers near friction; `/accessibility` WCAG; `/performance` CWV/runtime; `/responsive` laptop/desktop/wide/mobile viewport fit; `/trend` current mechanics without copying; `/research` source-informed mechanics and evidence confidence. |
-| Tool | Selects route preference: `/playwright`, `/figma`, `/tailwind`, `/gsap`, `/framer`, `/3d`, `/reference`; missing tools require fallback plan. |
+| Domain | Changes heuristics: `/new-site` starts with project fit, research, and an approved design contract; `/landing` first viewport + conversion; `/dashboard` density + control semantics; `/saas` repeated workflows; `/ecommerce` product/funnel trust; `/mobile` recomposition; `/showroom` craft/result proof; `/services` offer-choice clarity; `/about` capability trust; `/contact` direct action path; `/local` relevance/location/availability; `/agency`, `/studio`, `/portfolio`, `/hospitality`, `/legal`, `/finance`, `/healthcare`, `/luxury`, `/editorial`, `/startup`, `/app` select website-type playbooks. |
+| Workflow | Changes the operating sequence: `/redesign` audit-first; `/image-to-code` reference mechanics; `/imagegen` section-level visual contracts; `/brandkit` identity system; `/designplan` explicit pre-build decisions; `/output-integrity` completeness and public-output safety. |
+| Quality | Adds gates: `/premium` composition/detail; `/awwward` signature mechanism; `/conversion` proof + CTA; `/trust` proof/risk reducers near friction; `/accessibility` WCAG; `/performance` CWV/runtime; `/responsive` laptop/desktop/wide/mobile viewport fit; `/trend` current mechanics without transferring identity/code/assets; `/research` source-informed mechanics and evidence confidence. |
+| Tool | Selects route preference: `/playwright`, `/figma`, `/tailwind`, `/gsap`, `/framer`, `/3d`, `/reference`, `/stitch`; `/project-fit` inspects the real scaffold and reports installed/configured/declared/inferred capabilities separately. Missing tools require a fallback plan. |
 | Intensity | `/quick` top risks only; `/deep` full relevant protocol; `/brutal` strict scoring + sidecar critique where useful. |
 | Taste dials | `/variance-*`, `/motion-*`, `/density-*` tune visual experimentation, animation depth, and information per viewport. |
 
 ## Output Contracts
 
-- `/analyse`: Executive Summary, Evidence, Prioritized Findings, Severity, Impact, Fix Recommendation, QA Follow-up.
-- `/design`: Design Direction, Strategy Lane, Signature Move, Layout Strategy, Component Strategy, Token Contract, Responsive Behavior, Implementation Notes.
-- `/polish`: Visual Diagnosis, High-Impact Design Moves, Component Improvements, Typography/Spacing/Hierarchy Fixes, Motion Opportunities, Premium Detail Pass, Gate Risks.
-- `/implement`: Implementation Plan, Files/Components, Design System Alignment, State Contract, Accessibility Requirements, Performance Requirements, Verification Steps.
+- `/analyse`: Executive Summary, Evidence, Prioritized Findings, Severity, Root Cause, Impact, Fix Recommendation, QA Follow-up.
+- `/design`: Research Read, Design System, Design Direction, Strategy Lane, Signature Move, Layout Strategy, Component Strategy, Token Contract, Responsive Behavior, Implementation Notes.
+- `/polish`: Visual Diagnosis, Keep/Delete/Replace, High-Impact Design Moves, Component Improvements, Typography/Spacing/Hierarchy Fixes, Motion Opportunities, Premium Detail Pass, Gate Risks.
+- `/implement`: Implemented Outcome, Changed Files/Components, Design System Alignment, State Contract, Accessibility/Performance Decisions, Checks Run, Remaining Evidence Gaps. When scoped writes are authorized, a plan alone is not completion.
 - `/verify`: Pass/Fail/Needs Review, Browser Evidence, Viewport Results, Console/Runtime Issues, Accessibility Smoke, Performance Risks, Ship Recommendation.
 
 ## Compatibility Defaults
 
 - Tool params are preferences, not permission to add dependencies blindly.
+- `/new-site` runs project-fit intake before choosing architecture. If no approved design contract exists, complete `/design` before implementation.
+- `/project-fit` inspects instructions, manifests, framework config, scripts, tokens, components, routes, assets, fonts, and QA harness. Distinguish what is installed/configured from what starter prose merely declares.
 - `/figma` works as protocol even without Figma tooling: use frame URL, screenshot, tokens, exports, or ask for the missing source.
 - `/3d` plus `/mobile` requires a non-3D mobile fallback.
 - `/gsap` or `/framer` requires existing dependency or explicit acceptance.
@@ -33,8 +36,11 @@
 - `/showroom`, `/services`, `/about`, `/contact`, and `/local` are route job modifiers. They can combine with `/landing`, `/redesign`, `/polish`, `/verify`, `/conversion`, `/trust`, `/awwward`, and `/performance`.
 - `/trust` strengthens `/conversion`; it requires proof placement, risk reducers, source-aware claims, and no fake metrics.
 - `/verify` should apply route checks to all known changed or requested routes, not only the homepage.
+- `/playwright` and `/verify` request evidence; they do not themselves authorize browser control or screenshots. Capture only when the user or host/project policy allows it, and ask first for authenticated, private, paid, admin, client-confidential, or destructive surfaces.
+- `/trend`, `/research`, and `/reference` query the dated corpus first and return a small diverse set. Candidate descriptions are hypotheses. Authorized raw third-party captures remain local; public recipes use original code and owned or licensed assets.
 - Website-type parameters load `website-type-playbooks.md` and set defaults for hero logic, trust logic, CTA logic, layout rhythm, motion budget, asset needs, premium moves, and anti-patterns.
 - `/research`, `/premium`, `/awwward`, `/brandkit`, and new-site `/design` require research-first and design-system-first references before final direction.
+- Browser-verifiable implementation uses a closed loop: build -> inspect/capture when authorized -> compare with the design and shipping contracts -> patch -> recheck. Record anything not observed as an evidence gap.
 - Unsupported combinations return a short error and a valid replacement.
 
 ## Website Type Defaults
@@ -46,7 +52,9 @@
 | `/dashboard` | Data Confidence | low | component states, design-system governance |
 | `/ecommerce` | Conversion Trust + Product Proof | low | website-type playbooks, content conversion, accessibility |
 | `/hospitality` | Editorial Premium | low-mid | website-type playbooks, asset strategy, motion system |
-| `/legal`, `/finance`, `/healthcare` | Conversion Trust | low | trust, accessibility, content conversion |
+| `/legal` | Conversion Trust + Editorial Premium | low | jurisdiction/process trust, content conversion, accessibility |
+| `/finance` | Data Confidence + Conversion Trust | low | data/provenance, disclosure trust, content conversion |
+| `/healthcare` | Minimal Operator + Conversion Trust | low | care-path clarity, accessibility, privacy/trust content |
 | `/luxury`, `/editorial` | Editorial Premium + Soft Luxury | mid | typography/color, editorial motion, asset strategy |
 | `/startup` | Product Proof + Experimental Showcase | mid-high bounded | research, design-system-first, motion gates |
 
