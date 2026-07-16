@@ -2,6 +2,20 @@
 
 Use this for substantial UI work, premium redesigns, route systems, Awwwards-grade direction, and any task where quality matters more than speed.
 
+## Contents
+
+- Mandatory Sequence
+- Route Archetypes
+- Strategy Lane Gate
+- Asset Reality Gate
+- First Viewport Fit Contract
+- Diversity Gate
+- Token Contract
+- Evidence Confidence
+- Signature Move Rules
+- Motion Governance
+- Ship Decision
+
 ## Mandatory Sequence
 
 Run this before styling or implementation:
@@ -149,13 +163,15 @@ Examples of valid mechanisms: interactive task index, proof board, object-stage 
 
 Use `Fail` if any hard gate fails. Use `Needs Review` only when evidence is missing or manual/private states block certainty.
 
-Block completion when any critical score is below 4/5:
+Evaluate accessibility, correctness, responsive behavior, content integrity, runtime, reduced motion, and agreed performance budgets as binary or evidence-missing Shipping Gates. Never average one of these failures into a creative score.
+
+For a premium or award-ready claim, return to design when any Creative Jury dimension is below 4/5. Diagnose it through:
 
 - first impression
 - specificity
+- composition
 - typography
 - mobile craft
 - conversion clarity
-- accessibility
-- correctness
-- performance
+
+The creative result guides polish; it does not certify shipment or predict an official award.
