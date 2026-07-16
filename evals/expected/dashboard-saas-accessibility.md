@@ -1,10 +1,13 @@
 # Expected Structure
 
-- Implementation Plan
+- Inspected Project Contract
+- Implemented Outcome
+- Changed Files / Components
 - Component State Contracts
-- WCAG Requirements
+- Accessibility Decisions And Keyboard Behavior
 - Density Rules
-- Keyboard Behavior
 - State Coverage
-- Verification Steps
+- Checks Run
+- Remaining Evidence Gaps
 
+The answer must not stop at a plan when a writable project is in scope. It must not claim visual or browser verification unless capture was authorized and evidence exists.
