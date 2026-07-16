@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/frontend-design-ultra/benchmark/holdout-reveal.schema.json",
+  "title": "Benchmark Holdout Reveal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schemaVersion", "benchmarkVersion", "status", "revealedAt", "voteFreezeSha256", "commitmentSha256", "protocolFreezeSha256", "saltHex", "saltSha256", "bundlePath", "briefIds"],
+  "properties": {
+    "$schema": { "const": "../../protocol/v1/schemas/holdout-reveal.schema.json" },
+    "schemaVersion": { "const": 1 },
+    "benchmarkVersion": { "type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$" },
+    "status": { "const": "revealed" },
+    "revealedAt": { "type": "string", "format": "date-time" },
+    "voteFreezeSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "commitmentSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "protocolFreezeSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "saltHex": { "type": "string", "pattern": "^(?:[a-f0-9]{2}){32,}$" },
+    "saltSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "bundlePath": { "type": "string", "pattern": "^holdout-bundle(?:/[a-zA-Z0-9._-]+)*$" },
+    "briefIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^hold-[a-z0-9]+(?:-[a-z0-9]+)*$" }
+    }
+  }
+}
