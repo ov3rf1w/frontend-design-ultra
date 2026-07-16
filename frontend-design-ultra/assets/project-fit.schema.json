@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ov3rf1w/frontend-design-ultra/blob/main/frontend-design-ultra/assets/project-fit.schema.json",
+  "title": "Frontend Design Ultra Project Fit Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contractVersion", "projectKind", "profile", "skillCompatibility"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "contractVersion": {
+      "const": 1
+    },
+    "projectKind": {
+      "enum": ["codebase", "context-starter", "scaffold-fragment"]
+    },
+    "profile": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "starterVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "skillCompatibility": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable skill contract range or release policy; it does not override the installed skill."
+    },
+    "artifactMap": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^(?![A-Za-z]:)(?![\\\\/])(?!.*(?:^|[\\\\/])\\.\\.(?:[\\\\/]|$)).+"
+      }
+    },
+    "expectedScripts": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "preserve": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidencePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "screenshots": {
+          "enum": ["inherit", "ask", "allowed", "forbidden"]
+        }
+      }
+    }
+  }
+}
