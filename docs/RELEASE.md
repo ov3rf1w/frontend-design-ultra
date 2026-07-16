@@ -34,7 +34,7 @@ Enable these controls before publishing the first release:
 
 ## Pre-Publication History Privacy Gate
 
-The current pre-publication Git history is **unreviewed and therefore not cleared for public push**. A clean working tree, release archive, or current-tree secret scan does not prove that older commits, deleted files, commit identities, tags, or other reachable objects are safe.
+The current pre-publication Git history is **unreviewed and therefore not cleared for public push**. A local audit has also observed at least one commit identity using a personal-address form instead of a GitHub noreply identity; treat that as a blocking privacy finding until the owner records a publication strategy. A clean working tree, release archive, or current-tree secret scan does not prove that older commits, deleted files, commit identities, tags, or other reachable objects are safe.
 
 Before creating or pushing the public repository:
 
