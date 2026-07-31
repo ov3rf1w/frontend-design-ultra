@@ -47,7 +47,34 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
+          fetch-depth: 0
           persist-credentials: false
+
+      - name: Classify showcase evidence scope
+        id: evidence-scope
+        working-directory: ${{ github.workspace }}
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if [[ -z "$BASE_SHA" || "$BASE_SHA" =~ ^0+$ ]] || ! git cat-file -e "$BASE_SHA^{commit}"; then
+            echo "refresh=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if git diff --quiet "$BASE_SHA" "$GITHUB_SHA" -- \
+            'showcase/**' \
+            ':(exclude)showcase/package.json' \
+            ':(exclude)showcase/package-lock.json' \
+            'docs/assets/showcase/**' \
+            'docs/assets/media-provenance.json' \
+            'docs/assets/media-provenance.schema.json' \
+            'scripts/audit-showcase.mjs' \
+            'scripts/capture-showcase-gallery.mjs' \
+            'scripts/update-media-provenance.mjs' \
+            'scripts/validate-repo.mjs'; then
+            echo "refresh=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "refresh=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Set up Node.js
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
@@ -94,6 +121,11 @@ jobs:
       - name: Run browser QA contract
         working-directory: ${{ github.workspace }}
         run: npm run showcase:audit
+
+      - name: Refresh dependency-only evidence binding
+        if: steps.evidence-scope.outputs.refresh == 'true'
+        working-directory: ${{ github.workspace }}
+        run: npm run showcase:capture-gallery
 
       - name: Validate public showcase evidence
         working-directory: ${{ github.workspace }}

@@ -2,6 +2,7 @@
 
 import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
+import { realpathSync } from "node:fs";
 import { lstat, mkdir, mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -134,7 +135,13 @@ function runGit(root, args) {
 function samePath(left, right) {
   const normalize = (value) => {
     const resolved = path.resolve(value);
-    return process.platform === "win32" ? resolved.toLowerCase() : resolved;
+    let canonical = resolved;
+    try {
+      canonical = realpathSync.native(resolved);
+    } catch {
+      // The caller handles missing or invalid paths through the surrounding Git checks.
+    }
+    return process.platform === "win32" ? canonical.toLowerCase() : canonical;
   };
   return normalize(left) === normalize(right);
 }

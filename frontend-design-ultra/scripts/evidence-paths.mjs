@@ -15,8 +15,10 @@ function normalizedAbsolute(value) {
 }
 
 function isPathInside(root, candidate) {
-  const relative = path.relative(normalizedAbsolute(root), normalizedAbsolute(candidate));
-  return relative === "" || (!relative.startsWith("..") && !path.isAbsolute(relative));
+  const hasWindowsSyntax = [root, candidate].some((value) => /^[a-z]:[\\/]/i.test(String(value)) || String(value).includes("\\"));
+  const pathApi = hasWindowsSyntax ? path.win32 : path;
+  const relative = pathApi.relative(pathApi.resolve(String(root)), pathApi.resolve(String(candidate)));
+  return relative === "" || (!relative.startsWith("..") && !pathApi.isAbsolute(relative));
 }
 
 function configuredSyncRoots(env) {
@@ -33,9 +35,9 @@ function configuredSyncRoots(env) {
 
 export function isKnownSyncedPath(candidate, { env = process.env } = {}) {
   const resolved = normalizedAbsolute(candidate);
-  if (configuredSyncRoots(env).some((root) => isPathInside(root, resolved))) return true;
+  if (configuredSyncRoots(env).some((root) => isPathInside(root, candidate))) return true;
   return resolved
-    .split(path.sep)
+    .split(/[\\/]+/)
     .filter(Boolean)
     .some((segment) => SYNC_SEGMENT_PATTERNS.some((pattern) => pattern.test(segment)));
 }

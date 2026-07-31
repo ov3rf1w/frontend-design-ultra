@@ -22,7 +22,7 @@ test("installers require the public payload guide, license, and third-party noti
 });
 
 test("PowerShell local dry run survives unavailable optional validator dependencies", (context) => {
-  if (process.platform !== "win32") context.skip("Windows PowerShell regression");
+  if (process.platform !== "win32") return context.skip("Windows PowerShell regression");
   const codexHome = mkdtempSync(path.join(os.tmpdir(), "frontend-design-ultra-local-dry-run-"));
   context.after(() => rmSync(codexHome, { recursive: true, force: true }));
 

@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
 test("PowerShell uninstaller treats CODEX_HOME as a literal path", (context) => {
-  if (process.platform !== "win32") context.skip("Windows PowerShell regression");
+  if (process.platform !== "win32") return context.skip("Windows PowerShell regression");
 
   const fixture = mkdtempSync(path.join(os.tmpdir(), "frontend-design-ultra-uninstall-"));
   context.after(() => rmSync(fixture, { recursive: true, force: true }));
